@@ -1,0 +1,64 @@
+<script type="text/javascript">
+  (function(){
+    var regExp = new RegExp("X{3}(.*?)X{3}","gm");
+    var incr = 0;
+    var currentToReplaceArray = new Array();
+    var currentToReplaceHash = new Object();
+    var toReplaceArray = new Array();
+    if(pathToReplaceArray = $("input#path").val().match(regExp)) {
+      toReplaceArray = toReplaceArray.concat(pathToReplaceArray);
+    }
+    if(headersToReplaceArray = $("textarea#headers").val().match(regExp)) {
+      toReplaceArray = toReplaceArray.concat(headersToReplaceArray);
+    }
+    if(bodyToReplaceArray = $("textarea#body").val().match(regExp)) {
+      toReplaceArray = toReplaceArray.concat(bodyToReplaceArray);
+    }
+    for(i=0 ; i < toReplaceArray.length ; i++) {
+      if(toReplaceArray[i] == "XXXCHANGEMEXXX") {
+        toReplaceArray.splice(i, 1);
+        i--;
+      }
+      else {
+        toReplaceArray[i] = toReplaceArray[i].substr(3, toReplaceArray[i].length - 6);
+      }
+    }
+    jQuery.fn.reverse = Array.prototype.reverse;
+    $(".replace").each(function( index ) {
+      currentToReplaceArray.push($("#"+this.id).val());
+      currentToReplaceHash[$("#"+this.id).val()] = this.id.split(/_/)[1];
+      incr = this.id.split(/_/)[1];
+    });
+    for(i=0 ; i < currentToReplaceArray.length ; i++) {
+    var found = false;
+      for(j=0 ; j < toReplaceArray.length ; j++) {
+        if(toReplaceArray[j] == currentToReplaceArray[i]) {
+          found = true;
+        }
+      }
+      if(!found) {
+        $("#replace_"+ currentToReplaceHash[currentToReplaceArray[i]] +"_div").remove();
+      }
+    }
+    if(toReplaceArray.length > 0) {
+      $("#to_replace").show();
+      for(i=0 ; i < toReplaceArray.length ; i++) {
+        var found = false;
+        for(j=0 ; j < currentToReplaceArray.length ; j++) {
+          if(currentToReplaceArray[j] == toReplaceArray[i]) {
+            found = true;
+          }
+        }
+        if(!found) {
+          var toReplace = toReplaceArray[i];
+          incr ++;
+          $("#to_replace").append("<div id='replace_"+ incr +"_div' class='field'><div class='input-group'><span class='input-group-addon'>"+ toReplace +"</span><input type='hidden' id='replace_"+ incr +"' name='replace_"+ incr +"' value='"+ toReplace +"' class='replace' /><input type='text' id='replace_"+ incr +"_by' name='replace_"+ incr +"_by' class='form-control by' /></div><br /></div>");
+        }
+      }
+    }
+    else {
+      $("#to_replace").hide();
+    }
+    setTimeout(arguments.callee, 1000);
+  })();
+</script>

@@ -1,0 +1,163 @@
+<% capacity_rmg = Hash.new %>
+<% capacity_node = Hash.new %>
+<div class="panel panel-primary">
+  <div class="panel-heading">Disk metrics</div>
+  <div class="panel-body">
+    <table class="table sortable">
+      <thead>
+        <tr>
+          <th data-defaultsort="asc">RMG</th>
+          <th>Node</th>
+          <th>Device path</th>
+          <th>Total capacity</th>
+          <th>Used capacity</th>
+          <th>Free capacity</th>
+          <th>Capacity used (%)</th>
+          <th>Type of disk</th>
+          <th>Current status</th>
+        </tr>
+      </thead>
+
+      <tbody>
+      	<% @fs.each do |rmg, hash1| %>
+      		<%
+      			capacity_rmg[rmg] = Hash.new
+      			capacity_rmg[rmg]["System disks"] = Hash.new
+	      		capacity_rmg[rmg]["System disks"]["total_capacity"] = 0
+	      		capacity_rmg[rmg]["System disks"]["used_capacity"] = 0
+	      		capacity_rmg[rmg]["Metadata disks"] = Hash.new
+	      		capacity_rmg[rmg]["Metadata disks"]["total_capacity"] = 0
+	      		capacity_rmg[rmg]["Metadata disks"]["used_capacity"] = 0
+	      		capacity_rmg[rmg]["Data disks"] = Hash.new
+	      		capacity_rmg[rmg]["Data disks"]["total_capacity"] = 0
+	      		capacity_rmg[rmg]["Data disks"]["used_capacity"] = 0
+      			capacity_node[rmg] = Hash.new
+      		%>
+					<% hash1.each do |node, hash2| %>
+						<%
+		      		capacity_node[rmg][node] = Hash.new
+		      		capacity_node[rmg][node]["System disks"] = Hash.new
+		      		capacity_node[rmg][node]["System disks"]["total_capacity"] = 0
+		      		capacity_node[rmg][node]["System disks"]["used_capacity"] = 0
+		      		capacity_node[rmg][node]["Metadata disks"] = Hash.new
+		      		capacity_node[rmg][node]["Metadata disks"]["total_capacity"] = 0
+		      		capacity_node[rmg][node]["Metadata disks"]["used_capacity"] = 0
+		      		capacity_node[rmg][node]["Data disks"] = Hash.new
+		      		capacity_node[rmg][node]["Data disks"]["total_capacity"] = 0
+		      		capacity_node[rmg][node]["Data disks"]["used_capacity"] = 0
+						%>
+						<% hash2.each do |fsuuid, hash3| %>
+							<tr>
+								<td><%= rmg %></td>
+								<td><%= node %></td>
+								<td><%= hash3["device_path"] %></td>
+								<td><%= number_to_human_size hash3["total_capacity"] %></td>
+								<td><%= number_to_human_size hash3["used_capacity"] %></td>
+								<td><%= number_to_human_size hash3["free_capacity"] %></td>
+								<td><%= number_to_percentage hash3["percent_used"].to_f * 100, precision: 1 %></td>
+								<% case hash3["atmos_services"] %>
+								<% when "UNKNOWN" %>
+									<td>System disk</td>
+									<%
+									  if hash3["current_status"] != "IOERROR"
+											capacity_node[rmg][node]["System disks"]["total_capacity"] += hash3["total_capacity"].to_f
+											capacity_node[rmg][node]["System disks"]["used_capacity"] += hash3["used_capacity"].to_f
+											capacity_rmg[rmg]["System disks"]["total_capacity"] += hash3["total_capacity"].to_f
+											capacity_rmg[rmg]["System disks"]["used_capacity"] += hash3["used_capacity"].to_f
+										end
+									%>
+								<% when "MDS" %>
+									<td>Metadata disk</td>
+									<%
+										if hash3["current_status"] != "IOERROR"
+											capacity_node[rmg][node]["Metadata disks"]["total_capacity"] += hash3["total_capacity"].to_f
+											capacity_node[rmg][node]["Metadata disks"]["used_capacity"] += hash3["used_capacity"].to_f
+											capacity_rmg[rmg]["Metadata disks"]["total_capacity"] += hash3["total_capacity"].to_f
+											capacity_rmg[rmg]["Metadata disks"]["used_capacity"] += hash3["used_capacity"].to_f
+										end
+									%>
+								<% when "SS" %>
+									<td>Data disk</td>
+									<%
+										if hash3["current_status"] != "IOERROR"
+											capacity_node[rmg][node]["Data disks"]["total_capacity"] += hash3["total_capacity"].to_f
+											capacity_node[rmg][node]["Data disks"]["used_capacity"] += hash3["used_capacity"].to_f
+											capacity_rmg[rmg]["Data disks"]["total_capacity"] += hash3["total_capacity"].to_f
+											capacity_rmg[rmg]["Data disks"]["used_capacity"] += hash3["used_capacity"].to_f
+										end
+									%>
+								<% end %>
+								<td><%= hash3["current_status"] %></td>
+							</tr>
+						<% end %>
+					<% end %>
+				<% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="panel panel-primary">
+  <div class="panel-heading">Node metrics</div>
+  <div class="panel-body">
+    <table class="table sortable">
+      <thead>
+        <tr>
+          <th data-defaultsort="asc">RMG</th>
+          <th>Node</th>
+          <th>Type of disk</th>
+          <th>Total capacity</th>
+          <th>Used capacity</th>
+          <th>Capacity used (%)</th>
+        </tr>
+      </thead>
+
+      <tbody>
+      	<% capacity_node.each do |rmg, hash1| %>
+					<% hash1.each do |node, hash2| %>
+						<% hash2.each do |type, hash3| %>
+							<tr>
+								<td><%= rmg %></td>
+								<td><%= node %></td>
+								<td><%= type %></td>
+								<td><%= number_to_human_size hash3["total_capacity"] %></td>
+								<td><%= number_to_human_size hash3["used_capacity"] %></td>
+								<td><%= number_to_percentage hash3["used_capacity"] * 100 / hash3["total_capacity"], precision: 1 if hash3["total_capacity"] > 0 %></td>
+							</tr>
+						<% end %>
+					<% end %>
+				<% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="panel panel-primary">
+  <div class="panel-heading">RMG metrics</div>
+  <div class="panel-body">
+    <table class="table sortable">
+      <thead>
+        <tr>
+          <th data-defaultsort="asc">RMG</th>
+          <th>Type of disk</th>
+          <th>Total capacity</th>
+          <th>Used capacity</th>
+          <th>Capacity used (%)</th>
+        </tr>
+      </thead>
+
+      <tbody>
+      	<% capacity_rmg.each do |rmg, hash1| %>
+					<% hash1.each do |type, hash2| %>
+						<tr>
+							<td><%= rmg %></td>
+							<td><%= type %></td>
+							<td><%= number_to_human_size hash2["total_capacity"] %></td>
+							<td><%= number_to_human_size hash2["used_capacity"] %></td>
+							<td><%= number_to_percentage hash2["used_capacity"] * 100 / hash2["total_capacity"], precision: 1 if hash2["total_capacity"] > 0 %></td>
+						</tr>
+					<% end %>
+				<% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+<%= link_to "Back", "/platforms/#{@platform.id.to_s}", :class => "btn btn-default" %>

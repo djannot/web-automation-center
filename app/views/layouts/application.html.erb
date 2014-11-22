@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Web Automation Center <%= @version %></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  -->
+  <link href="/stylesheets/application.css" type="text/css" rel="stylesheet">
+  <link href="/stylesheets/bootstrap.min.css" type="text/css" rel="stylesheet">
+  <link href="/stylesheets/bootstrap-theme.min.css" type="text/css" rel="stylesheet">
+  <link href="/stylesheets/bootstrap-sortable.css" type="text/css" rel="stylesheet">
+  <script src="/javascripts/jquery-2.1.1.min.js"></script>
+  <script src="/assets/jquery_ujs.js?body=1" data-turbolinks-track="true"></script>
+  <script src="/assets/turbolinks.js?body=1" data-turbolinks-track="true"></script>
+  <script src="/javascripts/application.js"></script>
+  <script src="/javascripts/bootstrap.min.js"></script>
+  <script src="/javascripts/bootstrap-sortable.js"></script>
+  <script src="/javascripts/json2.js"></script>
+  <%= csrf_meta_tags %>
+
+</head>
+<body onload="prettyPrint()">
+
+<div class="container">
+
+  <h1 class="logo">Web Automation Center <small><%= @version %></small></h1>
+	<div class="spinner topleft" style="display:none;">
+		<img src="/images/ajax-loader.gif" />
+	</div>
+	<div class="spinner topright" style="display:none;">
+		<img src="/images/ajax-loader.gif" />
+	</div>
+	<div class="spinner bottomleft" style="display:none;">
+		<img src="/images/ajax-loader.gif" />
+	</div>
+	<div class="spinner bottomright" style="display:none;">
+		<img src="/images/ajax-loader.gif" />
+	</div>
+
+	<nav class="navbar navbar-default" role="navigation">
+	  <!-- Collect the nav links, forms, and other content for toggling -->
+	  <div class="collapse navbar-collapse navbar-ex1-collapse">
+	    <ul class="nav navbar-nav">
+	    	<% if current_user %>
+		      <li><a href="/">Home</a></li>
+		      <li class="dropdown">
+		        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cloud APIs<b class="caret"></b></a>
+		        <ul class="dropdown-menu">
+		          <li><a href="/clouds/new">Add</a></li>
+		          <li><a href="/clouds">Show</a></li>
+		        </ul>
+		      </li>
+		      <li class="dropdown">
+		        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Platform Management<b class="caret"></b></a>
+		        <ul class="dropdown-menu">
+		          <li><a href="/platforms/new">Add</a></li>
+		          <li><a href="/platforms">Show</a></li>
+		        </ul>
+		      </li>
+		      <li class="dropdown">
+		        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Other REST APIs<b class="caret"></b></a>
+		        <ul class="dropdown-menu">
+		          <li><a href="/cloud/manual_request/0">Manual request</a></li>
+		          <li><a href="/cloud/bulk_requests/0">Bulk requests</a></li>
+		        </ul>
+		      </li>
+		      <li class="dropdown">
+		        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Demos<b class="caret"></b></a>
+		        <ul class="dropdown-menu">
+		          <li><a href="/demos/new">Add</a></li>
+		          <li><a href="/demos">Show</a></li>
+		        </ul>
+		      </li>
+		      <li><%= link_to "Backup & Restore", '/backup/index' %></li>
+          <li><a href="/cloud/about/0">About</a></li>
+		      <li><%= link_to "Log out", log_out_path %></li>
+		    <% else %>
+		    	<li><%= link_to "Sign up", sign_up_path %></li>
+		    	<li><%= link_to "Log in", log_in_path %></li>
+		    <% end %>
+	    </ul>
+	  </div><!-- /.navbar-collapse -->
+	</nav>
+
+	<div id="alert-success" class="alert alert-success" style="display:none"></div>
+	<div id="alert-info" class="alert alert-info" style="display:none"></div>
+	<div id="alert-warning" class="alert alert-warning" style="display:none"></div>
+	<div id="alert-danger" class="alert alert-danger" style="display:none"></div>
+
+	<div id="explanation" class="well well-lg" style="display:none"></div>
+
+	<script type="text/javascript">
+		<% if notice %>
+			$('#alert-success').html("<%= notice %>").show().delay(10000).fadeOut();
+		<% end %>
+    <% if @error %>
+      $('#alert-danger').html("<%= @error %>").show().delay(10000).fadeOut();
+    <% end %>
+	</script>
+
+	<%= yield %>
+</div>
+
+</body>
+</html>

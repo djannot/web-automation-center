@@ -1,0 +1,93 @@
+<% if params[:controller] != "demos" && params[:controller] != "demo" %>
+  <a data-toggle="modal" href="#add_favorite_modal" class="btn btn-primary" onclick="fill_fields();">Add to favorites</a>
+<% end %>
+<a data-toggle="modal" href="#manage_favorites_modal" class="btn btn-primary" onclick="retrieve_favorites();">Manage favorites</a>
+<div class="modal fade" id="add_favorite_modal" tabindex="-1" role="dialog" aria-labelledby="add_favorite_modal_label" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Add current request to favorites</h4>
+      </div>
+      <div class="modal-body" id="add_favorite_modal_body">
+        <%= form_tag url_for(:action => 'add_favorite'), :id => "form", :remote => true do %>
+          <div class="field">
+            <div class="input-group">
+              <span class="input-group-addon">Description</span>
+              <%= text_field_tag :description, nil, :id => "description_modal", :class => "form-control" %>
+            </div>
+          </div>
+          <%= text_field_tag :privilege, nil, :id => "privilege_modal", :style => "display:none;" %>
+          <%= text_field_tag :http_method, nil, :id => "http_method_modal", :style => "display:none;" %>
+          <%= text_field_tag :path_or_url, nil, :id => "path_or_url_modal", :style => "display:none;" %>
+          <%= text_area_tag :headers, nil, :id => "headers_modal", :style => "display:none;" %>
+          <%= text_area_tag :body, nil, :id => "body_modal", :style => "display:none;" %>
+          <%= text_field_tag :api, nil, :id => "api_modal", :style => "display:none;" %>
+          <%= text_field_tag :api_type, nil, :id => "api_type_modal", :style => "display:none;" %>
+          <% if @platform %>
+            <%= hidden_field_tag :platform_id, :value => @platform.id %>
+          <% end %>
+          <% if @cloud %>
+            <%= hidden_field_tag :cloud_id, :value => @cloud.id %>
+          <% end %>
+          <br />
+          <%= submit_tag "Add request", :class => "btn btn-primary", :onclick => "formvalidation();" %>
+        <% end %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="manage_favorites_modal" tabindex="-1" role="dialog" aria-labelledby="manage_favorites_modal_label" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Your favorites</h4>
+      </div>
+      <div class="modal-body" id="manage_favorite_modal_body">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  function fill_fields() {
+    $("#description_modal").val("");
+    $("#http_method_modal").val($("#http_method").val());
+    $("#path_or_url_modal").val($("#path").val());
+    $("textarea#headers_modal").val($("#headers").val());
+    $("textarea#body_modal").val($("#body").val());
+    <% if @cloud %>
+      $("#api_modal").val("<%= @cloud.api %>");
+      $("#api_type_modal").val("Cloud API");
+    <% elsif @platform %>
+      $("#api_modal").val("<%= @platform.platform_type %>");
+      $("#api_type_modal").val("Platform Management");
+      <% if @platform.platform_type == "Atmos" %>
+        $("#privilege_modal").val($("#privilege").val());
+      <% end %>
+    <% end %>
+  }
+
+  function retrieve_favorites() {
+    $.ajax({url: '<%= url_for :action => 'retrieve_favorites', :id => "0" %>'});
+  }
+  
+  $(document).ready(function() {
+    $('#form').submit(function() {
+      if(/^[A-Za-z0-9\s]+$/.test($("#description_modal").val())) {
+        return true;
+      }
+      else {
+        window.alert("Only letters, numbers and space characters are allowed");
+        return false;
+      }
+    });
+  });
+</script>

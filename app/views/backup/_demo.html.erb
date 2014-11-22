@@ -1,0 +1,11 @@
+<tr>
+  <td><%= key["Key"].split(/\//)[1] %></td>
+  <td><%= key["LastModified"] %></td>
+  <td><%= key["Key"].split(/\//)[2] %></td>
+  <td><%= link_to 'Import', "/backup/import/#{key['Key']}", :class => "btn btn-primary" %></td>
+  <td>
+    <% if current_user.email == key["Key"].split(/\//)[1] %>
+      <%= link_to 'Delete', "/backup/delete/#{key['Key']}", data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %>
+    <% end %>
+  </td>
+</tr>

@@ -1,0 +1,30 @@
+<% if @exceptions %>
+  <div class="alert alert-danger"><%= @exceptions %></div>
+<% else %>
+  <% @method = "Post" %>
+	<%
+		@other = " when initiating multipart upload"
+    @url = @url_init_upload
+		@headers_sent = @headers_init_upload
+	  @response = @response_init_upload
+	%>
+	<%= render :partial => 'shared/execute_request' %>
+	<% @responses_parts.keys.sort.each do |part, responses| %>
+		<%
+			@other = " when uploading part #{part}"
+      @url = @url_parts[part]
+			@headers_sent = @headers_parts[part]
+		  @response = response
+		%>
+		<%= render :partial => 'shared/execute_request' %>
+	<% end %>
+	<%
+		@other = " when completing multipart upload"
+    @url = @url_completing
+    @body_sent = @body
+		@headers_sent = @headers
+	  @response = @response
+	%>
+	<%= render :partial => 'shared/execute_request' %>
+<% end %>
+<%= link_to "Back", "/cloud/multipart_upload/#{@cloud.id}", :class => "btn btn-default" %>

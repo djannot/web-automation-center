@@ -1,0 +1,61 @@
+<% details_metrics = Hash.from_xml(@response_metrics.body) %>
+<div class="panel panel-primary">
+  <div class="panel-heading">Tenant metrics</div>
+  <div class="panel-body">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Objects</th>
+          <th>Size</th>
+          <th>Real size</th>
+          <th>Metadata size</th>
+          <th>Total size</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td><%= details_metrics["scMetrics"]["objCount"] %></td>
+          <td><%= number_to_human_size(details_metrics["scMetrics"]["size"]) %></td>
+          <td><%= number_to_human_size(details_metrics["scMetrics"]["realsize"]) %></td>
+          <td><%= number_to_human_size(details_metrics["scMetrics"]["metadatasize"]) %></td>
+          <td><%= number_to_human_size(details_metrics["scMetrics"]["totalSize"]) %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<% details = Hash.from_xml(@response.body) %>
+<div class="panel panel-primary">
+  <div class="panel-heading">Subtenant list</div>
+  <div class="panel-body">
+		<table class="table sortable">
+      <thead>
+        <tr>
+          <th data-defaultsort="asc">Subtenant name</th>
+          <th>Subtenant id</th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% if details["subtenantList"]["subtenant"].instance_of? Array %>
+          <% details["subtenantList"]["subtenant"].each do |elem| %>
+  	         <tr>
+  	          <td><%= elem["name"] %></td>
+  	          <td><%= elem["id"] %></td>
+              <td><%= link_to "Show subtenant details", "/platform/show_subtenant_details/#{@platform.id.to_s}/#{elem["name"]}", :class => "btn btn-primary" %></td>
+  	        </tr>
+          <% end %>
+        <% elsif details["subtenantList"]["subtenant"].instance_of? Hash %>
+          <tr>
+            <td><%= details["subtenantList"]["subtenant"]["name"] %></td>
+            <td><%= details["subtenantList"]["subtenant"]["id"] %></td>
+            <td><%= link_to "Show subtenant details", "/platform/show_subtenant_details/#{@platform.id.to_s}/#{details["subtenantList"]["subtenant"]["name"]}", :class => "btn btn-primary" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+	</div>
+</div>
+<%= link_to "Back", "/platforms/#{@platform.id.to_s}", :class => "btn btn-default" %>

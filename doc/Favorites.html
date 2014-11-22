@@ -1,0 +1,612 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Module: Favorites
+  
+    &mdash; Documentation by YARD 0.8.7.6
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!Favorites.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (F)</a> &raquo;
+    
+    
+    <span class="title">Favorites</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Module: Favorites
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+  
+    
+  
+  
+    <dt class="r1">Included in:</dt>
+    <dd class="r1"><span class='object_link'><a href="CloudController.html" title="CloudController (class)">CloudController</a></span>, <span class='object_link'><a href="DemoController.html" title="DemoController (class)">DemoController</a></span>, <span class='object_link'><a href="DemosController.html" title="DemosController (class)">DemosController</a></span>, <span class='object_link'><a href="PlatformController.html" title="PlatformController (class)">PlatformController</a></span></dd>
+    
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">app/controllers/application_controller.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#add_favorite-instance_method" title="#add_favorite (instance method)">- (Object) <strong>add_favorite</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Create a new favorite item.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#delete_favorite-instance_method" title="#delete_favorite (instance method)">- (Object) <strong>delete_favorite</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Delete a favorite item.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#execute_favorite-instance_method" title="#execute_favorite (instance method)">- (Object) <strong>execute_favorite</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Replace the HTML fields by the data of the favorite item and execute the
+request.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#retrieve_favorites-instance_method" title="#retrieve_favorites (instance method)">- (Object) <strong>retrieve_favorites</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Get the favorite items.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#select_favorite-instance_method" title="#select_favorite (instance method)">- (Object) <strong>select_favorite</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Replace the HTML fields by the data of the favorite item.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#update_favorite-instance_method" title="#update_favorite (instance method)">- (Object) <strong>update_favorite</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Update an existing favorite item.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="add_favorite-instance_method">
+  
+    - (<tt>Object</tt>) <strong>add_favorite</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Create a new favorite item</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 9</span>
+
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_add_favorite identifier id'>add_favorite</span>
+  <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:api_type</span><span class='rbrack token'>]</span> <span class='assign token'>=</span> <span class='string val'>&quot;Other platform&quot;</span> <span class='rubyid_if if_mod kw'>if</span> <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:api_type</span><span class='rbrack token'>]</span> <span class='eq op'>==</span> <span class='string val'>&quot;&quot;</span>
+  <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:api</span><span class='rbrack token'>]</span> <span class='assign token'>=</span> <span class='string val'>&quot;Other API&quot;</span> <span class='rubyid_if if_mod kw'>if</span> <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:api</span><span class='rbrack token'>]</span> <span class='eq op'>==</span> <span class='string val'>&quot;&quot;</span>
+  <span class='rubyid_@favorite ivar id'>@favorite</span> <span class='assign token'>=</span> <span class='rubyid_Favorite constant id'>Favorite</span><span class='dot token'>.</span><span class='rubyid_new identifier id'>new</span><span class='lparen token'>(</span><span class='rubyid_params identifier id'>params</span><span class='rparen token'>)</span>
+  <span class='rubyid_current_user identifier id'>current_user</span>
+  <span class='rubyid_@favorite ivar id'>@favorite</span><span class='dot token'>.</span><span class='rubyid_user_id identifier id'>user_id</span> <span class='assign token'>=</span> <span class='rubyid_current_user identifier id'>current_user</span><span class='dot token'>.</span><span class='rubyid_id identifier id'>id</span>
+  <span class='rubyid_@favorite ivar id'>@favorite</span><span class='dot token'>.</span><span class='rubyid_save identifier id'>save</span>
+  <span class='rubyid_respond_to identifier id'>respond_to</span> <span class='rubyid_do do kw'>do</span> <span class='bitor op'>|</span><span class='rubyid_format identifier id'>format</span><span class='bitor op'>|</span>
+    <span class='rubyid_format identifier id'>format</span><span class='dot token'>.</span><span class='rubyid_js identifier id'>js</span> <span class='lbrace token'>{</span> <span class='rubyid_render identifier id'>render</span> <span class='string val'>'shared/add_favorite'</span> <span class='rbrace token'>}</span>
+  <span class='rubyid_end end kw'>end</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="delete_favorite-instance_method">
+  
+    - (<tt>Object</tt>) <strong>delete_favorite</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Delete a favorite item</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 70</span>
+
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_delete_favorite identifier id'>delete_favorite</span>
+  <span class='rubyid_@favorite ivar id'>@favorite</span> <span class='assign token'>=</span> <span class='rubyid_Favorite constant id'>Favorite</span><span class='dot token'>.</span><span class='rubyid_find identifier id'>find</span><span class='lparen token'>(</span><span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:id</span><span class='rbrack token'>]</span><span class='rparen token'>)</span>
+  <span class='rubyid_@deleted ivar id'>@deleted</span> <span class='assign token'>=</span> <span class='rubyid_false false kw'>false</span>
+  <span class='rubyid_if if kw'>if</span> <span class='rubyid_Task constant id'>Task</span><span class='dot token'>.</span><span class='rubyid_where identifier id'>where</span><span class='lparen token'>(</span><span class='lbrack token'>[</span><span class='string val'>&quot;favorite_id = ?&quot;</span><span class='comma token'>,</span> <span class='rubyid_@favorite ivar id'>@favorite</span><span class='dot token'>.</span><span class='rubyid_id identifier id'>id</span><span class='rbrack token'>]</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='rubyid_count identifier id'>count</span> <span class='eq op'>==</span> <span class='integer val'>0</span>
+    <span class='rubyid_@favorite ivar id'>@favorite</span><span class='dot token'>.</span><span class='rubyid_delete identifier id'>delete</span>
+    <span class='rubyid_@deleted ivar id'>@deleted</span> <span class='assign token'>=</span> <span class='rubyid_true true kw'>true</span>
+  <span class='rubyid_end end kw'>end</span>
+  <span class='rubyid_respond_to identifier id'>respond_to</span> <span class='rubyid_do do kw'>do</span> <span class='bitor op'>|</span><span class='rubyid_format identifier id'>format</span><span class='bitor op'>|</span>
+    <span class='rubyid_format identifier id'>format</span><span class='dot token'>.</span><span class='rubyid_js identifier id'>js</span> <span class='lbrace token'>{</span> <span class='rubyid_render identifier id'>render</span> <span class='string val'>'shared/delete_favorite'</span> <span class='rbrace token'>}</span>
+  <span class='rubyid_end end kw'>end</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="execute_favorite-instance_method">
+  
+    - (<tt>Object</tt>) <strong>execute_favorite</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Replace the HTML fields by the data of the favorite item and execute the
+request</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+62
+63
+64
+65
+66
+67</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 62</span>
+
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_execute_favorite identifier id'>execute_favorite</span>
+  <span class='rubyid_@favorite ivar id'>@favorite</span> <span class='assign token'>=</span> <span class='rubyid_Favorite constant id'>Favorite</span><span class='dot token'>.</span><span class='rubyid_find identifier id'>find</span><span class='lparen token'>(</span><span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:id</span><span class='rbrack token'>]</span><span class='rparen token'>)</span>
+  <span class='rubyid_respond_to identifier id'>respond_to</span> <span class='rubyid_do do kw'>do</span> <span class='bitor op'>|</span><span class='rubyid_format identifier id'>format</span><span class='bitor op'>|</span>
+    <span class='rubyid_format identifier id'>format</span><span class='dot token'>.</span><span class='rubyid_js identifier id'>js</span> <span class='lbrace token'>{</span> <span class='rubyid_render identifier id'>render</span> <span class='string val'>'shared/execute_favorite'</span> <span class='rbrace token'>}</span>
+  <span class='rubyid_end end kw'>end</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="retrieve_favorites-instance_method">
+  
+    - (<tt>Object</tt>) <strong>retrieve_favorites</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Get the favorite items</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 36</span>
+
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_retrieve_favorites identifier id'>retrieve_favorites</span>
+  <span class='rubyid_current_user identifier id'>current_user</span>
+  <span class='rubyid_@demos ivar id'>@demos</span> <span class='assign token'>=</span> <span class='rubyid_@current_user ivar id'>@current_user</span><span class='dot token'>.</span><span class='rubyid_demos identifier id'>demos</span><span class='dot token'>.</span><span class='rubyid_all identifier id'>all</span>
+  <span class='rubyid_@cloud ivar id'>@cloud</span> <span class='assign token'>=</span> <span class='rubyid_Cloud constant id'>Cloud</span><span class='dot token'>.</span><span class='rubyid_find identifier id'>find</span><span class='lparen token'>(</span><span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:cloud_id</span><span class='rbrack token'>]</span><span class='rparen token'>)</span> <span class='rubyid_if if_mod kw'>if</span> <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:cloud_id</span><span class='rbrack token'>]</span> <span class='andop op'>&amp;&amp;</span> <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:cloud_id</span><span class='rbrack token'>]</span> <span class='neq op'>!=</span> <span class='string val'>&quot;0&quot;</span>
+  <span class='rubyid_@platform ivar id'>@platform</span> <span class='assign token'>=</span> <span class='rubyid_Platform constant id'>Platform</span><span class='dot token'>.</span><span class='rubyid_find identifier id'>find</span><span class='lparen token'>(</span><span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:platform_id</span><span class='rbrack token'>]</span><span class='rparen token'>)</span> <span class='rubyid_if if_mod kw'>if</span> <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:platform_id</span><span class='rbrack token'>]</span>
+  <span class='rubyid_@favorites ivar id'>@favorites</span> <span class='assign token'>=</span> <span class='rubyid_Hash constant id'>Hash</span><span class='dot token'>.</span><span class='rubyid_new identifier id'>new</span>
+  <span class='rubyid_all_favorites identifier id'>all_favorites</span> <span class='assign token'>=</span> <span class='rubyid_@current_user ivar id'>@current_user</span><span class='dot token'>.</span><span class='rubyid_favorites identifier id'>favorites</span><span class='dot token'>.</span><span class='rubyid_all identifier id'>all</span>
+  <span class='rubyid_all_favorites identifier id'>all_favorites</span><span class='dot token'>.</span><span class='rubyid_each identifier id'>each</span> <span class='rubyid_do do kw'>do</span> <span class='bitor op'>|</span><span class='rubyid_favorite identifier id'>favorite</span><span class='bitor op'>|</span>
+    <span class='rubyid_@favorites ivar id'>@favorites</span><span class='lbrack token'>[</span><span class='rubyid_favorite identifier id'>favorite</span><span class='dot token'>.</span><span class='rubyid_api_type identifier id'>api_type</span><span class='rbrack token'>]</span> <span class='assign token'>=</span> <span class='rubyid_Hash constant id'>Hash</span><span class='dot token'>.</span><span class='rubyid_new identifier id'>new</span> <span class='rubyid_unless unless_mod kw'>unless</span> <span class='rubyid_@favorites ivar id'>@favorites</span><span class='dot token'>.</span><span class='rubyid_key? fid id'>key?</span><span class='lparen token'>(</span><span class='rubyid_favorite identifier id'>favorite</span><span class='dot token'>.</span><span class='rubyid_api_type identifier id'>api_type</span><span class='rparen token'>)</span>
+    <span class='rubyid_@favorites ivar id'>@favorites</span><span class='lbrack token'>[</span><span class='rubyid_favorite identifier id'>favorite</span><span class='dot token'>.</span><span class='rubyid_api_type identifier id'>api_type</span><span class='rbrack token'>]</span><span class='lbrack token'>[</span><span class='rubyid_favorite identifier id'>favorite</span><span class='dot token'>.</span><span class='rubyid_api identifier id'>api</span><span class='rbrack token'>]</span> <span class='assign token'>=</span> <span class='rubyid_Array constant id'>Array</span><span class='dot token'>.</span><span class='rubyid_new identifier id'>new</span> <span class='rubyid_unless unless_mod kw'>unless</span> <span class='rubyid_@favorites ivar id'>@favorites</span><span class='lbrack token'>[</span><span class='rubyid_favorite identifier id'>favorite</span><span class='dot token'>.</span><span class='rubyid_api_type identifier id'>api_type</span><span class='rbrack token'>]</span><span class='lbrack token'>[</span><span class='rubyid_favorite identifier id'>favorite</span><span class='dot token'>.</span><span class='rubyid_api identifier id'>api</span><span class='rbrack token'>]</span>
+    <span class='rubyid_@favorites ivar id'>@favorites</span><span class='lbrack token'>[</span><span class='rubyid_favorite identifier id'>favorite</span><span class='dot token'>.</span><span class='rubyid_api_type identifier id'>api_type</span><span class='rbrack token'>]</span><span class='lbrack token'>[</span><span class='rubyid_favorite identifier id'>favorite</span><span class='dot token'>.</span><span class='rubyid_api identifier id'>api</span><span class='rbrack token'>]</span> <span class='lshft op'>&lt;&lt;</span> <span class='rubyid_favorite identifier id'>favorite</span>
+  <span class='rubyid_end end kw'>end</span>
+  <span class='rubyid_respond_to identifier id'>respond_to</span> <span class='rubyid_do do kw'>do</span> <span class='bitor op'>|</span><span class='rubyid_format identifier id'>format</span><span class='bitor op'>|</span>
+    <span class='rubyid_format identifier id'>format</span><span class='dot token'>.</span><span class='rubyid_js identifier id'>js</span> <span class='lbrace token'>{</span> <span class='rubyid_render identifier id'>render</span> <span class='string val'>'shared/retrieve_favorites'</span> <span class='rbrace token'>}</span>
+  <span class='rubyid_end end kw'>end</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="select_favorite-instance_method">
+  
+    - (<tt>Object</tt>) <strong>select_favorite</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Replace the HTML fields by the data of the favorite item</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+54
+55
+56
+57
+58
+59</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 54</span>
+
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_select_favorite identifier id'>select_favorite</span>
+  <span class='rubyid_@favorite ivar id'>@favorite</span> <span class='assign token'>=</span> <span class='rubyid_Favorite constant id'>Favorite</span><span class='dot token'>.</span><span class='rubyid_find identifier id'>find</span><span class='lparen token'>(</span><span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:id</span><span class='rbrack token'>]</span><span class='rparen token'>)</span>
+  <span class='rubyid_respond_to identifier id'>respond_to</span> <span class='rubyid_do do kw'>do</span> <span class='bitor op'>|</span><span class='rubyid_format identifier id'>format</span><span class='bitor op'>|</span>
+    <span class='rubyid_format identifier id'>format</span><span class='dot token'>.</span><span class='rubyid_js identifier id'>js</span> <span class='lbrace token'>{</span> <span class='rubyid_render identifier id'>render</span> <span class='string val'>'shared/select_favorite'</span> <span class='rbrace token'>}</span>
+  <span class='rubyid_end end kw'>end</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="update_favorite-instance_method">
+  
+    - (<tt>Object</tt>) <strong>update_favorite</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Update an existing favorite item</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 22</span>
+
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_update_favorite identifier id'>update_favorite</span>
+  <span class='rubyid_@favorite ivar id'>@favorite</span> <span class='assign token'>=</span> <span class='rubyid_Favorite constant id'>Favorite</span><span class='dot token'>.</span><span class='rubyid_find identifier id'>find</span><span class='lparen token'>(</span><span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:id</span><span class='rbrack token'>]</span><span class='rparen token'>)</span>
+  <span class='rubyid_@favorite ivar id'>@favorite</span><span class='dot token'>.</span><span class='rubyid_update_attributes identifier id'>update_attributes</span><span class='lparen token'>(</span><span class='symbol val'>:description</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:description</span><span class='rbrack token'>]</span><span class='comma token'>,</span> <span class='symbol val'>:http_method</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:http_method</span><span class='rbrack token'>]</span><span class='comma token'>,</span> <span class='symbol val'>:path_or_url</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:path_or_url</span><span class='rbrack token'>]</span><span class='comma token'>,</span> <span class='symbol val'>:headers</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:headers</span><span class='rbrack token'>]</span><span class='comma token'>,</span> <span class='symbol val'>:body</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:body</span><span class='rbrack token'>]</span><span class='rparen token'>)</span>
+  <span class='rubyid_@favorite ivar id'>@favorite</span><span class='dot token'>.</span><span class='rubyid_update_attribute identifier id'>update_attribute</span><span class='lparen token'>(</span><span class='symbol val'>:privilege</span><span class='comma token'>,</span> <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:privilege</span><span class='rbrack token'>]</span><span class='rparen token'>)</span> <span class='rubyid_if if_mod kw'>if</span> <span class='rubyid_@favorite ivar id'>@favorite</span><span class='dot token'>.</span><span class='rubyid_privilege identifier id'>privilege</span>
+  <span class='rubyid_@updated ivar id'>@updated</span> <span class='assign token'>=</span> <span class='rubyid_false false kw'>false</span>
+  <span class='rubyid_if if kw'>if</span> <span class='rubyid_@favorite ivar id'>@favorite</span><span class='dot token'>.</span><span class='rubyid_save identifier id'>save</span>
+    <span class='rubyid_@updated ivar id'>@updated</span> <span class='assign token'>=</span> <span class='rubyid_true true kw'>true</span>
+  <span class='rubyid_end end kw'>end</span>
+  <span class='rubyid_respond_to identifier id'>respond_to</span> <span class='rubyid_do do kw'>do</span> <span class='bitor op'>|</span><span class='rubyid_format identifier id'>format</span><span class='bitor op'>|</span>
+    <span class='rubyid_format identifier id'>format</span><span class='dot token'>.</span><span class='rubyid_js identifier id'>js</span> <span class='lbrace token'>{</span> <span class='rubyid_render identifier id'>render</span> <span class='string val'>'shared/update_favorite'</span> <span class='rbrace token'>}</span>
+  <span class='rubyid_end end kw'>end</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Sat Nov 22 22:39:20 2014 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.6 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

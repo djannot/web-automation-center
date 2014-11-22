@@ -1,0 +1,29 @@
+<% if @exception %>
+	$('#alert-danger').html("<%= @exception %>");
+	$('#alert-danger').show().delay(10000).fadeOut();
+<% else %>
+	var percent_done = Math.round(lines_completed * 100 / lines_total);
+	var current_time = new Date();
+	$("#progress").css('width',percent_done + '%');
+  $("#progress").html(percent_done + '%');
+  $('#tbody_status').html("<tr><td>" + lines_completed + "</td><td>" + Math.round((current_time - start_time) / 1000) + " s</td></td></tr>");
+	<% @responses.each do |key, response| %>
+		<% if response.respond_to? :status %>
+			$('#tbody_results').append("<tr><td><%= key %></td><td><%= response.status %></td></tr>");
+		<% else %>
+			$('#tbody_results').append("<tr><td><%= key %></td><td><%= response.code %></td></tr>");
+		<% end %>
+	<% end %>
+	<% if @detailed_results %>
+	  <% @responses.each do |line, response| %>
+	  	<%
+				@url = @all_urls[line]
+	  		@line = line
+	  		@response = response
+	  		@headers_sent = @headers[line]
+	  	%>
+			$('#changediv').append("<%= escape_javascript(render :partial => 'shared/execute_request')%>");
+		<% end %>
+	<% end %>
+	send_bulk_requests();
+<% end %>

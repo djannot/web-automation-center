@@ -1,0 +1,939 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: BackupController
+  
+    &mdash; Documentation by YARD 0.8.7.6
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!BackupController.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (B)</a> &raquo;
+    
+    
+    <span class="title">BackupController</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: BackupController
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName"><span class='object_link'><a href="ApplicationController.html" title="ApplicationController (class)">ApplicationController</a></span></span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">ActionController::Base</li>
+          
+            <li class="next"><span class='object_link'><a href="ApplicationController.html" title="ApplicationController (class)">ApplicationController</a></span></li>
+          
+            <li class="next">BackupController</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">app/controllers/backup_controller.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#backup-instance_method" title="#backup (instance method)">- (Object) <strong>backup</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Backup user data either to a file or to the cloud.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#delete-instance_method" title="#delete (instance method)">- (Object) <strong>delete</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Delete all the current user data.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#delete_cloud_data-instance_method" title="#delete_cloud_data (instance method)">- (Object) <strong>delete_cloud_data</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Delete backup, favorite items or demo items stored in the cloud.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#index-instance_method" title="#index (instance method)">- (Object) <strong>index</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#list_cloud_data-instance_method" title="#list_cloud_data (instance method)">- (Object) <strong>list_cloud_data</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Show backup, favorite items and demo items stored in the cloud.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#restore-instance_method" title="#restore (instance method)">- (Object) <strong>restore</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Restore user data either from a file or from the cloud.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods inherited from <span class='object_link'><a href="ApplicationController.html" title="ApplicationController (class)">ApplicationController</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="ApplicationController.html#amazon_request-instance_method" title="ApplicationController#amazon_request (method)">#amazon_request</a></span>, <span class='object_link'><a href="ApplicationController.html#atmos_management_request-instance_method" title="ApplicationController#atmos_management_request (method)">#atmos_management_request</a></span>, <span class='object_link'><a href="ApplicationController.html#atmos_request-instance_method" title="ApplicationController#atmos_request (method)">#atmos_request</a></span>, <span class='object_link'><a href="ApplicationController.html#avamar_request-instance_method" title="ApplicationController#avamar_request (method)">#avamar_request</a></span>, <span class='object_link'><a href="ApplicationController.html#current_user-instance_method" title="ApplicationController#current_user (method)">#current_user</a></span>, <span class='object_link'><a href="ApplicationController.html#get_ip_addresses-instance_method" title="ApplicationController#get_ip_addresses (method)">#get_ip_addresses</a></span>, <span class='object_link'><a href="ApplicationController.html#http_request-instance_method" title="ApplicationController#http_request (method)">#http_request</a></span>, <span class='object_link'><a href="ApplicationController.html#human_size_to_number-instance_method" title="ApplicationController#human_size_to_number (method)">#human_size_to_number</a></span>, <span class='object_link'><a href="ApplicationController.html#require_login-instance_method" title="ApplicationController#require_login (method)">#require_login</a></span>, <span class='object_link'><a href="ApplicationController.html#set_cloud-instance_method" title="ApplicationController#set_cloud (method)">#set_cloud</a></span>, <span class='object_link'><a href="ApplicationController.html#set_variables-instance_method" title="ApplicationController#set_variables (method)">#set_variables</a></span>, <span class='object_link'><a href="ApplicationController.html#sign_amazon_request-instance_method" title="ApplicationController#sign_amazon_request (method)">#sign_amazon_request</a></span>, <span class='object_link'><a href="ApplicationController.html#sign_atmos_request-instance_method" title="ApplicationController#sign_atmos_request (method)">#sign_atmos_request</a></span>, <span class='object_link'><a href="ApplicationController.html#swift_request-instance_method" title="ApplicationController#swift_request (method)">#swift_request</a></span>, <span class='object_link'><a href="ApplicationController.html#vcloud_request-instance_method" title="ApplicationController#vcloud_request (method)">#vcloud_request</a></span>, <span class='object_link'><a href="ApplicationController.html#vipr_request-instance_method" title="ApplicationController#vipr_request (method)">#vipr_request</a></span></p>
+
+  
+  
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="backup-instance_method">
+  
+    - (<tt>Object</tt>) <strong>backup</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Backup user data either to a file or to the cloud</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/backup_controller.rb', line 6</span>
+
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_backup identifier id'>backup</span>
+  <span class='rubyid_data identifier id'>data</span> <span class='assign token'>=</span> <span class='string val'>&quot;&quot;</span>
+  <span class='rubyid_current_user identifier id'>current_user</span>
+  <span class='rubyid_if if kw'>if</span> <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='string val'>&quot;favorites&quot;</span><span class='rbrack token'>]</span>
+    <span class='rubyid_data identifier id'>data</span> <span class='lshft op'>&lt;&lt;</span> <span class='string val'>&quot;favorite_relations = Hash.new\n&quot;</span>
+    <span class='rubyid_if if kw'>if</span> <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:demo_id</span><span class='rbrack token'>]</span>
+      <span class='rubyid_@favorites ivar id'>@favorites</span> <span class='assign token'>=</span> <span class='lbrack token'>[</span><span class='rbrack token'>]</span>
+      <span class='rubyid_Task constant id'>Task</span><span class='dot token'>.</span><span class='rubyid_where identifier id'>where</span><span class='lparen token'>(</span><span class='lbrack token'>[</span><span class='string val'>&quot;demo_id = ?&quot;</span><span class='comma token'>,</span> <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:demo_id</span><span class='rbrack token'>]</span><span class='rbrack token'>]</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='rubyid_each identifier id'>each</span> <span class='rubyid_do do kw'>do</span> <span class='bitor op'>|</span><span class='rubyid_task identifier id'>task</span><span class='bitor op'>|</span>
+        <span class='rubyid_@favorites ivar id'>@favorites</span> <span class='lshft op'>&lt;&lt;</span> <span class='rubyid_task identifier id'>task</span><span class='dot token'>.</span><span class='rubyid_favorite identifier id'>favorite</span>
+      <span class='rubyid_end end kw'>end</span>
+    <span class='rubyid_elsif elsif kw'>elsif</span> <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:favorite_id</span><span class='rbrack token'>]</span>
+      <span class='rubyid_@favorites ivar id'>@favorites</span> <span class='assign token'>=</span> <span class='rubyid_Favorite constant id'>Favorite</span><span class='dot token'>.</span><span class='rubyid_where identifier id'>where</span><span class='lparen token'>(</span><span class='lbrack token'>[</span><span class='string val'>&quot;id = ?&quot;</span><span class='comma token'>,</span> <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:favorite_id</span><span class='rbrack token'>]</span><span class='rbrack token'>]</span><span class='rparen token'>)</span>
+    <span class='rubyid_else else kw'>else</span>
+      <span class='rubyid_@favorites ivar id'>@favorites</span> <span class='assign token'>=</span> <span class='rubyid_@current_user ivar id'>@current_user</span><span class='dot token'>.</span><span class='rubyid_favorites identifier id'>favorites</span><span class='dot token'>.</span><span class='rubyid_all identifier id'>all</span>
+    <span class='rubyid_end end kw'>end</span>
+    <span class='rubyid_@favorites ivar id'>@favorites</span><span class='dot token'>.</span><span class='rubyid_each identifier id'>each</span> <span class='rubyid_do do kw'>do</span> <span class='bitor op'>|</span><span class='rubyid_favorite identifier id'>favorite</span><span class='bitor op'>|</span>
+      <span class='rubyid_favorite_id identifier id'>favorite_id</span> <span class='assign token'>=</span> <span class='rubyid_favorite identifier id'>favorite</span><span class='dot token'>.</span><span class='rubyid_attributes identifier id'>attributes</span><span class='lbrack token'>[</span><span class='string val'>&quot;id&quot;</span><span class='rbrack token'>]</span>
+      <span class='rubyid_favorite_attributes identifier id'>favorite_attributes</span> <span class='assign token'>=</span> <span class='rubyid_favorite identifier id'>favorite</span><span class='dot token'>.</span><span class='rubyid_attributes identifier id'>attributes</span>
+      <span class='rubyid_favorite_attributes identifier id'>favorite_attributes</span><span class='dot token'>.</span><span class='rubyid_delete identifier id'>delete</span><span class='lparen token'>(</span><span class='string val'>&quot;id&quot;</span><span class='rparen token'>)</span>
+      <span class='rubyid_favorite_attributes identifier id'>favorite_attributes</span><span class='dot token'>.</span><span class='rubyid_delete identifier id'>delete</span><span class='lparen token'>(</span><span class='string val'>&quot;user_id&quot;</span><span class='rparen token'>)</span>
+      <span class='rubyid_favorite_attributes identifier id'>favorite_attributes</span><span class='dot token'>.</span><span class='rubyid_delete identifier id'>delete</span><span class='lparen token'>(</span><span class='string val'>&quot;created_at&quot;</span><span class='rparen token'>)</span>
+      <span class='rubyid_favorite_attributes identifier id'>favorite_attributes</span><span class='dot token'>.</span><span class='rubyid_delete identifier id'>delete</span><span class='lparen token'>(</span><span class='string val'>&quot;updated_at&quot;</span><span class='rparen token'>)</span>
+      <span class='rubyid_data identifier id'>data</span> <span class='lshft op'>&lt;&lt;</span> <span class='dstring node'>&quot;favorite = @current_user.favorites.create(#{favorite_attributes})\n&quot;</span>
+      <span class='rubyid_data identifier id'>data</span> <span class='lshft op'>&lt;&lt;</span> <span class='dstring node'>&quot;favorite_relations[#{favorite_id}] = favorite.id\n&quot;</span>
+    <span class='rubyid_end end kw'>end</span>
+  <span class='rubyid_end end kw'>end</span>
+
+  <span class='rubyid_if if kw'>if</span> <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='string val'>&quot;demos&quot;</span><span class='rbrack token'>]</span>
+    <span class='rubyid_data identifier id'>data</span> <span class='lshft op'>&lt;&lt;</span> <span class='string val'>&quot;demo_relations = Hash.new\n&quot;</span>
+    <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:demo_id</span><span class='rbrack token'>]</span> <span class='question op'>?</span> <span class='rubyid_@demos ivar id'>@demos</span> <span class='assign token'>=</span> <span class='rubyid_Demo constant id'>Demo</span><span class='dot token'>.</span><span class='rubyid_where identifier id'>where</span><span class='lparen token'>(</span><span class='lbrack token'>[</span><span class='string val'>&quot;id = ?&quot;</span><span class='comma token'>,</span> <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:demo_id</span><span class='rbrack token'>]</span><span class='rbrack token'>]</span><span class='rparen token'>)</span> <span class='colon op'>:</span> <span class='rubyid_@demos ivar id'>@demos</span> <span class='assign token'>=</span> <span class='rubyid_@current_user ivar id'>@current_user</span><span class='dot token'>.</span><span class='rubyid_demos identifier id'>demos</span><span class='dot token'>.</span><span class='rubyid_all identifier id'>all</span>
+    <span class='rubyid_@demos ivar id'>@demos</span><span class='dot token'>.</span><span class='rubyid_each identifier id'>each</span> <span class='rubyid_do do kw'>do</span> <span class='bitor op'>|</span><span class='rubyid_demo identifier id'>demo</span><span class='bitor op'>|</span>
+      <span class='rubyid_demo_id identifier id'>demo_id</span> <span class='assign token'>=</span> <span class='rubyid_demo identifier id'>demo</span><span class='dot token'>.</span><span class='rubyid_attributes identifier id'>attributes</span><span class='lbrack token'>[</span><span class='string val'>&quot;id&quot;</span><span class='rbrack token'>]</span>
+      <span class='rubyid_demo_attributes identifier id'>demo_attributes</span> <span class='assign token'>=</span> <span class='rubyid_demo identifier id'>demo</span><span class='dot token'>.</span><span class='rubyid_attributes identifier id'>attributes</span>
+      <span class='rubyid_demo_attributes identifier id'>demo_attributes</span><span class='dot token'>.</span><span class='rubyid_delete identifier id'>delete</span><span class='lparen token'>(</span><span class='string val'>&quot;id&quot;</span><span class='rparen token'>)</span>
+      <span class='rubyid_demo_attributes identifier id'>demo_attributes</span><span class='dot token'>.</span><span class='rubyid_delete identifier id'>delete</span><span class='lparen token'>(</span><span class='string val'>&quot;user_id&quot;</span><span class='rparen token'>)</span>
+      <span class='rubyid_demo_attributes identifier id'>demo_attributes</span><span class='dot token'>.</span><span class='rubyid_delete identifier id'>delete</span><span class='lparen token'>(</span><span class='string val'>&quot;created_at&quot;</span><span class='rparen token'>)</span>
+      <span class='rubyid_demo_attributes identifier id'>demo_attributes</span><span class='dot token'>.</span><span class='rubyid_delete identifier id'>delete</span><span class='lparen token'>(</span><span class='string val'>&quot;updated_at&quot;</span><span class='rparen token'>)</span>
+      <span class='rubyid_data identifier id'>data</span> <span class='lshft op'>&lt;&lt;</span> <span class='dstring node'>&quot;demo = @current_user.demos.create(#{demo_attributes})\n&quot;</span>
+      <span class='rubyid_data identifier id'>data</span> <span class='lshft op'>&lt;&lt;</span> <span class='dstring node'>&quot;demo_relations[#{demo_id}] = demo.id\n&quot;</span>
+    <span class='rubyid_end end kw'>end</span>
+  <span class='rubyid_end end kw'>end</span>
+
+  <span class='rubyid_if if kw'>if</span> <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='string val'>&quot;platforms&quot;</span><span class='rbrack token'>]</span>
+    <span class='rubyid_data identifier id'>data</span> <span class='lshft op'>&lt;&lt;</span> <span class='string val'>&quot;platform_relations = Hash.new\n&quot;</span>
+    <span class='rubyid_@platforms ivar id'>@platforms</span> <span class='assign token'>=</span> <span class='rubyid_@current_user ivar id'>@current_user</span><span class='dot token'>.</span><span class='rubyid_platforms identifier id'>platforms</span><span class='dot token'>.</span><span class='rubyid_all identifier id'>all</span>
+    <span class='rubyid_@platforms ivar id'>@platforms</span><span class='dot token'>.</span><span class='rubyid_each identifier id'>each</span> <span class='rubyid_do do kw'>do</span> <span class='bitor op'>|</span><span class='rubyid_platform identifier id'>platform</span><span class='bitor op'>|</span>
+      <span class='rubyid_platform_id identifier id'>platform_id</span> <span class='assign token'>=</span> <span class='rubyid_platform identifier id'>platform</span><span class='dot token'>.</span><span class='rubyid_attributes identifier id'>attributes</span><span class='lbrack token'>[</span><span class='string val'>&quot;id&quot;</span><span class='rbrack token'>]</span>
+      <span class='rubyid_platform_attributes identifier id'>platform_attributes</span> <span class='assign token'>=</span> <span class='rubyid_platform identifier id'>platform</span><span class='dot token'>.</span><span class='rubyid_attributes identifier id'>attributes</span>
+      <span class='rubyid_platform_attributes identifier id'>platform_attributes</span><span class='dot token'>.</span><span class='rubyid_delete identifier id'>delete</span><span class='lparen token'>(</span><span class='string val'>&quot;id&quot;</span><span class='rparen token'>)</span>
+      <span class='rubyid_platform_attributes identifier id'>platform_attributes</span><span class='dot token'>.</span><span class='rubyid_delete identifier id'>delete</span><span class='lparen token'>(</span><span class='string val'>&quot;user_id&quot;</span><span class='rparen token'>)</span>
+      <span class='rubyid_platform_attributes identifier id'>platform_attributes</span><span class='dot token'>.</span><span class='rubyid_delete identifier id'>delete</span><span class='lparen token'>(</span><span class='string val'>&quot;created_at&quot;</span><span class='rparen token'>)</span>
+      <span class='rubyid_platform_attributes identifier id'>platform_attributes</span><span class='dot token'>.</span><span class='rubyid_delete identifier id'>delete</span><span class='lparen token'>(</span><span class='string val'>&quot;updated_at&quot;</span><span class='rparen token'>)</span>
+      <span class='rubyid_data identifier id'>data</span> <span class='lshft op'>&lt;&lt;</span> <span class='dstring node'>&quot;platform = @current_user.platforms.create(#{platform_attributes})\n&quot;</span>
+      <span class='rubyid_data identifier id'>data</span> <span class='lshft op'>&lt;&lt;</span> <span class='dstring node'>&quot;platform_relations[#{platform_id}] = platform.id\n&quot;</span>
+    <span class='rubyid_end end kw'>end</span>
+  <span class='rubyid_end end kw'>end</span>
+
+  <span class='rubyid_if if kw'>if</span> <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='string val'>&quot;clouds&quot;</span><span class='rbrack token'>]</span>
+    <span class='rubyid_data identifier id'>data</span> <span class='lshft op'>&lt;&lt;</span> <span class='string val'>&quot;cloud_relations = Hash.new\n&quot;</span>
+    <span class='rubyid_@clouds ivar id'>@clouds</span> <span class='assign token'>=</span> <span class='rubyid_@current_user ivar id'>@current_user</span><span class='dot token'>.</span><span class='rubyid_clouds identifier id'>clouds</span><span class='dot token'>.</span><span class='rubyid_all identifier id'>all</span>
+    <span class='rubyid_@clouds ivar id'>@clouds</span><span class='dot token'>.</span><span class='rubyid_each identifier id'>each</span> <span class='rubyid_do do kw'>do</span> <span class='bitor op'>|</span><span class='rubyid_cloud identifier id'>cloud</span><span class='bitor op'>|</span>
+      <span class='rubyid_cloud_id identifier id'>cloud_id</span> <span class='assign token'>=</span> <span class='rubyid_cloud identifier id'>cloud</span><span class='dot token'>.</span><span class='rubyid_attributes identifier id'>attributes</span><span class='lbrack token'>[</span><span class='string val'>&quot;id&quot;</span><span class='rbrack token'>]</span>
+      <span class='rubyid_platform_id identifier id'>platform_id</span> <span class='assign token'>=</span> <span class='rubyid_cloud identifier id'>cloud</span><span class='dot token'>.</span><span class='rubyid_attributes identifier id'>attributes</span><span class='lbrack token'>[</span><span class='string val'>&quot;platform_id&quot;</span><span class='rbrack token'>]</span> <span class='rubyid_if if_mod kw'>if</span> <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='string val'>&quot;platforms&quot;</span><span class='rbrack token'>]</span>
+      <span class='rubyid_cloud_attributes identifier id'>cloud_attributes</span> <span class='assign token'>=</span> <span class='rubyid_cloud identifier id'>cloud</span><span class='dot token'>.</span><span class='rubyid_attributes identifier id'>attributes</span>
+      <span class='rubyid_cloud_attributes identifier id'>cloud_attributes</span><span class='dot token'>.</span><span class='rubyid_delete identifier id'>delete</span><span class='lparen token'>(</span><span class='string val'>&quot;id&quot;</span><span class='rparen token'>)</span>
+      <span class='rubyid_cloud_attributes identifier id'>cloud_attributes</span><span class='dot token'>.</span><span class='rubyid_delete identifier id'>delete</span><span class='lparen token'>(</span><span class='string val'>&quot;user_id&quot;</span><span class='rparen token'>)</span>
+      <span class='rubyid_cloud_attributes identifier id'>cloud_attributes</span><span class='dot token'>.</span><span class='rubyid_delete identifier id'>delete</span><span class='lparen token'>(</span><span class='string val'>&quot;platform_id&quot;</span><span class='rparen token'>)</span>
+      <span class='rubyid_cloud_attributes identifier id'>cloud_attributes</span><span class='dot token'>.</span><span class='rubyid_delete identifier id'>delete</span><span class='lparen token'>(</span><span class='string val'>&quot;created_at&quot;</span><span class='rparen token'>)</span>
+      <span class='rubyid_cloud_attributes identifier id'>cloud_attributes</span><span class='dot token'>.</span><span class='rubyid_delete identifier id'>delete</span><span class='lparen token'>(</span><span class='string val'>&quot;updated_at&quot;</span><span class='rparen token'>)</span>
+      <span class='rubyid_if if kw'>if</span><span class='lparen token'>(</span><span class='rubyid_platform_id identifier id'>platform_id</span><span class='rparen token'>)</span>
+        <span class='rubyid_data identifier id'>data</span> <span class='lshft op'>&lt;&lt;</span> <span class='dstring node'>&quot;cloud = @current_user.clouds.create(#{cloud_attributes}.merge!({'platform_id' =&gt; platform_relations[#{platform_id}]}))\n&quot;</span>
+      <span class='rubyid_else else kw'>else</span>
+        <span class='rubyid_data identifier id'>data</span> <span class='lshft op'>&lt;&lt;</span> <span class='dstring node'>&quot;cloud = @current_user.clouds.create(#{cloud_attributes})\n&quot;</span>
+      <span class='rubyid_end end kw'>end</span>
+      <span class='rubyid_data identifier id'>data</span> <span class='lshft op'>&lt;&lt;</span> <span class='dstring node'>&quot;cloud_relations[#{cloud_id}] = cloud.id\n&quot;</span>
+    <span class='rubyid_end end kw'>end</span>
+  <span class='rubyid_end end kw'>end</span>
+
+  <span class='rubyid_if if kw'>if</span> <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='string val'>&quot;demos&quot;</span><span class='rbrack token'>]</span>
+    <span class='rubyid_data identifier id'>data</span> <span class='lshft op'>&lt;&lt;</span> <span class='string val'>&quot;task_relations = Hash.new\n&quot;</span>
+    <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:demo_id</span><span class='rbrack token'>]</span> <span class='question op'>?</span> <span class='rubyid_@tasks ivar id'>@tasks</span> <span class='assign token'>=</span> <span class='rubyid_Task constant id'>Task</span><span class='dot token'>.</span><span class='rubyid_where identifier id'>where</span><span class='lparen token'>(</span><span class='lbrack token'>[</span><span class='string val'>&quot;demo_id = ?&quot;</span><span class='comma token'>,</span> <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:demo_id</span><span class='rbrack token'>]</span><span class='rbrack token'>]</span><span class='rparen token'>)</span> <span class='colon op'>:</span> <span class='rubyid_@tasks ivar id'>@tasks</span> <span class='assign token'>=</span> <span class='rubyid_@current_user ivar id'>@current_user</span><span class='dot token'>.</span><span class='rubyid_tasks identifier id'>tasks</span><span class='dot token'>.</span><span class='rubyid_all identifier id'>all</span>
+    <span class='rubyid_@tasks ivar id'>@tasks</span><span class='dot token'>.</span><span class='rubyid_each identifier id'>each</span> <span class='rubyid_do do kw'>do</span> <span class='bitor op'>|</span><span class='rubyid_task identifier id'>task</span><span class='bitor op'>|</span>
+      <span class='rubyid_task_id identifier id'>task_id</span> <span class='assign token'>=</span> <span class='rubyid_task identifier id'>task</span><span class='dot token'>.</span><span class='rubyid_attributes identifier id'>attributes</span><span class='lbrack token'>[</span><span class='string val'>&quot;id&quot;</span><span class='rbrack token'>]</span>
+      <span class='rubyid_demo_id identifier id'>demo_id</span> <span class='assign token'>=</span> <span class='rubyid_task identifier id'>task</span><span class='dot token'>.</span><span class='rubyid_attributes identifier id'>attributes</span><span class='lbrack token'>[</span><span class='string val'>&quot;demo_id&quot;</span><span class='rbrack token'>]</span>
+      <span class='rubyid_cloud_id identifier id'>cloud_id</span> <span class='assign token'>=</span> <span class='rubyid_task identifier id'>task</span><span class='dot token'>.</span><span class='rubyid_attributes identifier id'>attributes</span><span class='lbrack token'>[</span><span class='string val'>&quot;cloud_id&quot;</span><span class='rbrack token'>]</span> <span class='rubyid_if if_mod kw'>if</span> <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='string val'>&quot;clouds&quot;</span><span class='rbrack token'>]</span>
+      <span class='rubyid_platform_id identifier id'>platform_id</span> <span class='assign token'>=</span> <span class='rubyid_task identifier id'>task</span><span class='dot token'>.</span><span class='rubyid_attributes identifier id'>attributes</span><span class='lbrack token'>[</span><span class='string val'>&quot;platform_id&quot;</span><span class='rbrack token'>]</span> <span class='rubyid_if if_mod kw'>if</span> <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='string val'>&quot;platforms&quot;</span><span class='rbrack token'>]</span>
+      <span class='rubyid_favorite_id identifier id'>favorite_id</span> <span class='assign token'>=</span> <span class='rubyid_task identifier id'>task</span><span class='dot token'>.</span><span class='rubyid_attributes identifier id'>attributes</span><span class='lbrack token'>[</span><span class='string val'>&quot;favorite_id&quot;</span><span class='rbrack token'>]</span>
+      <span class='rubyid_task_attributes identifier id'>task_attributes</span> <span class='assign token'>=</span> <span class='rubyid_task identifier id'>task</span><span class='dot token'>.</span><span class='rubyid_attributes identifier id'>attributes</span>
+      <span class='rubyid_task_attributes identifier id'>task_attributes</span><span class='dot token'>.</span><span class='rubyid_delete identifier id'>delete</span><span class='lparen token'>(</span><span class='string val'>&quot;id&quot;</span><span class='rparen token'>)</span>
+      <span class='rubyid_task_attributes identifier id'>task_attributes</span><span class='dot token'>.</span><span class='rubyid_delete identifier id'>delete</span><span class='lparen token'>(</span><span class='string val'>&quot;user_id&quot;</span><span class='rparen token'>)</span>
+      <span class='rubyid_task_attributes identifier id'>task_attributes</span><span class='dot token'>.</span><span class='rubyid_delete identifier id'>delete</span><span class='lparen token'>(</span><span class='string val'>&quot;demo_id&quot;</span><span class='rparen token'>)</span>
+      <span class='rubyid_task_attributes identifier id'>task_attributes</span><span class='dot token'>.</span><span class='rubyid_delete identifier id'>delete</span><span class='lparen token'>(</span><span class='string val'>&quot;cloud_id&quot;</span><span class='rparen token'>)</span>
+      <span class='rubyid_task_attributes identifier id'>task_attributes</span><span class='dot token'>.</span><span class='rubyid_delete identifier id'>delete</span><span class='lparen token'>(</span><span class='string val'>&quot;platform_id&quot;</span><span class='rparen token'>)</span>
+      <span class='rubyid_task_attributes identifier id'>task_attributes</span><span class='dot token'>.</span><span class='rubyid_delete identifier id'>delete</span><span class='lparen token'>(</span><span class='string val'>&quot;favorite_id&quot;</span><span class='rparen token'>)</span>
+      <span class='rubyid_task_attributes identifier id'>task_attributes</span><span class='dot token'>.</span><span class='rubyid_delete identifier id'>delete</span><span class='lparen token'>(</span><span class='string val'>&quot;created_at&quot;</span><span class='rparen token'>)</span>
+      <span class='rubyid_task_attributes identifier id'>task_attributes</span><span class='dot token'>.</span><span class='rubyid_delete identifier id'>delete</span><span class='lparen token'>(</span><span class='string val'>&quot;updated_at&quot;</span><span class='rparen token'>)</span>
+      <span class='rubyid_if if kw'>if</span> <span class='rubyid_platform_id identifier id'>platform_id</span>
+        <span class='rubyid_data identifier id'>data</span> <span class='lshft op'>&lt;&lt;</span> <span class='dstring node'>&quot;task = @current_user.tasks.create(#{task_attributes}.merge!({'demo_id' =&gt; demo_relations[#{demo_id}], 'platform_id' =&gt; platform_relations[#{platform_id}],'favorite_id' =&gt; favorite_relations[#{favorite_id}]}))\n&quot;</span>
+      <span class='rubyid_elsif elsif kw'>elsif</span> <span class='rubyid_cloud_id identifier id'>cloud_id</span>
+        <span class='rubyid_data identifier id'>data</span> <span class='lshft op'>&lt;&lt;</span> <span class='dstring node'>&quot;task = @current_user.tasks.create(#{task_attributes}.merge!({'demo_id' =&gt; demo_relations[#{demo_id}], 'cloud_id' =&gt; cloud_relations[#{cloud_id}],'favorite_id' =&gt; favorite_relations[#{favorite_id}]}))\n&quot;</span>
+      <span class='rubyid_else else kw'>else</span>
+        <span class='rubyid_data identifier id'>data</span> <span class='lshft op'>&lt;&lt;</span> <span class='dstring node'>&quot;task = @current_user.tasks.create(#{task_attributes}.merge!({'demo_id' =&gt; demo_relations[#{demo_id}],'favorite_id' =&gt; favorite_relations[#{favorite_id}]}))\n&quot;</span>
+      <span class='rubyid_end end kw'>end</span>
+      <span class='rubyid_data identifier id'>data</span> <span class='lshft op'>&lt;&lt;</span> <span class='dstring node'>&quot;task_relations[#{task_id}] = task.id\n&quot;</span>
+    <span class='rubyid_end end kw'>end</span>
+  <span class='rubyid_end end kw'>end</span>
+
+  <span class='rubyid_if if kw'>if</span> <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='string val'>&quot;demos&quot;</span><span class='rbrack token'>]</span>
+    <span class='rubyid_data identifier id'>data</span> <span class='lshft op'>&lt;&lt;</span> <span class='string val'>&quot;regexpression_relations = Hash.new\n&quot;</span>
+    <span class='rubyid_if if kw'>if</span> <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:demo_id</span><span class='rbrack token'>]</span>
+      <span class='rubyid_@regexpressions ivar id'>@regexpressions</span> <span class='assign token'>=</span> <span class='lbrack token'>[</span><span class='rbrack token'>]</span>
+      <span class='rubyid_@tasks ivar id'>@tasks</span><span class='dot token'>.</span><span class='rubyid_each identifier id'>each</span> <span class='rubyid_do do kw'>do</span> <span class='bitor op'>|</span><span class='rubyid_task identifier id'>task</span><span class='bitor op'>|</span>
+        <span class='rubyid_task identifier id'>task</span><span class='dot token'>.</span><span class='rubyid_regexpressions identifier id'>regexpressions</span><span class='dot token'>.</span><span class='rubyid_each identifier id'>each</span> <span class='rubyid_do do kw'>do</span> <span class='bitor op'>|</span><span class='rubyid_regexpression identifier id'>regexpression</span><span class='bitor op'>|</span>
+          <span class='rubyid_@regexpressions ivar id'>@regexpressions</span> <span class='lshft op'>&lt;&lt;</span> <span class='rubyid_regexpression identifier id'>regexpression</span>
+        <span class='rubyid_end end kw'>end</span>
+      <span class='rubyid_end end kw'>end</span>
+    <span class='rubyid_else else kw'>else</span>
+      <span class='rubyid_@regexpressions ivar id'>@regexpressions</span> <span class='assign token'>=</span> <span class='rubyid_@current_user ivar id'>@current_user</span><span class='dot token'>.</span><span class='rubyid_regexpressions identifier id'>regexpressions</span><span class='dot token'>.</span><span class='rubyid_all identifier id'>all</span>
+    <span class='rubyid_end end kw'>end</span>
+    <span class='rubyid_@regexpressions ivar id'>@regexpressions</span><span class='dot token'>.</span><span class='rubyid_each identifier id'>each</span> <span class='rubyid_do do kw'>do</span> <span class='bitor op'>|</span><span class='rubyid_regexpression identifier id'>regexpression</span><span class='bitor op'>|</span>
+      <span class='rubyid_regexpression_id identifier id'>regexpression_id</span> <span class='assign token'>=</span> <span class='rubyid_regexpression identifier id'>regexpression</span><span class='dot token'>.</span><span class='rubyid_attributes identifier id'>attributes</span><span class='lbrack token'>[</span><span class='string val'>&quot;id&quot;</span><span class='rbrack token'>]</span>
+      <span class='rubyid_task_id identifier id'>task_id</span> <span class='assign token'>=</span> <span class='rubyid_regexpression identifier id'>regexpression</span><span class='dot token'>.</span><span class='rubyid_attributes identifier id'>attributes</span><span class='lbrack token'>[</span><span class='string val'>&quot;task_id&quot;</span><span class='rbrack token'>]</span>
+      <span class='rubyid_regexpression_attributes identifier id'>regexpression_attributes</span> <span class='assign token'>=</span> <span class='rubyid_regexpression identifier id'>regexpression</span><span class='dot token'>.</span><span class='rubyid_attributes identifier id'>attributes</span>
+      <span class='rubyid_regexpression_attributes identifier id'>regexpression_attributes</span><span class='dot token'>.</span><span class='rubyid_delete identifier id'>delete</span><span class='lparen token'>(</span><span class='string val'>&quot;id&quot;</span><span class='rparen token'>)</span>
+      <span class='rubyid_regexpression_attributes identifier id'>regexpression_attributes</span><span class='dot token'>.</span><span class='rubyid_delete identifier id'>delete</span><span class='lparen token'>(</span><span class='string val'>&quot;user_id&quot;</span><span class='rparen token'>)</span>
+      <span class='rubyid_regexpression_attributes identifier id'>regexpression_attributes</span><span class='dot token'>.</span><span class='rubyid_delete identifier id'>delete</span><span class='lparen token'>(</span><span class='string val'>&quot;task_id&quot;</span><span class='rparen token'>)</span>
+      <span class='rubyid_regexpression_attributes identifier id'>regexpression_attributes</span><span class='dot token'>.</span><span class='rubyid_delete identifier id'>delete</span><span class='lparen token'>(</span><span class='string val'>&quot;created_at&quot;</span><span class='rparen token'>)</span>
+      <span class='rubyid_regexpression_attributes identifier id'>regexpression_attributes</span><span class='dot token'>.</span><span class='rubyid_delete identifier id'>delete</span><span class='lparen token'>(</span><span class='string val'>&quot;updated_at&quot;</span><span class='rparen token'>)</span>
+      <span class='rubyid_data identifier id'>data</span> <span class='lshft op'>&lt;&lt;</span> <span class='dstring node'>&quot;regexpression = @current_user.regexpressions.create(#{regexpression_attributes}.merge!({'task_id' =&gt; task_relations[#{task_id}]}))\n&quot;</span>
+      <span class='rubyid_data identifier id'>data</span> <span class='lshft op'>&lt;&lt;</span> <span class='dstring node'>&quot;regexpression_relations[#{regexpression_id}] = regexpression.id\n&quot;</span>
+    <span class='rubyid_end end kw'>end</span>
+  <span class='rubyid_end end kw'>end</span>
+
+  <span class='rubyid_if if kw'>if</span> <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:encrypt_password</span><span class='rbrack token'>]</span>
+    <span class='rubyid_data identifier id'>data</span> <span class='assign token'>=</span> <span class='rubyid_data identifier id'>data</span><span class='dot token'>.</span><span class='rubyid_encrypt identifier id'>encrypt</span><span class='lparen token'>(</span><span class='symbol val'>:symmetric</span><span class='comma token'>,</span> <span class='symbol val'>:algorithm</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>'des-ecb'</span><span class='comma token'>,</span> <span class='symbol val'>:password</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:encrypt_password</span><span class='rbrack token'>]</span><span class='rparen token'>)</span>
+  <span class='rubyid_end end kw'>end</span>
+
+  <span class='rubyid_if if kw'>if</span> <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:cloud</span><span class='rbrack token'>]</span>
+    <span class='rubyid_@response ivar id'>@response</span><span class='comma token'>,</span> <span class='rubyid_@headers ivar id'>@headers</span><span class='comma token'>,</span> <span class='rubyid_@url ivar id'>@url</span> <span class='assign token'>=</span> <span class='rubyid_amazon_request identifier id'>amazon_request</span><span class='lparen token'>(</span><span class='string val'>&quot;Put&quot;</span><span class='comma token'>,</span> <span class='dstring node'>&quot;/#{current_user.email}/Backup-#{Time.now.to_formatted_s(:number)}&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;&quot;</span><span class='comma token'>,</span> <span class='rubyid_data identifier id'>data</span><span class='comma token'>,</span> <span class='symbol val'>:cloud</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='rubyid_@s3 ivar id'>@s3</span><span class='rparen token'>)</span>
+    <span class='rubyid_redirect_to identifier id'>redirect_to</span> <span class='symbol val'>:action</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>&quot;list_cloud_data&quot;</span>
+  <span class='rubyid_elsif elsif kw'>elsif</span> <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:backup_action</span><span class='rbrack token'>]</span> <span class='eq op'>==</span> <span class='string val'>&quot;share_favorite&quot;</span>
+    <span class='rubyid_@response ivar id'>@response</span><span class='comma token'>,</span> <span class='rubyid_@headers ivar id'>@headers</span><span class='comma token'>,</span> <span class='rubyid_@url ivar id'>@url</span> <span class='assign token'>=</span> <span class='rubyid_amazon_request identifier id'>amazon_request</span><span class='lparen token'>(</span><span class='string val'>&quot;Put&quot;</span><span class='comma token'>,</span> <span class='dstring node'>&quot;/Favorites/#{@favorites[0].api_type}/#{@favorites[0].api}/#{current_user.email}/#{@favorites[0].description}&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;&quot;</span><span class='comma token'>,</span> <span class='rubyid_data identifier id'>data</span><span class='comma token'>,</span> <span class='symbol val'>:cloud</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='rubyid_@s3 ivar id'>@s3</span><span class='rparen token'>)</span>
+    <span class='rubyid_logger identifier id'>logger</span><span class='dot token'>.</span><span class='rubyid_info identifier id'>info</span> <span class='rubyid_@response ivar id'>@response</span><span class='dot token'>.</span><span class='rubyid_body identifier id'>body</span>
+    <span class='rubyid_respond_to identifier id'>respond_to</span> <span class='rubyid_do do kw'>do</span> <span class='bitor op'>|</span><span class='rubyid_format identifier id'>format</span><span class='bitor op'>|</span>
+      <span class='rubyid_format identifier id'>format</span><span class='dot token'>.</span><span class='rubyid_js identifier id'>js</span> <span class='lbrace token'>{</span> <span class='rubyid_render identifier id'>render</span> <span class='string val'>&quot;shared/execute_share_favorite&quot;</span> <span class='rbrace token'>}</span>
+    <span class='rubyid_end end kw'>end</span>
+  <span class='rubyid_elsif elsif kw'>elsif</span> <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:backup_action</span><span class='rbrack token'>]</span> <span class='eq op'>==</span> <span class='string val'>&quot;share_demo&quot;</span>
+    <span class='rubyid_@response ivar id'>@response</span><span class='comma token'>,</span> <span class='rubyid_@headers ivar id'>@headers</span><span class='comma token'>,</span> <span class='rubyid_@url ivar id'>@url</span> <span class='assign token'>=</span> <span class='rubyid_amazon_request identifier id'>amazon_request</span><span class='lparen token'>(</span><span class='string val'>&quot;Put&quot;</span><span class='comma token'>,</span> <span class='dstring node'>&quot;/Demos/#{current_user.email}/#{@demos[0].name}&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;&quot;</span><span class='comma token'>,</span> <span class='rubyid_data identifier id'>data</span><span class='comma token'>,</span> <span class='symbol val'>:cloud</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='rubyid_@s3 ivar id'>@s3</span><span class='rparen token'>)</span>
+    <span class='rubyid_logger identifier id'>logger</span><span class='dot token'>.</span><span class='rubyid_info identifier id'>info</span> <span class='rubyid_@response ivar id'>@response</span><span class='dot token'>.</span><span class='rubyid_body identifier id'>body</span>
+    <span class='rubyid_respond_to identifier id'>respond_to</span> <span class='rubyid_do do kw'>do</span> <span class='bitor op'>|</span><span class='rubyid_format identifier id'>format</span><span class='bitor op'>|</span>
+      <span class='rubyid_format identifier id'>format</span><span class='dot token'>.</span><span class='rubyid_js identifier id'>js</span> <span class='lbrace token'>{</span> <span class='rubyid_render identifier id'>render</span> <span class='string val'>&quot;shared/execute_share_demo&quot;</span> <span class='rbrace token'>}</span>
+    <span class='rubyid_end end kw'>end</span>
+  <span class='rubyid_else else kw'>else</span>
+    <span class='rubyid_send_data identifier id'>send_data</span><span class='lparen token'>(</span><span class='rubyid_data identifier id'>data</span><span class='comma token'>,</span> <span class='symbol val'>:filename</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='dstring node'>&quot;Backup-#{Time.now.to_formatted_s(:number)}.txt&quot;</span> <span class='rparen token'>)</span>
+  <span class='rubyid_end end kw'>end</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="delete-instance_method">
+  
+    - (<tt>Object</tt>) <strong>delete</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Delete all the current user data</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+205
+206
+207
+208
+209
+210
+211
+212
+213</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/backup_controller.rb', line 205</span>
+
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_delete identifier id'>delete</span>
+  <span class='rubyid_current_user identifier id'>current_user</span>
+  <span class='rubyid_current_user identifier id'>current_user</span><span class='dot token'>.</span><span class='rubyid_regexpressions identifier id'>regexpressions</span><span class='dot token'>.</span><span class='rubyid_destroy_all identifier id'>destroy_all</span>
+  <span class='rubyid_current_user identifier id'>current_user</span><span class='dot token'>.</span><span class='rubyid_tasks identifier id'>tasks</span><span class='dot token'>.</span><span class='rubyid_destroy_all identifier id'>destroy_all</span>
+  <span class='rubyid_current_user identifier id'>current_user</span><span class='dot token'>.</span><span class='rubyid_clouds identifier id'>clouds</span><span class='dot token'>.</span><span class='rubyid_destroy_all identifier id'>destroy_all</span>
+  <span class='rubyid_current_user identifier id'>current_user</span><span class='dot token'>.</span><span class='rubyid_platforms identifier id'>platforms</span><span class='dot token'>.</span><span class='rubyid_destroy_all identifier id'>destroy_all</span>
+  <span class='rubyid_current_user identifier id'>current_user</span><span class='dot token'>.</span><span class='rubyid_demos identifier id'>demos</span><span class='dot token'>.</span><span class='rubyid_destroy_all identifier id'>destroy_all</span>
+  <span class='rubyid_current_user identifier id'>current_user</span><span class='dot token'>.</span><span class='rubyid_favorites identifier id'>favorites</span><span class='dot token'>.</span><span class='rubyid_destroy_all identifier id'>destroy_all</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="delete_cloud_data-instance_method">
+  
+    - (<tt>Object</tt>) <strong>delete_cloud_data</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Delete backup, favorite items or demo items stored in the cloud</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/backup_controller.rb', line 216</span>
+
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_delete_cloud_data identifier id'>delete_cloud_data</span>
+  <span class='rubyid_current_user identifier id'>current_user</span>
+  <span class='rubyid_if if kw'>if</span> <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:api_type</span><span class='rbrack token'>]</span>
+    <span class='rubyid_if if kw'>if</span> <span class='rubyid_current_user identifier id'>current_user</span><span class='dot token'>.</span><span class='rubyid_email identifier id'>email</span> <span class='eq op'>==</span> <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:email</span><span class='rbrack token'>]</span>
+      <span class='rubyid_@response ivar id'>@response</span><span class='comma token'>,</span> <span class='rubyid_@headers ivar id'>@headers</span><span class='comma token'>,</span> <span class='rubyid_@url ivar id'>@url</span> <span class='assign token'>=</span> <span class='rubyid_amazon_request identifier id'>amazon_request</span><span class='lparen token'>(</span><span class='string val'>&quot;Delete&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;/Favorites/&quot;</span> <span class='plus op'>+</span> <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:api_type</span><span class='rbrack token'>]</span> <span class='plus op'>+</span> <span class='string val'>&quot;/&quot;</span> <span class='plus op'>+</span> <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:api</span><span class='rbrack token'>]</span> <span class='plus op'>+</span> <span class='string val'>&quot;/&quot;</span> <span class='plus op'>+</span> <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:email</span><span class='rbrack token'>]</span> <span class='plus op'>+</span> <span class='string val'>&quot;/&quot;</span> <span class='plus op'>+</span> <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:name</span><span class='rbrack token'>]</span><span class='comma token'>,</span> <span class='string val'>&quot;&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;&quot;</span><span class='comma token'>,</span> <span class='symbol val'>:cloud</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='rubyid_@s3 ivar id'>@s3</span><span class='rparen token'>)</span>
+    <span class='rubyid_end end kw'>end</span>
+  <span class='rubyid_elsif elsif kw'>elsif</span> <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:name</span><span class='rbrack token'>]</span>
+    <span class='rubyid_if if kw'>if</span> <span class='rubyid_current_user identifier id'>current_user</span><span class='dot token'>.</span><span class='rubyid_email identifier id'>email</span> <span class='eq op'>==</span> <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:email</span><span class='rbrack token'>]</span>
+      <span class='rubyid_@response ivar id'>@response</span><span class='comma token'>,</span> <span class='rubyid_@headers ivar id'>@headers</span><span class='comma token'>,</span> <span class='rubyid_@url ivar id'>@url</span> <span class='assign token'>=</span> <span class='rubyid_amazon_request identifier id'>amazon_request</span><span class='lparen token'>(</span><span class='string val'>&quot;Delete&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;/Demos/&quot;</span> <span class='plus op'>+</span> <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:email</span><span class='rbrack token'>]</span> <span class='plus op'>+</span> <span class='string val'>&quot;/&quot;</span> <span class='plus op'>+</span> <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:name</span><span class='rbrack token'>]</span><span class='comma token'>,</span> <span class='string val'>&quot;&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;&quot;</span><span class='comma token'>,</span> <span class='symbol val'>:cloud</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='rubyid_@s3 ivar id'>@s3</span><span class='rparen token'>)</span>
+    <span class='rubyid_end end kw'>end</span>
+  <span class='rubyid_else else kw'>else</span>
+    <span class='rubyid_@response ivar id'>@response</span><span class='comma token'>,</span> <span class='rubyid_@headers ivar id'>@headers</span><span class='comma token'>,</span> <span class='rubyid_@url ivar id'>@url</span> <span class='assign token'>=</span> <span class='rubyid_amazon_request identifier id'>amazon_request</span><span class='lparen token'>(</span><span class='string val'>&quot;Delete&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;/&quot;</span> <span class='plus op'>+</span> <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:email</span><span class='rbrack token'>]</span> <span class='plus op'>+</span> <span class='string val'>&quot;/&quot;</span> <span class='plus op'>+</span> <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:key</span><span class='rbrack token'>]</span><span class='comma token'>,</span> <span class='string val'>&quot;&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;&quot;</span><span class='comma token'>,</span> <span class='symbol val'>:cloud</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='rubyid_@s3 ivar id'>@s3</span><span class='rparen token'>)</span>
+  <span class='rubyid_end end kw'>end</span>
+  <span class='rubyid_redirect_to identifier id'>redirect_to</span> <span class='symbol val'>:action</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>&quot;list_cloud_data&quot;</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="index-instance_method">
+  
+    - (<tt>Object</tt>) <strong>index</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2
+3</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/backup_controller.rb', line 2</span>
+
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_index identifier id'>index</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="list_cloud_data-instance_method">
+  
+    - (<tt>Object</tt>) <strong>list_cloud_data</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Show backup, favorite items and demo items stored in the cloud</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/backup_controller.rb', line 164</span>
+
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_list_cloud_data identifier id'>list_cloud_data</span>
+  <span class='rubyid_begin begin kw'>begin</span>
+    <span class='rubyid_@response ivar id'>@response</span><span class='comma token'>,</span> <span class='rubyid_@headers ivar id'>@headers</span><span class='comma token'>,</span> <span class='rubyid_@url ivar id'>@url</span> <span class='assign token'>=</span> <span class='rubyid_amazon_request identifier id'>amazon_request</span><span class='lparen token'>(</span><span class='string val'>&quot;Get&quot;</span><span class='comma token'>,</span> <span class='dstring node'>&quot;/?prefix=#{current_user.email}&amp;amp;delimiter=%2F&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;&quot;</span><span class='comma token'>,</span> <span class='symbol val'>:cloud</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='rubyid_@s3 ivar id'>@s3</span><span class='rparen token'>)</span>
+    <span class='rubyid_@response_favorites ivar id'>@response_favorites</span><span class='comma token'>,</span> <span class='rubyid_@headers_favorites ivar id'>@headers_favorites</span><span class='comma token'>,</span> <span class='rubyid_@url_favorites ivar id'>@url_favorites</span> <span class='assign token'>=</span> <span class='rubyid_amazon_request identifier id'>amazon_request</span><span class='lparen token'>(</span><span class='string val'>&quot;Get&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;/?prefix=Favorites&amp;amp;delimiter=%2F&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;&quot;</span><span class='comma token'>,</span> <span class='symbol val'>:cloud</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='rubyid_@s3 ivar id'>@s3</span><span class='rparen token'>)</span>
+    <span class='rubyid_@response_demos ivar id'>@response_demos</span><span class='comma token'>,</span> <span class='rubyid_@headers_demos ivar id'>@headers_demos</span><span class='comma token'>,</span> <span class='rubyid_@url_demos ivar id'>@url_demos</span>  <span class='assign token'>=</span> <span class='rubyid_amazon_request identifier id'>amazon_request</span><span class='lparen token'>(</span><span class='string val'>&quot;Get&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;/?prefix=Demos&amp;amp;delimiter=%2F&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;&quot;</span><span class='comma token'>,</span> <span class='symbol val'>:cloud</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='rubyid_@s3 ivar id'>@s3</span><span class='rparen token'>)</span>
+  <span class='rubyid_rescue rescue kw'>rescue</span>
+    <span class='rubyid_session identifier id'>session</span><span class='lbrack token'>[</span><span class='symbol val'>:error</span><span class='rbrack token'>]</span> <span class='assign token'>=</span> <span class='string val'>&quot;Can't connect to the Amazon bucket. Check the environment variables&quot;</span>
+    <span class='rubyid_redirect_to identifier id'>redirect_to</span> <span class='symbol val'>:controller</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>&quot;clouds&quot;</span><span class='comma token'>,</span> <span class='symbol val'>:action</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>&quot;error&quot;</span><span class='comma token'>,</span> <span class='symbol val'>:id</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>&quot;0&quot;</span>
+  <span class='rubyid_end end kw'>end</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="restore-instance_method">
+  
+    - (<tt>Object</tt>) <strong>restore</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Restore user data either from a file or from the cloud</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/backup_controller.rb', line 176</span>
+
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_restore identifier id'>restore</span>
+  <span class='rubyid_begin begin kw'>begin</span>
+    <span class='rubyid_current_user identifier id'>current_user</span>
+    <span class='rubyid_if if kw'>if</span> <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:file</span><span class='rbrack token'>]</span>
+      <span class='rubyid_file_content identifier id'>file_content</span> <span class='assign token'>=</span> <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:file</span><span class='rbrack token'>]</span><span class='dot token'>.</span><span class='rubyid_read identifier id'>read</span><span class='dot token'>.</span><span class='rubyid_to_s identifier id'>to_s</span>
+      <span class='rubyid_data identifier id'>data</span> <span class='assign token'>=</span> <span class='rubyid_file_content identifier id'>file_content</span><span class='dot token'>.</span><span class='rubyid_decrypt identifier id'>decrypt</span><span class='lparen token'>(</span><span class='symbol val'>:symmetric</span><span class='comma token'>,</span> <span class='symbol val'>:algorithm</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>'des-ecb'</span><span class='comma token'>,</span> <span class='symbol val'>:password</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:password</span><span class='rbrack token'>]</span><span class='rparen token'>)</span>
+      <span class='rubyid_eval identifier id'>eval</span><span class='lparen token'>(</span><span class='rubyid_data identifier id'>data</span><span class='rparen token'>)</span>
+    <span class='rubyid_elsif elsif kw'>elsif</span> <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:api_type</span><span class='rbrack token'>]</span>
+      <span class='rubyid_@response ivar id'>@response</span><span class='comma token'>,</span> <span class='rubyid_@headers ivar id'>@headers</span><span class='comma token'>,</span> <span class='rubyid_@url ivar id'>@url</span> <span class='assign token'>=</span> <span class='rubyid_amazon_request identifier id'>amazon_request</span><span class='lparen token'>(</span><span class='string val'>&quot;Get&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;/Favorites/&quot;</span> <span class='plus op'>+</span> <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:api_type</span><span class='rbrack token'>]</span> <span class='plus op'>+</span> <span class='string val'>&quot;/&quot;</span> <span class='plus op'>+</span> <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:api</span><span class='rbrack token'>]</span> <span class='plus op'>+</span> <span class='string val'>&quot;/&quot;</span> <span class='plus op'>+</span> <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:email</span><span class='rbrack token'>]</span> <span class='plus op'>+</span> <span class='string val'>&quot;/&quot;</span> <span class='plus op'>+</span> <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:name</span><span class='rbrack token'>]</span><span class='comma token'>,</span> <span class='string val'>&quot;&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;&quot;</span><span class='comma token'>,</span> <span class='symbol val'>:cloud</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='rubyid_@s3 ivar id'>@s3</span><span class='rparen token'>)</span>
+      <span class='rubyid_eval identifier id'>eval</span><span class='lparen token'>(</span><span class='rubyid_@response ivar id'>@response</span><span class='dot token'>.</span><span class='rubyid_body identifier id'>body</span><span class='rparen token'>)</span>
+    <span class='rubyid_elsif elsif kw'>elsif</span> <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:name</span><span class='rbrack token'>]</span>
+      <span class='rubyid_@response ivar id'>@response</span><span class='comma token'>,</span> <span class='rubyid_@headers ivar id'>@headers</span><span class='comma token'>,</span> <span class='rubyid_@url ivar id'>@url</span> <span class='assign token'>=</span> <span class='rubyid_amazon_request identifier id'>amazon_request</span><span class='lparen token'>(</span><span class='string val'>&quot;Get&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;/Demos/&quot;</span> <span class='plus op'>+</span> <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:email</span><span class='rbrack token'>]</span> <span class='plus op'>+</span> <span class='string val'>&quot;/&quot;</span> <span class='plus op'>+</span> <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:name</span><span class='rbrack token'>]</span><span class='comma token'>,</span> <span class='string val'>&quot;&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;&quot;</span><span class='comma token'>,</span> <span class='symbol val'>:cloud</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='rubyid_@s3 ivar id'>@s3</span><span class='rparen token'>)</span>
+      <span class='rubyid_eval identifier id'>eval</span><span class='lparen token'>(</span><span class='rubyid_@response ivar id'>@response</span><span class='dot token'>.</span><span class='rubyid_body identifier id'>body</span><span class='rparen token'>)</span>
+    <span class='rubyid_else else kw'>else</span>
+      <span class='rubyid_@response ivar id'>@response</span><span class='comma token'>,</span> <span class='rubyid_@headers ivar id'>@headers</span><span class='comma token'>,</span> <span class='rubyid_@url ivar id'>@url</span> <span class='assign token'>=</span> <span class='rubyid_amazon_request identifier id'>amazon_request</span><span class='lparen token'>(</span><span class='string val'>&quot;Get&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;/&quot;</span> <span class='plus op'>+</span> <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:email</span><span class='rbrack token'>]</span> <span class='plus op'>+</span> <span class='string val'>&quot;/&quot;</span> <span class='plus op'>+</span> <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:key</span><span class='rbrack token'>]</span><span class='comma token'>,</span> <span class='string val'>&quot;&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;&quot;</span><span class='comma token'>,</span> <span class='symbol val'>:cloud</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='rubyid_@s3 ivar id'>@s3</span><span class='rparen token'>)</span>
+      <span class='rubyid_data identifier id'>data</span> <span class='assign token'>=</span> <span class='rubyid_@response ivar id'>@response</span><span class='dot token'>.</span><span class='rubyid_body identifier id'>body</span><span class='dot token'>.</span><span class='rubyid_decrypt identifier id'>decrypt</span><span class='lparen token'>(</span><span class='symbol val'>:symmetric</span><span class='comma token'>,</span> <span class='symbol val'>:algorithm</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>'des-ecb'</span><span class='comma token'>,</span> <span class='symbol val'>:password</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:password</span><span class='rbrack token'>]</span><span class='rparen token'>)</span>
+      <span class='rubyid_eval identifier id'>eval</span><span class='lparen token'>(</span><span class='rubyid_data identifier id'>data</span><span class='rparen token'>)</span>
+    <span class='rubyid_end end kw'>end</span>
+  <span class='rubyid_rescue rescue kw'>rescue</span>
+    <span class='rubyid_begin begin kw'>begin</span>
+      <span class='rubyid_puts identifier id'>puts</span> <span class='rubyid_file_content identifier id'>file_content</span>
+      <span class='rubyid_eval identifier id'>eval</span><span class='lparen token'>(</span><span class='rubyid_file_content identifier id'>file_content</span><span class='rparen token'>)</span>
+    <span class='rubyid_rescue rescue kw'>rescue</span> <span class='rubyid_Exception constant id'>Exception</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='rubyid_e identifier id'>e</span>
+      <span class='rubyid_@exception ivar id'>@exception</span> <span class='assign token'>=</span> <span class='rubyid_e identifier id'>e</span>
+    <span class='rubyid_end end kw'>end</span>
+  <span class='rubyid_end end kw'>end</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Sat Nov 22 22:39:23 2014 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.6 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

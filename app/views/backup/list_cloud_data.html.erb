@@ -1,0 +1,113 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">Your Backups</div>
+  <div class="panel-body">
+    <div class="field">
+      <div class="input-group">
+        <span class="input-group-addon">Decryption password</span>
+        <%= password_field_tag :password, nil, :class => "form-control" %>
+      </div>
+    </div>
+    <br />
+    <table class="table sortable">
+      <thead>
+        <tr>
+          <th data-defaultsort="asc">Type</th>
+          <th>Date</th>
+          <th>Size (KB)</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody
+        <%
+          response_hash = Hash.from_xml(@response.body)
+          if @response.status == 200 && response_hash["ListBucketResult"].has_key?("Contents")
+        %>
+          <% if response_hash["ListBucketResult"]["Contents"].length > 0 %>
+            <% if response_hash["ListBucketResult"]["Contents"].instance_of? Array %>
+              <% response_hash["ListBucketResult"]["Contents"].each do |key| %>
+                <%= render "backup", key: key %>
+              <% end %>
+            <% else %>
+              <% key = response_hash["ListBucketResult"]["Contents"] %>
+              <%= render "backup", key: key %>
+            <% end %>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">The Shared Favorites</div>
+  <div class="panel-body">
+    <table class="table sortable">
+      <thead>
+        <tr>
+          <th data-defaultsort="asc">API Type</th>
+          <th>API</th>
+          <th>Creator's email</th>
+          <th>Date</th>
+          <th>Name</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody
+        <%
+          response_hash = Hash.from_xml(@response_favorites.body)
+          if @response_favorites.status == 200 && response_hash["ListBucketResult"].has_key?("Contents")
+        %>
+          <% if response_hash["ListBucketResult"]["Contents"].length > 0 %>
+            <% if response_hash["ListBucketResult"]["Contents"].instance_of? Array %>
+              <% response_hash["ListBucketResult"]["Contents"].each do |key| %>
+                <%= render "favorite", key: key %>
+              <% end %>
+            <% else %>
+              <% key = response_hash["ListBucketResult"]["Contents"] %>
+              <%= render "favorite", key: key %>
+            <% end %>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">The Shared Demos</div>
+  <div class="panel-body">
+    <table class="table sortable">
+      <thead>
+        <tr>
+          <th>Creator's email</th>
+          <th>Date</th>
+          <th>Name</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody
+        <%
+          response_hash = Hash.from_xml(@response_demos.body)
+          if @response_demos.status == 200 && response_hash["ListBucketResult"].has_key?("Contents")
+        %>
+          <% if response_hash["ListBucketResult"]["Contents"].length > 0 %>
+            <% if response_hash["ListBucketResult"]["Contents"].instance_of? Array %>
+              <% response_hash["ListBucketResult"]["Contents"].each do |key| %>
+                <%= render "demo", key: key %>
+              <% end %>
+            <% else %>
+              <% key = response_hash["ListBucketResult"]["Contents"] %>
+              <%= render "demo", key: key %>
+            <% end %>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

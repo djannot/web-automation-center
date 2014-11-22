@@ -1,0 +1,11 @@
+$('#add_to_a_demo_<%= @task.favorite_id %>').hide();
+<% if @saved %>
+	$("#add_to_a_demo_<%= @task.favorite_id %>_success").html("Task successfully added").show().delay(10000).fadeOut();
+	if($("#tasks").length > 0) {
+		<% @demo = Demo.find(@task.demo_id) %>
+		$('#manage_favorites_modal').modal('hide');
+		setTimeout(function(){$("#tasks").html("<%= escape_javascript(render :partial => '/demos/tasks') %>");}, 1000);
+	}
+<% else %>
+	$("#add_to_a_demo_<%= @task.favorite_id %>_danger").html("Task can't be added because of the following error: <%= @task.errors %>").show().delay(10000).fadeOut();
+<% end %>

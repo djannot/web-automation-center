@@ -1,0 +1,2 @@
+$("#show_regexpressions_<%= @task.id %>").hide();
+$("#add_regexpression_<%= @task.id %>").html("<%= escape_javascript(render :partial => '/demo/add_regexpression') %>").hide().fadeIn();

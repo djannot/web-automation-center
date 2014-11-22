@@ -1,0 +1,30 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">Listing platforms</div>
+  <div class="panel-body">
+    <table class="table sortable">
+      <thead>
+        <tr>
+          <th data-defaultsort="asc">Platform type</th>
+          <th>Ip</th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% if @platforms %>
+          <% @platforms.each do |platform| %>
+            <tr>
+              <td><%= platform.platform_type %></td>
+              <td><%= platform.ip %></td>
+              <td><%= link_to 'Actions', platform, :class => "btn btn-primary" %></td>
+              <td><%= link_to 'Edit', edit_platform_path(platform), :class => "btn btn-primary" %></td>
+              <td><%= link_to 'Delete', platform, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %></td>
+            </tr>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

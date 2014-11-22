@@ -1,0 +1,37 @@
+<% if @exception %>
+	$('#alert-danger').html("<%= @exception %>");
+	$('#alert-danger').show().delay(10000).fadeOut();
+<% else %>
+	<%
+		@line = nil
+		@headers_sent = @headers
+	%>
+	$('#changediv<% if @task %>_<%= @task.id %><% end %>').html("<%= escape_javascript(render :partial => 'shared/execute_request')%>").hide().fadeIn(2000);
+	<%
+    response_code = ""
+    if @response.respond_to? :status
+      response_code = @response.status
+    else
+      response_code = @response.code
+    end
+  %>
+  <% if @task %>
+		$("#status_<%= @task.id %>").html('<%= link_to response_code.to_s, url_for(:controller => 'demo', :action => 'show_task', :id => @task.id), :remote => true, :class => "btn btn-default" %>').fadeIn();
+		<% if @task.response_codes && @task.response_codes != "" %>
+	    <% if @task.response_codes.include?(",") %>
+	      <% if @task.response_codes.split(/,/).include?(response_code.to_s) %>
+					$("#status_<%= @task.id %> a").removeClass("btn-default").addClass("btn-success");
+	      <% else %>
+					$("#status_<%= @task.id %> a").removeClass("btn-default").addClass("btn-danger");
+	      <% end %>
+	    <% else %>
+	      <% if @task.response_codes.include?(response_code.to_s) %>
+					$("#status_<%= @task.id %> a").removeClass("btn-default").addClass("btn-success");
+	      <% else %>
+					$("#status_<%= @task.id %> a").removeClass("btn-default").addClass("btn-danger");
+	      <% end %>
+	    <% end %>
+	  <% end %>
+	<% end %>
+	$('html, body').animate({scrollTop: $('.top:last').offset().top}, 100);
+<% end %>

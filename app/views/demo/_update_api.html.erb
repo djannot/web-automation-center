@@ -1,0 +1,95 @@
+<td colspan="11">
+  <%= form_tag url_for(:controller => 'demo', :action => 'execute_update_api', :id => @task.id), :remote => "true" do %>
+    <div class="field">
+      <div class="input-group">
+        <span class="input-group-addon">Type</span>
+        <%= select_tag :type, options_for_select({ "Cloud API" => "Cloud API", "Platform Management" => "Platform Management", "Other Platform" => "Other Platform" }), :class => "form-control", :onchange => "display_type(this.value);" %>
+      </div>
+    </div>
+    <br />
+    <div class="field" id="select_platform_type_<%= @task.id %>" style="display:none;">
+      <div class="input-group">
+        <span class="input-group-addon">Platform</span>
+        <%= select_tag :platform, options_for_select(@current_user.platforms.select(:platform_type).distinct.collect {|p| [ p.platform_type, p.platform_type ] }), :include_blank => true, :class => "form-control", :onchange => "display_platforms(this.value);" %>
+      </div>
+      <br />
+    </div>
+    <div class="field" id="select_cloud_api_<%= @task.id %>" style="display:none;">
+      <div class="input-group">
+        <span class="input-group-addon">Cloud</span>
+          <%= select_tag :cloud, options_for_select(@current_user.clouds.select(:api).distinct.collect {|p| [ p.api, p.api ] }), :include_blank => true, :class => "form-control", :onchange => "display_clouds(this.value);" %>
+      </div>
+    <br />
+    </div>
+    <% @current_user.platforms.select(:platform_type).distinct.each do |platform| %>
+      <div class="field select_platforms_or_clouds" id="select_platforms_<%= platform.platform_type.gsub(/ /, "_") %>" style="display:none;">
+        <div class="input-group">
+          <span class="input-group-addon">Platform Ip</span>
+            <%= select_tag :platform_id, options_for_select(@current_user.platforms.where(["platform_type like ?", platform.platform_type]).distinct.collect {|p| [ p.ip, p.id ] }), :include_blank => true, :class => "form-control", :onchange => "$('#id_selected').val(this.value);" %>
+        </div>
+        <br />
+      </div>
+    <% end %>
+    <% @current_user.clouds.select(:api).distinct.each do |cloud| %>
+      <div class="field select_platforms_or_clouds" id="select_clouds_<%= cloud.api.gsub(/ /, "_") %>" style="display:none;">
+        <div class="input-group">
+          <span class="input-group-addon">Url & Token</span>
+            <%= select_tag :cloud_id, options_for_select(@current_user.clouds.where(["api like ?", cloud.api]).distinct.collect {|p| [ "Url: #{p.url} & Token: #{p.token}" , p.id ] }), :include_blank => true, :class => "form-control", :onchange => "$('#id_selected').val(this.value);" %>
+        </div>
+        <br />
+      </div>
+    <% end %>
+    <div class="field">
+      <div class="input-group">
+        <span class="input-group-addon">
+          <input id="all" type="checkbox" value="yes" name="all">
+        </span>
+        <input type="text" class="form-control" value="Apply the modification to all the tasks ?" readonly="readonly">
+      </div>
+      <br />
+    </div>
+    <%= hidden_field_tag :id_selected, nil, :id => "id_selected" %>
+    <div class="actions">
+      <%= submit_tag "Update API", :id => "submit_button", :class => "btn btn-primary" %>
+    </div>
+  <% end %>
+</td>
+<script type="text/javascript">
+  function display_type(type) {
+    $("#select_platform_type_<%= @task.id %>").hide();
+    $("#select_cloud_api_<%= @task.id %>").hide();
+    $(".select_platforms_or_clouds").hide();
+    if(type == "Platform Management") {
+      $("#select_platform_type_<%= @task.id %>").fadeIn();
+    }
+    if(type == "Cloud API") {
+      $("#select_cloud_api_<%= @task.id %>").fadeIn();
+    }
+  }
+
+  function display_platforms(platform_type) {
+    $(".select_platforms_or_clouds").hide();
+    $("#select_platforms_" + platform_type.replace(" ", "_")).fadeIn();
+  }
+
+  function display_clouds(api) {
+    $(".select_platforms_or_clouds").hide();
+    $("#select_clouds_" + api.replace(" ", "_")).fadeIn();
+  }
+
+  $("#type").val("<% if @task.platform_id %>Platform Management<% elsif @task.cloud_id %>Cloud API<% else %>Other Platform<% end %>");
+  <% if @task.platform_id %>
+    $("#platform").val("<%= Platform.find(@task.platform_id).platform_type %>");
+    $("#select_platform_type_<%= @task.id %>").show();
+    $("#platform").val("<%= Platform.find(@task.platform_id).platform_type %>");
+    $("#select_platforms_<%= Platform.find(@task.platform_id).platform_type.gsub(/ /, "_") %> #platform_id").val("<%= Platform.find(@task.platform_id).id %>");
+    $("#select_platforms_<%= Platform.find(@task.platform_id).platform_type.gsub(/ /, "_") %>").show();
+    $('#id_selected').val("<%= Platform.find(@task.platform_id).id %>");
+  <% elsif @task.cloud_id %>
+    $("#cloud").val("<%= Cloud.find(@task.cloud_id).api %>");
+    $("#select_cloud_api_<%= @task.id %>").show();
+    $("#select_clouds_<%= Cloud.find(@task.cloud_id).api.gsub(/ /, "_") %> #cloud_id").val("<%= Cloud.find(@task.cloud_id).id %>");
+    $("#select_clouds_<%= Cloud.find(@task.cloud_id).api.gsub(/ /, "_") %>").show();
+    $('#id_selected').val("<%= Cloud.find(@task.cloud_id).id %>");
+  <% end %>
+</script>

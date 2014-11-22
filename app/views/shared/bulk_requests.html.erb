@@ -1,0 +1,181 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">Create you own request</div>
+  <div class="panel-body">
+    <% if @platform %>
+      <%= render :partial => "/platform/show_platform" %>
+      <% @object = @platform %>
+    <% end %>
+    <% if @cloud %>
+      <%= render :partial => "/cloud/show_cloud" %>
+      <% @object = @cloud %>
+    <% end %>
+    <% @object_id = @object ? @object.id : "0" %>
+    <div id="to_replace" style="display:none">
+      <h2>Text to replace</h2>
+    </div>
+    <h2>Request</h2>
+    <div class="field">
+      <div class="input-group">
+        <span class="input-group-addon">File</span>
+        <%= file_field_tag "file", :class => "form-control" %>
+      </div>
+    </div>
+    <br />
+    <div class="input-group">
+      <span class="input-group-addon">Number of threads</span>
+      <%= text_field_tag :threads, nil, :class => "form-control" %>
+    </div>
+    <br />
+    <div class="input-group">
+      <input type="text" class="form-control" value="Detailed results" readonly>
+      <span class="input-group-addon">
+        <%= check_box_tag :detailed_results %>
+      </span>
+    </div>
+    <br />
+    <%= render :partial => "shared/form_request" %>
+    <div class="actions">
+      <%= button_tag "Execute requests", :id => "submit_request", :style => "display:none;", :class => "btn btn-primary" %>
+    </div>
+    <div id="status" style="display: none;">
+      <h1>Status</h1>
+      <div class="progress progress-striped active" id="progressouter">
+        <div class="progress-bar"  role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%" id="progress">
+          <span class="sr-only">0% Complete</span>
+        </div>
+      </div>
+      <br />
+      <table class="table sortable">
+        <thead>
+          <tr>
+            <th>Requests executed</th>
+            <th>Duration</th>
+          </tr>
+        </thead>
+
+        <tbody id="tbody_status">
+        </tbody>
+      </table>
+    </div>
+    <div id="results" style="display: none;">
+      <h1>Simple results</h1>
+      <table class="table sortable">
+        <thead>
+          <tr>
+            <th data-defaultsort="asc">Value</th>
+            <th>Response Code</th>
+          </tr>
+        </thead>
+
+        <tbody id="tbody_results">
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<div id="changediv"></div>
+<% if @platform %>
+  <%= link_to "Back", @platform, :class => "btn btn-default" %>
+<% elsif @cloud %>
+  <%= link_to "Back", @cloud, :class => "btn btn-default" %>
+<% else %>
+  <%= link_to "Back", "/", :class => "btn btn-default" %>
+<% end %>
+<script type="text/javascript">
+  $('#alert-info').html("The XXXCHANGEMEXXX keyword will be replaced by each line of the file<br />Other keyword can be specified with the format XXXKeywordXXX");
+  $('#alert-info').show();
+  $('#file').change(function(evt) {
+    files = evt.target.files;
+    
+    var reader = new FileReader();
+    reader.onload = (function(theFile) {
+      return function(e) {
+        file_content = e.target.result;
+        $('#submit_request').show();
+      };
+    })(files[0]);
+    reader.readAsText(files[0]);
+  });
+
+  function send_bulk_requests() {
+    if (lines.length === 0) {
+      $("#progress").css('width',percent_done + '%');
+      $("#progress").html(percent_done + '%');
+      $("#progressouter").removeClass("active");
+      $("#progress").html("Done");
+      var current_time = new Date();
+      $('#tbody_status').html("<tr><td>" + lines_completed + "</td><td>" + Math.round((current_time - start_time) / 1000) + " s</td></td></tr>");
+      return;
+    }
+
+    var data = {
+      lines_to_send : new Array(),
+      <% if @platform %>
+        platform : "<%= @platform.id %>",
+      <% else %>
+        cloud : "<%= @object_id %>",
+      <% end %>
+      threads : threads,
+      detailed_results: detailed_results,
+      http_method : $('#http_method').val(),
+      path : $('#path').val(),
+      headers : $('#headers').val(),
+      <% if @platform %>
+        <% if @platform.platform_type == "Atmos" %>
+          user : $('#user').val(),
+        <% end %>
+      <% end %>
+      body : $('#body').val()
+    }
+    jQuery.fn.reverse = Array.prototype.reverse;
+    $(".replace").each(function( index ) {
+      data[this.id] = $("#"+this.id).val();
+      data[this.id + "_by"] = $("#"+this.id+"_by").val();
+    });
+
+    for (var i = 0; i < threads; i ++) {
+      if (lines.length > 0) {
+        data.lines_to_send[i] = lines.shift();
+        lines_completed ++;
+      }
+    }
+
+    $.ajax({
+      type : "GET",
+      <% if @platform %>
+        url : "/platform/execute_bulk_requests/" + data.platform,
+      <% else %>
+        url : "/cloud/execute_bulk_requests/" + data.cloud,
+      <% end %>
+      data : {data: JSON.stringify(data)},
+    });
+  }
+
+  $('#submit_request').click(function(evt) {
+    start_time = new Date();
+    lines = file_content.split("\n");
+    lines_completed = 0;
+    lines_total = lines.length;
+    threads = $('#threads').val() == "" ? 1 : parseInt($('#threads').val());
+    $("#progress").css('width','0%');
+    $("#progress").html('0%');
+    $("#progressouter").addClass("active");
+    $("#progress").html('<span class="sr-only">0% Complete</span>');
+    $('#tbody_status').html("");
+    $('#status').show();
+    $('#tbody_results').html("");
+    $('#results').show();
+    $('#changediv').html("");
+    if ($('#detailed_results').is(":checked")) {
+      detailed_results = true;
+      $('#changediv').html("<h1>Detailed results</h1>");
+      $('#changediv').show();
+    }
+    else {
+      detailed_results = false;
+    }
+    send_bulk_requests();
+  });
+</script>
+<%= render :partial => "shared/favorites" %>
+<%= render :partial => "shared/to_replace" %>

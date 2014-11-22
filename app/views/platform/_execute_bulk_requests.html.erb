@@ -1,0 +1,64 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">Result for line: <%= line %></div>
+  <div class="panel-body">
+    <h2>Headers</h2>
+    <table class="table sortable">
+      <thead>
+        <tr>
+          <th data-defaultsort="asc">Key</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+
+      <tbody>
+      	<% line_headers.each do |key, value| %>
+         	<tr>
+    	      <td><%= key %></td>
+    	      <td><%= value %></td>
+        	</tr>
+        <% end %>
+      </tbody>
+    </table>
+    <h2>Response code</h2>
+    <h3><span class="label label-default"><%= response.code %></span></h3>
+    <h2>Response headers</h2>
+    <table class="table sortable">
+      <thead>
+        <tr>
+          <th data-defaultsort="asc">Key</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+
+      <tbody>
+      	<% response.each do |key, value| %>
+         	<tr>
+    	      <td><%= key %></td>
+    	      <td><%= value %></td>
+        	</tr>
+        <% end %>
+      </tbody>
+    </table>
+    <h2>Response body</h2>
+    <%
+      output = ""
+      begin
+        if response['content-type'] =~ /xml/
+          xml = REXML::Document.new response.body
+          formatter = REXML::Formatters::Pretty.new(2)
+          formatter.compact = true
+          formatter.write(xml, output)
+        elsif response.body.encoding.name == 'UTF-8'
+          output = response.body
+        else
+          output = "Response body can't be displayed because its encoding isn't UTF-8"
+        end
+      rescue
+        output = response.body
+      end
+    %>
+    <pre>
+      <code><%= output %></code>
+    </pre>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  url: MyString
+  token: MyString
+  shared_secret: MyString
+
+two:
+  url: MyString
+  token: MyString
+  shared_secret: MyString

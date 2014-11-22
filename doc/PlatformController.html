@@ -1,0 +1,1208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: PlatformController
+  
+    &mdash; Documentation by YARD 0.8.7.6
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!PlatformController.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (P)</a> &raquo;
+    
+    
+    <span class="title">PlatformController</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: PlatformController
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName"><span class='object_link'><a href="ApplicationController.html" title="ApplicationController (class)">ApplicationController</a></span></span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">ActionController::Base</li>
+          
+            <li class="next"><span class='object_link'><a href="ApplicationController.html" title="ApplicationController (class)">ApplicationController</a></span></li>
+          
+            <li class="next">PlatformController</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+      <dt class="r2">Includes:</dt>
+      <dd class="r2"><span class='object_link'><a href="Favorites.html" title="Favorites (module)">Favorites</a></span>, REXML</dd>
+      
+    
+  
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">app/controllers/platform_controller.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#bulk_requests-instance_method" title="#bulk_requests (instance method)">- (Object) <strong>bulk_requests</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Show the form to execute bulk HTTP requests.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#execute_bulk_requests-instance_method" title="#execute_bulk_requests (instance method)">- (Object) <strong>execute_bulk_requests</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Execute the bulk HTTP requests.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#execute_manual_request-instance_method" title="#execute_manual_request (instance method)">- (Object) <strong>execute_manual_request</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Execute the HTTP request.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#follow_link-instance_method" title="#follow_link (instance method)">- (Object) <strong>follow_link</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Follow ViPR link returned in the response body.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#logical_view-instance_method" title="#logical_view (instance method)">- (Object) <strong>logical_view</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Show the logical reporting using the Atmos REST Management API.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#manual_request-instance_method" title="#manual_request (instance method)">- (Object) <strong>manual_request</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Show the form to execute HTTP request.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#physical_view-instance_method" title="#physical_view (instance method)">- (Object) <strong>physical_view</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Show the physical reporting using the Atmos REST Management API.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#set_platform-instance_method" title="#set_platform (instance method)">- (Object) <strong>set_platform</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Set the current platform API.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#show_subtenant_details-instance_method" title="#show_subtenant_details (instance method)">- (Object) <strong>show_subtenant_details</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Show the subtenant reporting using the Atmos REST Management API.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#show_uid_metrics-instance_method" title="#show_uid_metrics (instance method)">- (Object) <strong>show_uid_metrics</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Show the uid reporting using the Atmos REST Management API.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="Favorites.html" title="Favorites (module)">Favorites</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Favorites.html#add_favorite-instance_method" title="Favorites#add_favorite (method)">#add_favorite</a></span>, <span class='object_link'><a href="Favorites.html#delete_favorite-instance_method" title="Favorites#delete_favorite (method)">#delete_favorite</a></span>, <span class='object_link'><a href="Favorites.html#execute_favorite-instance_method" title="Favorites#execute_favorite (method)">#execute_favorite</a></span>, <span class='object_link'><a href="Favorites.html#retrieve_favorites-instance_method" title="Favorites#retrieve_favorites (method)">#retrieve_favorites</a></span>, <span class='object_link'><a href="Favorites.html#select_favorite-instance_method" title="Favorites#select_favorite (method)">#select_favorite</a></span>, <span class='object_link'><a href="Favorites.html#update_favorite-instance_method" title="Favorites#update_favorite (method)">#update_favorite</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods inherited from <span class='object_link'><a href="ApplicationController.html" title="ApplicationController (class)">ApplicationController</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="ApplicationController.html#amazon_request-instance_method" title="ApplicationController#amazon_request (method)">#amazon_request</a></span>, <span class='object_link'><a href="ApplicationController.html#atmos_management_request-instance_method" title="ApplicationController#atmos_management_request (method)">#atmos_management_request</a></span>, <span class='object_link'><a href="ApplicationController.html#atmos_request-instance_method" title="ApplicationController#atmos_request (method)">#atmos_request</a></span>, <span class='object_link'><a href="ApplicationController.html#avamar_request-instance_method" title="ApplicationController#avamar_request (method)">#avamar_request</a></span>, <span class='object_link'><a href="ApplicationController.html#current_user-instance_method" title="ApplicationController#current_user (method)">#current_user</a></span>, <span class='object_link'><a href="ApplicationController.html#get_ip_addresses-instance_method" title="ApplicationController#get_ip_addresses (method)">#get_ip_addresses</a></span>, <span class='object_link'><a href="ApplicationController.html#http_request-instance_method" title="ApplicationController#http_request (method)">#http_request</a></span>, <span class='object_link'><a href="ApplicationController.html#human_size_to_number-instance_method" title="ApplicationController#human_size_to_number (method)">#human_size_to_number</a></span>, <span class='object_link'><a href="ApplicationController.html#require_login-instance_method" title="ApplicationController#require_login (method)">#require_login</a></span>, <span class='object_link'><a href="ApplicationController.html#set_cloud-instance_method" title="ApplicationController#set_cloud (method)">#set_cloud</a></span>, <span class='object_link'><a href="ApplicationController.html#set_variables-instance_method" title="ApplicationController#set_variables (method)">#set_variables</a></span>, <span class='object_link'><a href="ApplicationController.html#sign_amazon_request-instance_method" title="ApplicationController#sign_amazon_request (method)">#sign_amazon_request</a></span>, <span class='object_link'><a href="ApplicationController.html#sign_atmos_request-instance_method" title="ApplicationController#sign_atmos_request (method)">#sign_atmos_request</a></span>, <span class='object_link'><a href="ApplicationController.html#swift_request-instance_method" title="ApplicationController#swift_request (method)">#swift_request</a></span>, <span class='object_link'><a href="ApplicationController.html#vcloud_request-instance_method" title="ApplicationController#vcloud_request (method)">#vcloud_request</a></span>, <span class='object_link'><a href="ApplicationController.html#vipr_request-instance_method" title="ApplicationController#vipr_request (method)">#vipr_request</a></span></p>
+
+  
+  
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="bulk_requests-instance_method">
+  
+    - (<tt>Object</tt>) <strong>bulk_requests</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Show the form to execute bulk HTTP requests</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/platform_controller.rb', line 164</span>
+
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_bulk_requests identifier id'>bulk_requests</span>
+  <span class='rubyid_if if kw'>if</span> <span class='rubyid_@platform ivar id'>@platform</span><span class='dot token'>.</span><span class='rubyid_platform_type identifier id'>platform_type</span> <span class='eq op'>==</span> <span class='string val'>&quot;Atmos&quot;</span>
+    <span class='rubyid_@path ivar id'>@path</span> <span class='assign token'>=</span> <span class='string val'>&quot;ex: /tenant_admin/list_sub_tenant&quot;</span>
+    <span class='rubyid_@headers ivar id'>@headers</span> <span class='assign token'>=</span> <span class='string val'>&quot;One on each line. ex: {'x-atmos-subtenantname' =&gt; 't1subtenant'}. The headers needed for authentication will be added automatically for both POX and REST API&quot;</span>
+  <span class='rubyid_elsif elsif kw'>elsif</span> <span class='rubyid_@platform ivar id'>@platform</span><span class='dot token'>.</span><span class='rubyid_platform_type identifier id'>platform_type</span> <span class='eq op'>==</span> <span class='string val'>&quot;ViPR&quot;</span>
+    <span class='rubyid_@path ivar id'>@path</span> <span class='assign token'>=</span> <span class='string val'>&quot;ex: /tenant&quot;</span>
+    <span class='rubyid_@headers ivar id'>@headers</span> <span class='assign token'>=</span> <span class='string val'>&quot;One on each line. ex: {'key' =&gt; 'value'}. x-sds-auth-token will be added automatically&quot;</span>
+  <span class='rubyid_elsif elsif kw'>elsif</span> <span class='rubyid_@platform ivar id'>@platform</span><span class='dot token'>.</span><span class='rubyid_platform_type identifier id'>platform_type</span> <span class='eq op'>==</span> <span class='string val'>&quot;vCloud Director&quot;</span>
+    <span class='rubyid_@path ivar id'>@path</span> <span class='assign token'>=</span> <span class='string val'>&quot;ex: /api/org&quot;</span>
+    <span class='rubyid_@headers ivar id'>@headers</span> <span class='assign token'>=</span> <span class='string val'>&quot;One on each line. ex: {'key' =&gt; 'value'}. x-vcloud-authorization and Accept will be added automatically&quot;</span>
+  <span class='rubyid_end end kw'>end</span>
+  <span class='rubyid_respond_to identifier id'>respond_to</span> <span class='rubyid_do do kw'>do</span> <span class='bitor op'>|</span><span class='rubyid_format identifier id'>format</span><span class='bitor op'>|</span>
+    <span class='rubyid_format identifier id'>format</span><span class='dot token'>.</span><span class='rubyid_html identifier id'>html</span> <span class='lbrace token'>{</span> <span class='rubyid_render identifier id'>render</span> <span class='string val'>&quot;shared/bulk_requests&quot;</span> <span class='rbrace token'>}</span>
+  <span class='rubyid_end end kw'>end</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="execute_bulk_requests-instance_method">
+  
+    - (<tt>Object</tt>) <strong>execute_bulk_requests</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Execute the bulk HTTP requests</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/platform_controller.rb', line 181</span>
+
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_execute_bulk_requests identifier id'>execute_bulk_requests</span>
+  <span class='rubyid_begin begin kw'>begin</span>
+    <span class='rubyid_@responses ivar id'>@responses</span> <span class='assign token'>=</span> <span class='rubyid_Hash constant id'>Hash</span><span class='dot token'>.</span><span class='rubyid_new identifier id'>new</span>
+    <span class='rubyid_@headers ivar id'>@headers</span> <span class='assign token'>=</span> <span class='rubyid_Hash constant id'>Hash</span><span class='dot token'>.</span><span class='rubyid_new identifier id'>new</span>
+    <span class='rubyid_@all_urls ivar id'>@all_urls</span> <span class='assign token'>=</span> <span class='rubyid_Hash constant id'>Hash</span><span class='dot token'>.</span><span class='rubyid_new identifier id'>new</span>
+    <span class='rubyid_data identifier id'>data</span> <span class='assign token'>=</span> <span class='rubyid_ActiveSupport constant id'>ActiveSupport</span><span class='colon2 op'>::</span><span class='rubyid_JSON constant id'>JSON</span><span class='dot token'>.</span><span class='rubyid_decode identifier id'>decode</span><span class='lparen token'>(</span><span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:data</span><span class='rbrack token'>]</span><span class='rparen token'>)</span>
+    <span class='rubyid_@detailed_results ivar id'>@detailed_results</span> <span class='assign token'>=</span> <span class='rubyid_data identifier id'>data</span><span class='lbrack token'>[</span><span class='string val'>&quot;detailed_results&quot;</span><span class='rbrack token'>]</span>
+    <span class='rubyid_num_threads identifier id'>num_threads</span> <span class='assign token'>=</span> <span class='rubyid_data identifier id'>data</span><span class='lbrack token'>[</span><span class='string val'>&quot;threads&quot;</span><span class='rbrack token'>]</span><span class='dot token'>.</span><span class='rubyid_to_i identifier id'>to_i</span>
+    <span class='rubyid_http_method identifier id'>http_method</span> <span class='assign token'>=</span> <span class='rubyid_data identifier id'>data</span><span class='lbrack token'>[</span><span class='string val'>&quot;http_method&quot;</span><span class='rbrack token'>]</span>
+    <span class='rubyid_data identifier id'>data</span><span class='lbrack token'>[</span><span class='string val'>&quot;lines_to_send&quot;</span><span class='rbrack token'>]</span><span class='dot token'>.</span><span class='rubyid_threadify identifier id'>threadify</span><span class='lparen token'>(</span><span class='rubyid_num_threads identifier id'>num_threads</span><span class='rparen token'>)</span> <span class='lbrace token'>{</span> <span class='bitor op'>|</span><span class='rubyid_line identifier id'>line</span><span class='bitor op'>|</span>
+      <span class='rubyid_path identifier id'>path</span> <span class='assign token'>=</span> <span class='rubyid_data identifier id'>data</span><span class='lbrack token'>[</span><span class='string val'>&quot;path&quot;</span><span class='rbrack token'>]</span><span class='dot token'>.</span><span class='rubyid_gsub identifier id'>gsub</span><span class='lparen token'>(</span><span class='regexp val'>/XXXCHANGEMEXXX/</span><span class='comma token'>,</span> <span class='rubyid_line identifier id'>line</span><span class='rparen token'>)</span>
+      <span class='rubyid_headers identifier id'>headers</span> <span class='assign token'>=</span> <span class='rubyid_data identifier id'>data</span><span class='lbrack token'>[</span><span class='string val'>&quot;headers&quot;</span><span class='rbrack token'>]</span><span class='dot token'>.</span><span class='rubyid_gsub identifier id'>gsub</span><span class='lparen token'>(</span><span class='regexp val'>/XXXCHANGEMEXXX/</span><span class='comma token'>,</span> <span class='rubyid_line identifier id'>line</span><span class='rparen token'>)</span>
+      <span class='rubyid_body identifier id'>body</span> <span class='assign token'>=</span> <span class='rubyid_data identifier id'>data</span><span class='lbrack token'>[</span><span class='string val'>&quot;body&quot;</span><span class='rbrack token'>]</span><span class='dot token'>.</span><span class='rubyid_gsub identifier id'>gsub</span><span class='lparen token'>(</span><span class='regexp val'>/XXXCHANGEMEXXX/</span><span class='comma token'>,</span> <span class='rubyid_line identifier id'>line</span><span class='rparen token'>)</span>
+      <span class='rubyid_data identifier id'>data</span><span class='dot token'>.</span><span class='rubyid_each identifier id'>each</span> <span class='rubyid_do do kw'>do</span> <span class='bitor op'>|</span><span class='rubyid_key identifier id'>key</span><span class='comma token'>,</span> <span class='rubyid_value identifier id'>value</span><span class='bitor op'>|</span>
+        <span class='rubyid_if if kw'>if</span> <span class='rubyid_key identifier id'>key</span><span class='dot token'>.</span><span class='rubyid_start_with? fid id'>start_with?</span><span class='lparen token'>(</span><span class='string val'>&quot;replace_&quot;</span><span class='rparen token'>)</span> <span class='andop op'>&amp;&amp;</span> <span class='notop op'>!</span><span class='rubyid_key identifier id'>key</span><span class='dot token'>.</span><span class='rubyid_end_with? fid id'>end_with?</span><span class='lparen token'>(</span><span class='string val'>&quot;_by&quot;</span><span class='rparen token'>)</span>
+          <span class='rubyid_path identifier id'>path</span><span class='dot token'>.</span><span class='rubyid_gsub! fid id'>gsub!</span><span class='lparen token'>(</span><span class='dstring node'>&quot;XXX#{value}XXX&quot;</span><span class='comma token'>,</span><span class='rubyid_data identifier id'>data</span><span class='lbrack token'>[</span><span class='rubyid_key identifier id'>key</span> <span class='plus op'>+</span> <span class='string val'>&quot;_by&quot;</span><span class='rbrack token'>]</span><span class='rparen token'>)</span> <span class='rubyid_if if_mod kw'>if</span> <span class='rubyid_data identifier id'>data</span><span class='lbrack token'>[</span><span class='rubyid_key identifier id'>key</span> <span class='plus op'>+</span> <span class='string val'>&quot;_by&quot;</span><span class='rbrack token'>]</span> <span class='neq op'>!=</span> <span class='string val'>&quot;&quot;</span>
+          <span class='rubyid_headers identifier id'>headers</span><span class='dot token'>.</span><span class='rubyid_gsub! fid id'>gsub!</span><span class='lparen token'>(</span><span class='dstring node'>&quot;XXX#{value}XXX&quot;</span><span class='comma token'>,</span><span class='rubyid_data identifier id'>data</span><span class='lbrack token'>[</span><span class='rubyid_key identifier id'>key</span> <span class='plus op'>+</span> <span class='string val'>&quot;_by&quot;</span><span class='rbrack token'>]</span><span class='rparen token'>)</span> <span class='rubyid_if if_mod kw'>if</span> <span class='rubyid_data identifier id'>data</span><span class='lbrack token'>[</span><span class='rubyid_key identifier id'>key</span> <span class='plus op'>+</span> <span class='string val'>&quot;_by&quot;</span><span class='rbrack token'>]</span> <span class='neq op'>!=</span> <span class='string val'>&quot;&quot;</span>
+          <span class='rubyid_body identifier id'>body</span><span class='dot token'>.</span><span class='rubyid_gsub! fid id'>gsub!</span><span class='lparen token'>(</span><span class='dstring node'>&quot;XXX#{value}XXX&quot;</span><span class='comma token'>,</span><span class='rubyid_data identifier id'>data</span><span class='lbrack token'>[</span><span class='rubyid_key identifier id'>key</span> <span class='plus op'>+</span> <span class='string val'>&quot;_by&quot;</span><span class='rbrack token'>]</span><span class='rparen token'>)</span> <span class='rubyid_if if_mod kw'>if</span> <span class='rubyid_data identifier id'>data</span><span class='lbrack token'>[</span><span class='rubyid_key identifier id'>key</span> <span class='plus op'>+</span> <span class='string val'>&quot;_by&quot;</span><span class='rbrack token'>]</span> <span class='neq op'>!=</span> <span class='string val'>&quot;&quot;</span>
+        <span class='rubyid_end end kw'>end</span>
+      <span class='rubyid_end end kw'>end</span>
+      <span class='rubyid_if if kw'>if</span> <span class='rubyid_@platform ivar id'>@platform</span><span class='dot token'>.</span><span class='rubyid_platform_type identifier id'>platform_type</span> <span class='eq op'>==</span> <span class='string val'>&quot;Atmos&quot;</span>
+        <span class='rubyid_headers_to_send identifier id'>headers_to_send</span> <span class='assign token'>=</span> <span class='rubyid_Hash constant id'>Hash</span><span class='dot token'>.</span><span class='rubyid_new identifier id'>new</span>
+        <span class='rubyid_headers identifier id'>headers</span><span class='dot token'>.</span><span class='rubyid_split identifier id'>split</span><span class='lparen token'>(</span><span class='string val'>&quot;\n&quot;</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='rubyid_each identifier id'>each</span> <span class='rubyid_do do kw'>do</span> <span class='bitor op'>|</span><span class='rubyid_row identifier id'>row</span><span class='bitor op'>|</span>
+          <span class='rubyid_hash identifier id'>hash</span> <span class='assign token'>=</span> <span class='rubyid_eval identifier id'>eval</span><span class='lparen token'>(</span><span class='rubyid_row identifier id'>row</span><span class='rparen token'>)</span>
+          <span class='rubyid_headers_to_send identifier id'>headers_to_send</span><span class='lbrack token'>[</span><span class='rubyid_hash identifier id'>hash</span><span class='dot token'>.</span><span class='rubyid_keys identifier id'>keys</span><span class='dot token'>.</span><span class='rubyid_first identifier id'>first</span><span class='rbrack token'>]</span> <span class='assign token'>=</span> <span class='rubyid_Array constant id'>Array</span><span class='dot token'>.</span><span class='rubyid_new identifier id'>new</span> <span class='lshft op'>&lt;&lt;</span> <span class='rubyid_hash identifier id'>hash</span><span class='dot token'>.</span><span class='rubyid_values identifier id'>values</span><span class='dot token'>.</span><span class='rubyid_first identifier id'>first</span><span class='dot token'>.</span><span class='rubyid_to_s identifier id'>to_s</span>
+        <span class='rubyid_end end kw'>end</span>
+        <span class='rubyid_@responses ivar id'>@responses</span><span class='lbrack token'>[</span><span class='rubyid_line identifier id'>line</span><span class='rbrack token'>]</span><span class='comma token'>,</span> <span class='rubyid_@headers ivar id'>@headers</span><span class='lbrack token'>[</span><span class='rubyid_line identifier id'>line</span><span class='rbrack token'>]</span><span class='comma token'>,</span> <span class='rubyid_@all_urls ivar id'>@all_urls</span><span class='lbrack token'>[</span><span class='rubyid_line identifier id'>line</span><span class='rbrack token'>]</span> <span class='assign token'>=</span> <span class='rubyid_atmos_management_request identifier id'>atmos_management_request</span><span class='lparen token'>(</span><span class='rubyid_http_method identifier id'>http_method</span><span class='comma token'>,</span> <span class='rubyid_headers_to_send identifier id'>headers_to_send</span><span class='comma token'>,</span> <span class='rubyid_path identifier id'>path</span><span class='comma token'>,</span> <span class='rubyid_body identifier id'>body</span><span class='comma token'>,</span> <span class='rubyid_data identifier id'>data</span><span class='lbrack token'>[</span><span class='string val'>&quot;privilege&quot;</span><span class='rbrack token'>]</span><span class='dot token'>.</span><span class='rubyid_downcase identifier id'>downcase</span><span class='rparen token'>)</span>
+      <span class='rubyid_elsif elsif kw'>elsif</span> <span class='rubyid_@platform ivar id'>@platform</span><span class='dot token'>.</span><span class='rubyid_platform_type identifier id'>platform_type</span> <span class='eq op'>==</span> <span class='string val'>&quot;Avamar&quot;</span>
+        <span class='rubyid_@responses ivar id'>@responses</span><span class='lbrack token'>[</span><span class='rubyid_line identifier id'>line</span><span class='rbrack token'>]</span><span class='comma token'>,</span> <span class='rubyid_@headers ivar id'>@headers</span><span class='lbrack token'>[</span><span class='rubyid_line identifier id'>line</span><span class='rbrack token'>]</span><span class='comma token'>,</span> <span class='rubyid_@all_urls ivar id'>@all_urls</span><span class='lbrack token'>[</span><span class='rubyid_line identifier id'>line</span><span class='rbrack token'>]</span> <span class='assign token'>=</span> <span class='rubyid_avamar_request identifier id'>avamar_request</span><span class='lparen token'>(</span><span class='rubyid_http_method identifier id'>http_method</span><span class='comma token'>,</span> <span class='rubyid_path identifier id'>path</span><span class='comma token'>,</span> <span class='rubyid_headers identifier id'>headers</span><span class='comma token'>,</span> <span class='rubyid_body identifier id'>body</span><span class='rparen token'>)</span>
+      <span class='rubyid_elsif elsif kw'>elsif</span> <span class='rubyid_@platform ivar id'>@platform</span><span class='dot token'>.</span><span class='rubyid_platform_type identifier id'>platform_type</span> <span class='eq op'>==</span> <span class='string val'>&quot;ViPR&quot;</span>
+        <span class='rubyid_@responses ivar id'>@responses</span><span class='lbrack token'>[</span><span class='rubyid_line identifier id'>line</span><span class='rbrack token'>]</span><span class='comma token'>,</span> <span class='rubyid_@headers ivar id'>@headers</span><span class='lbrack token'>[</span><span class='rubyid_line identifier id'>line</span><span class='rbrack token'>]</span><span class='comma token'>,</span> <span class='rubyid_@all_urls ivar id'>@all_urls</span><span class='lbrack token'>[</span><span class='rubyid_line identifier id'>line</span><span class='rbrack token'>]</span> <span class='assign token'>=</span> <span class='rubyid_vipr_request identifier id'>vipr_request</span><span class='lparen token'>(</span><span class='rubyid_http_method identifier id'>http_method</span><span class='comma token'>,</span> <span class='rubyid_path identifier id'>path</span><span class='comma token'>,</span> <span class='rubyid_headers identifier id'>headers</span><span class='comma token'>,</span> <span class='rubyid_body identifier id'>body</span><span class='rparen token'>)</span>
+      <span class='rubyid_elsif elsif kw'>elsif</span> <span class='rubyid_@platform ivar id'>@platform</span><span class='dot token'>.</span><span class='rubyid_platform_type identifier id'>platform_type</span> <span class='eq op'>==</span> <span class='string val'>&quot;vCloud Director&quot;</span>
+        <span class='rubyid_@responses ivar id'>@responses</span><span class='lbrack token'>[</span><span class='rubyid_line identifier id'>line</span><span class='rbrack token'>]</span><span class='comma token'>,</span> <span class='rubyid_@headers ivar id'>@headers</span><span class='lbrack token'>[</span><span class='rubyid_line identifier id'>line</span><span class='rbrack token'>]</span><span class='comma token'>,</span> <span class='rubyid_@all_urls ivar id'>@all_urls</span><span class='lbrack token'>[</span><span class='rubyid_line identifier id'>line</span><span class='rbrack token'>]</span> <span class='assign token'>=</span> <span class='rubyid_vcloud_request identifier id'>vcloud_request</span><span class='lparen token'>(</span><span class='rubyid_http_method identifier id'>http_method</span><span class='comma token'>,</span> <span class='rubyid_path identifier id'>path</span><span class='comma token'>,</span> <span class='rubyid_headers identifier id'>headers</span><span class='comma token'>,</span> <span class='rubyid_body identifier id'>body</span><span class='rparen token'>)</span>
+      <span class='rubyid_end end kw'>end</span>
+    <span class='rbrace token'>}</span>
+  <span class='rubyid_rescue rescue kw'>rescue</span> <span class='rubyid_Exception constant id'>Exception</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='rubyid_e identifier id'>e</span>
+    <span class='rubyid_@exception ivar id'>@exception</span> <span class='assign token'>=</span> <span class='rubyid_e identifier id'>e</span>
+  <span class='rubyid_end end kw'>end</span>
+  <span class='rubyid_respond_to identifier id'>respond_to</span> <span class='rubyid_do do kw'>do</span> <span class='bitor op'>|</span><span class='rubyid_format identifier id'>format</span><span class='bitor op'>|</span>
+    <span class='rubyid_format identifier id'>format</span><span class='dot token'>.</span><span class='rubyid_js identifier id'>js</span> <span class='lbrace token'>{</span> <span class='rubyid_render identifier id'>render</span> <span class='string val'>'shared/execute_bulk_requests'</span> <span class='rbrace token'>}</span>
+  <span class='rubyid_end end kw'>end</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="execute_manual_request-instance_method">
+  
+    - (<tt>Object</tt>) <strong>execute_manual_request</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Execute the HTTP request</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/platform_controller.rb', line 124</span>
+
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_execute_manual_request identifier id'>execute_manual_request</span>
+  <span class='rubyid_http_method identifier id'>http_method</span> <span class='assign token'>=</span> <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:http_method</span><span class='rbrack token'>]</span>
+  <span class='rubyid_path identifier id'>path</span> <span class='assign token'>=</span> <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:path</span><span class='rbrack token'>]</span>
+  <span class='rubyid_headers identifier id'>headers</span> <span class='assign token'>=</span> <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:headers</span><span class='rbrack token'>]</span>
+  <span class='rubyid_body identifier id'>body</span> <span class='assign token'>=</span> <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:body</span><span class='rbrack token'>]</span>
+  <span class='rubyid_params identifier id'>params</span><span class='dot token'>.</span><span class='rubyid_each identifier id'>each</span> <span class='rubyid_do do kw'>do</span> <span class='bitor op'>|</span><span class='rubyid_key identifier id'>key</span><span class='comma token'>,</span> <span class='rubyid_value identifier id'>value</span><span class='bitor op'>|</span>
+    <span class='rubyid_if if kw'>if</span> <span class='rubyid_key identifier id'>key</span><span class='dot token'>.</span><span class='rubyid_start_with? fid id'>start_with?</span><span class='lparen token'>(</span><span class='string val'>&quot;replace_&quot;</span><span class='rparen token'>)</span> <span class='andop op'>&amp;&amp;</span> <span class='notop op'>!</span><span class='rubyid_key identifier id'>key</span><span class='dot token'>.</span><span class='rubyid_end_with? fid id'>end_with?</span><span class='lparen token'>(</span><span class='string val'>&quot;_by&quot;</span><span class='rparen token'>)</span>
+      <span class='rubyid_path identifier id'>path</span><span class='dot token'>.</span><span class='rubyid_gsub! fid id'>gsub!</span><span class='lparen token'>(</span><span class='dstring node'>&quot;XXX#{value}XXX&quot;</span><span class='comma token'>,</span><span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='rubyid_key identifier id'>key</span> <span class='plus op'>+</span> <span class='string val'>&quot;_by&quot;</span><span class='rbrack token'>]</span><span class='rparen token'>)</span> <span class='rubyid_if if_mod kw'>if</span> <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='rubyid_key identifier id'>key</span> <span class='plus op'>+</span> <span class='string val'>&quot;_by&quot;</span><span class='rbrack token'>]</span> <span class='neq op'>!=</span> <span class='string val'>&quot;&quot;</span>
+      <span class='rubyid_headers identifier id'>headers</span><span class='dot token'>.</span><span class='rubyid_gsub! fid id'>gsub!</span><span class='lparen token'>(</span><span class='dstring node'>&quot;XXX#{value}XXX&quot;</span><span class='comma token'>,</span><span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='rubyid_key identifier id'>key</span> <span class='plus op'>+</span> <span class='string val'>&quot;_by&quot;</span><span class='rbrack token'>]</span><span class='rparen token'>)</span> <span class='rubyid_if if_mod kw'>if</span> <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='rubyid_key identifier id'>key</span> <span class='plus op'>+</span> <span class='string val'>&quot;_by&quot;</span><span class='rbrack token'>]</span> <span class='neq op'>!=</span> <span class='string val'>&quot;&quot;</span>
+      <span class='rubyid_body identifier id'>body</span><span class='dot token'>.</span><span class='rubyid_gsub! fid id'>gsub!</span><span class='lparen token'>(</span><span class='dstring node'>&quot;XXX#{value}XXX&quot;</span><span class='comma token'>,</span><span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='rubyid_key identifier id'>key</span> <span class='plus op'>+</span> <span class='string val'>&quot;_by&quot;</span><span class='rbrack token'>]</span><span class='rparen token'>)</span> <span class='rubyid_if if_mod kw'>if</span> <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='rubyid_key identifier id'>key</span> <span class='plus op'>+</span> <span class='string val'>&quot;_by&quot;</span><span class='rbrack token'>]</span> <span class='neq op'>!=</span> <span class='string val'>&quot;&quot;</span>
+    <span class='rubyid_end end kw'>end</span>
+  <span class='rubyid_end end kw'>end</span>
+  <span class='rubyid_if if kw'>if</span> <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:task_id</span><span class='rbrack token'>]</span>
+    <span class='rubyid_@task ivar id'>@task</span> <span class='assign token'>=</span> <span class='rubyid_Task constant id'>Task</span><span class='dot token'>.</span><span class='rubyid_find identifier id'>find</span><span class='lparen token'>(</span><span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:task_id</span><span class='rbrack token'>]</span><span class='rparen token'>)</span>
+    <span class='rubyid_@regexpressions ivar id'>@regexpressions</span> <span class='assign token'>=</span> <span class='rubyid_@task ivar id'>@task</span><span class='dot token'>.</span><span class='rubyid_regexpressions identifier id'>regexpressions</span>
+  <span class='rubyid_end end kw'>end</span>
+  <span class='rubyid_begin begin kw'>begin</span>
+    <span class='rubyid_if if kw'>if</span> <span class='rubyid_@platform ivar id'>@platform</span><span class='dot token'>.</span><span class='rubyid_platform_type identifier id'>platform_type</span> <span class='eq op'>==</span> <span class='string val'>&quot;Atmos&quot;</span>
+      <span class='rubyid_headers_to_send identifier id'>headers_to_send</span> <span class='assign token'>=</span> <span class='rubyid_Hash constant id'>Hash</span><span class='dot token'>.</span><span class='rubyid_new identifier id'>new</span>
+      <span class='rubyid_headers identifier id'>headers</span><span class='dot token'>.</span><span class='rubyid_split identifier id'>split</span><span class='lparen token'>(</span><span class='string val'>&quot;\n&quot;</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='rubyid_each identifier id'>each</span> <span class='rubyid_do do kw'>do</span> <span class='bitor op'>|</span><span class='rubyid_row identifier id'>row</span><span class='bitor op'>|</span>
+        <span class='rubyid_hash identifier id'>hash</span> <span class='assign token'>=</span> <span class='rubyid_eval identifier id'>eval</span><span class='lparen token'>(</span><span class='rubyid_row identifier id'>row</span><span class='rparen token'>)</span>
+        <span class='rubyid_headers_to_send identifier id'>headers_to_send</span><span class='lbrack token'>[</span><span class='rubyid_hash identifier id'>hash</span><span class='dot token'>.</span><span class='rubyid_keys identifier id'>keys</span><span class='dot token'>.</span><span class='rubyid_first identifier id'>first</span><span class='rbrack token'>]</span> <span class='assign token'>=</span> <span class='rubyid_Array constant id'>Array</span><span class='dot token'>.</span><span class='rubyid_new identifier id'>new</span> <span class='lshft op'>&lt;&lt;</span> <span class='rubyid_hash identifier id'>hash</span><span class='dot token'>.</span><span class='rubyid_values identifier id'>values</span><span class='dot token'>.</span><span class='rubyid_first identifier id'>first</span><span class='dot token'>.</span><span class='rubyid_to_s identifier id'>to_s</span>
+      <span class='rubyid_end end kw'>end</span>
+      <span class='rubyid_@response ivar id'>@response</span><span class='comma token'>,</span> <span class='rubyid_@headers ivar id'>@headers</span><span class='comma token'>,</span> <span class='rubyid_@url ivar id'>@url</span> <span class='assign token'>=</span> <span class='rubyid_atmos_management_request identifier id'>atmos_management_request</span><span class='lparen token'>(</span><span class='rubyid_http_method identifier id'>http_method</span><span class='comma token'>,</span> <span class='rubyid_headers_to_send identifier id'>headers_to_send</span><span class='comma token'>,</span> <span class='rubyid_path identifier id'>path</span><span class='comma token'>,</span> <span class='rubyid_body identifier id'>body</span><span class='comma token'>,</span> <span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:privilege</span><span class='rbrack token'>]</span><span class='dot token'>.</span><span class='rubyid_downcase identifier id'>downcase</span><span class='rparen token'>)</span>
+    <span class='rubyid_elsif elsif kw'>elsif</span> <span class='rubyid_@platform ivar id'>@platform</span><span class='dot token'>.</span><span class='rubyid_platform_type identifier id'>platform_type</span> <span class='eq op'>==</span> <span class='string val'>&quot;Avamar&quot;</span>
+      <span class='rubyid_@response ivar id'>@response</span><span class='comma token'>,</span> <span class='rubyid_@headers ivar id'>@headers</span><span class='comma token'>,</span> <span class='rubyid_@url ivar id'>@url</span> <span class='assign token'>=</span> <span class='rubyid_avamar_request identifier id'>avamar_request</span><span class='lparen token'>(</span><span class='rubyid_http_method identifier id'>http_method</span><span class='comma token'>,</span> <span class='rubyid_path identifier id'>path</span><span class='comma token'>,</span> <span class='rubyid_headers identifier id'>headers</span><span class='comma token'>,</span> <span class='rubyid_body identifier id'>body</span><span class='rparen token'>)</span>
+    <span class='rubyid_elsif elsif kw'>elsif</span> <span class='rubyid_@platform ivar id'>@platform</span><span class='dot token'>.</span><span class='rubyid_platform_type identifier id'>platform_type</span> <span class='eq op'>==</span> <span class='string val'>&quot;ViPR&quot;</span>
+      <span class='rubyid_@response ivar id'>@response</span><span class='comma token'>,</span> <span class='rubyid_@headers ivar id'>@headers</span><span class='comma token'>,</span> <span class='rubyid_@url ivar id'>@url</span> <span class='assign token'>=</span> <span class='rubyid_vipr_request identifier id'>vipr_request</span><span class='lparen token'>(</span><span class='rubyid_http_method identifier id'>http_method</span><span class='comma token'>,</span> <span class='rubyid_path identifier id'>path</span><span class='comma token'>,</span> <span class='rubyid_headers identifier id'>headers</span><span class='comma token'>,</span> <span class='rubyid_body identifier id'>body</span><span class='rparen token'>)</span>
+    <span class='rubyid_elsif elsif kw'>elsif</span> <span class='rubyid_@platform ivar id'>@platform</span><span class='dot token'>.</span><span class='rubyid_platform_type identifier id'>platform_type</span> <span class='eq op'>==</span> <span class='string val'>&quot;vCloud Director&quot;</span>
+      <span class='rubyid_@response ivar id'>@response</span><span class='comma token'>,</span> <span class='rubyid_@headers ivar id'>@headers</span><span class='comma token'>,</span> <span class='rubyid_@url ivar id'>@url</span> <span class='assign token'>=</span> <span class='rubyid_vcloud_request identifier id'>vcloud_request</span><span class='lparen token'>(</span><span class='rubyid_http_method identifier id'>http_method</span><span class='comma token'>,</span> <span class='rubyid_path identifier id'>path</span><span class='comma token'>,</span> <span class='rubyid_headers identifier id'>headers</span><span class='comma token'>,</span> <span class='rubyid_body identifier id'>body</span><span class='rparen token'>)</span>
+    <span class='rubyid_end end kw'>end</span>
+  <span class='rubyid_rescue rescue kw'>rescue</span> <span class='rubyid_Exception constant id'>Exception</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='rubyid_e identifier id'>e</span>
+    <span class='rubyid_@exception ivar id'>@exception</span> <span class='assign token'>=</span> <span class='rubyid_e identifier id'>e</span>
+  <span class='rubyid_end end kw'>end</span>
+  <span class='rubyid_respond_to identifier id'>respond_to</span> <span class='rubyid_do do kw'>do</span> <span class='bitor op'>|</span><span class='rubyid_format identifier id'>format</span><span class='bitor op'>|</span>
+    <span class='rubyid_format identifier id'>format</span><span class='dot token'>.</span><span class='rubyid_js identifier id'>js</span> <span class='lbrace token'>{</span> <span class='rubyid_render identifier id'>render</span> <span class='string val'>'shared/execute_manual_request'</span> <span class='rbrace token'>}</span>
+  <span class='rubyid_end end kw'>end</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="follow_link-instance_method">
+  
+    - (<tt>Object</tt>) <strong>follow_link</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Follow ViPR link returned in the response body</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/platform_controller.rb', line 225</span>
+
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_follow_link identifier id'>follow_link</span>
+  <span class='rubyid_data identifier id'>data</span> <span class='assign token'>=</span> <span class='rubyid_ActiveSupport constant id'>ActiveSupport</span><span class='colon2 op'>::</span><span class='rubyid_JSON constant id'>JSON</span><span class='dot token'>.</span><span class='rubyid_decode identifier id'>decode</span><span class='lparen token'>(</span><span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:data</span><span class='rbrack token'>]</span><span class='rparen token'>)</span>
+  <span class='rubyid_http_method identifier id'>http_method</span> <span class='assign token'>=</span> <span class='string val'>&quot;Get&quot;</span>
+  <span class='rubyid_@path ivar id'>@path</span> <span class='assign token'>=</span> <span class='rubyid_data identifier id'>data</span><span class='lbrack token'>[</span><span class='string val'>&quot;path&quot;</span><span class='rbrack token'>]</span>
+  <span class='rubyid_headers identifier id'>headers</span> <span class='assign token'>=</span> <span class='string val'>&quot;&quot;</span>
+  <span class='rubyid_body identifier id'>body</span> <span class='assign token'>=</span> <span class='string val'>&quot;&quot;</span>
+  <span class='rubyid_begin begin kw'>begin</span>
+    <span class='rubyid_if if kw'>if</span> <span class='rubyid_@platform ivar id'>@platform</span><span class='dot token'>.</span><span class='rubyid_platform_type identifier id'>platform_type</span> <span class='eq op'>==</span> <span class='string val'>&quot;ViPR&quot;</span>
+      <span class='rubyid_@response ivar id'>@response</span><span class='comma token'>,</span> <span class='rubyid_@headers ivar id'>@headers</span><span class='comma token'>,</span> <span class='rubyid_@url ivar id'>@url</span> <span class='assign token'>=</span> <span class='rubyid_vipr_request identifier id'>vipr_request</span><span class='lparen token'>(</span><span class='rubyid_http_method identifier id'>http_method</span><span class='comma token'>,</span> <span class='rubyid_@path ivar id'>@path</span><span class='comma token'>,</span> <span class='rubyid_headers identifier id'>headers</span><span class='comma token'>,</span> <span class='rubyid_body identifier id'>body</span><span class='rparen token'>)</span>
+    <span class='rubyid_end end kw'>end</span>
+  <span class='rubyid_rescue rescue kw'>rescue</span> <span class='rubyid_Exception constant id'>Exception</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='rubyid_e identifier id'>e</span>
+    <span class='rubyid_@exception ivar id'>@exception</span> <span class='assign token'>=</span> <span class='rubyid_e identifier id'>e</span>
+  <span class='rubyid_end end kw'>end</span>
+  <span class='rubyid_respond_to identifier id'>respond_to</span> <span class='rubyid_do do kw'>do</span> <span class='bitor op'>|</span><span class='rubyid_format identifier id'>format</span><span class='bitor op'>|</span>
+    <span class='rubyid_format identifier id'>format</span><span class='dot token'>.</span><span class='rubyid_js identifier id'>js</span> <span class='lbrace token'>{</span> <span class='rubyid_render identifier id'>render</span> <span class='symbol val'>:follow_link</span> <span class='rbrace token'>}</span>
+  <span class='rubyid_end end kw'>end</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="logical_view-instance_method">
+  
+    - (<tt>Object</tt>) <strong>logical_view</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Show the logical reporting using the Atmos REST Management API</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/platform_controller.rb', line 10</span>
+
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_logical_view identifier id'>logical_view</span>
+  <span class='rubyid_path identifier id'>path</span> <span class='assign token'>=</span> <span class='dstring node'>&quot;/sysmgmt/tenants/#{@platform.tenant_name}/subtenants&quot;</span>
+  <span class='rubyid_@response ivar id'>@response</span><span class='comma token'>,</span> <span class='rubyid_temp identifier id'>temp</span><span class='comma token'>,</span> <span class='rubyid_temp identifier id'>temp</span> <span class='assign token'>=</span> <span class='rubyid_atmos_management_request identifier id'>atmos_management_request</span><span class='lparen token'>(</span><span class='string val'>&quot;Get&quot;</span><span class='comma token'>,</span> <span class='rubyid_Hash constant id'>Hash</span><span class='dot token'>.</span><span class='rubyid_new identifier id'>new</span><span class='comma token'>,</span>  <span class='rubyid_path identifier id'>path</span><span class='comma token'>,</span> <span class='rubyid_nil nil kw'>nil</span><span class='comma token'>,</span> <span class='string val'>&quot;tenantadmin&quot;</span><span class='rparen token'>)</span>
+  <span class='rubyid_path identifier id'>path</span> <span class='assign token'>=</span> <span class='dstring node'>&quot;/sysmgmt/tenants/#{@platform.tenant_name}/scMetrics&quot;</span>
+  <span class='rubyid_@response_metrics ivar id'>@response_metrics</span><span class='comma token'>,</span> <span class='rubyid_temp identifier id'>temp</span><span class='comma token'>,</span> <span class='rubyid_temp identifier id'>temp</span> <span class='assign token'>=</span> <span class='rubyid_atmos_management_request identifier id'>atmos_management_request</span><span class='lparen token'>(</span><span class='string val'>&quot;Get&quot;</span><span class='comma token'>,</span> <span class='rubyid_Hash constant id'>Hash</span><span class='dot token'>.</span><span class='rubyid_new identifier id'>new</span><span class='comma token'>,</span>  <span class='rubyid_path identifier id'>path</span><span class='comma token'>,</span> <span class='rubyid_nil nil kw'>nil</span><span class='comma token'>,</span> <span class='string val'>&quot;tenantadmin&quot;</span><span class='rparen token'>)</span>
+  <span class='rubyid_respond_to identifier id'>respond_to</span> <span class='rubyid_do do kw'>do</span> <span class='bitor op'>|</span><span class='rubyid_format identifier id'>format</span><span class='bitor op'>|</span>
+    <span class='rubyid_format identifier id'>format</span><span class='dot token'>.</span><span class='rubyid_html identifier id'>html</span> <span class='lbrace token'>{</span> <span class='rubyid_render identifier id'>render</span> <span class='symbol val'>:logical_view</span> <span class='rbrace token'>}</span>
+  <span class='rubyid_end end kw'>end</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="manual_request-instance_method">
+  
+    - (<tt>Object</tt>) <strong>manual_request</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Show the form to execute HTTP request</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/platform_controller.rb', line 104</span>
+
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_manual_request identifier id'>manual_request</span>
+  <span class='rubyid_if if kw'>if</span> <span class='rubyid_@platform ivar id'>@platform</span><span class='dot token'>.</span><span class='rubyid_platform_type identifier id'>platform_type</span> <span class='eq op'>==</span> <span class='string val'>&quot;Atmos&quot;</span>
+    <span class='rubyid_@path ivar id'>@path</span> <span class='assign token'>=</span> <span class='string val'>&quot;ex: /sysmgmt/rmgs&quot;</span>
+    <span class='rubyid_@headers ivar id'>@headers</span> <span class='assign token'>=</span> <span class='string val'>&quot;One on each line. ex: {'x-atmos-subtenantname' =&gt; 't1subtenant'}. The headers needed for authentication will be added automatically for both POX and REST API&quot;</span>
+  <span class='rubyid_elsif elsif kw'>elsif</span> <span class='rubyid_@platform ivar id'>@platform</span><span class='dot token'>.</span><span class='rubyid_platform_type identifier id'>platform_type</span> <span class='eq op'>==</span> <span class='string val'>&quot;Avamar&quot;</span>
+      <span class='rubyid_@path ivar id'>@path</span> <span class='assign token'>=</span> <span class='string val'>&quot;ex: /rest-api/versions&quot;</span>
+      <span class='rubyid_@headers ivar id'>@headers</span> <span class='assign token'>=</span> <span class='string val'>&quot;One on each line. ex: {'key' =&gt; 'value'}. X-Concerto-Authorization will be added automatically&quot;</span>
+  <span class='rubyid_elsif elsif kw'>elsif</span> <span class='rubyid_@platform ivar id'>@platform</span><span class='dot token'>.</span><span class='rubyid_platform_type identifier id'>platform_type</span> <span class='eq op'>==</span> <span class='string val'>&quot;ViPR&quot;</span>
+    <span class='rubyid_@path ivar id'>@path</span> <span class='assign token'>=</span> <span class='string val'>&quot;ex: /tenant&quot;</span>
+    <span class='rubyid_@headers ivar id'>@headers</span> <span class='assign token'>=</span> <span class='string val'>&quot;One on each line. ex: {'key' =&gt; 'value'}. x-sds-auth-token will be added automatically&quot;</span>
+  <span class='rubyid_elsif elsif kw'>elsif</span> <span class='rubyid_@platform ivar id'>@platform</span><span class='dot token'>.</span><span class='rubyid_platform_type identifier id'>platform_type</span> <span class='eq op'>==</span> <span class='string val'>&quot;vCloud Director&quot;</span>
+    <span class='rubyid_@path ivar id'>@path</span> <span class='assign token'>=</span> <span class='string val'>&quot;ex: /api/org&quot;</span>
+    <span class='rubyid_@headers ivar id'>@headers</span> <span class='assign token'>=</span> <span class='string val'>&quot;One on each line. ex: {'key' =&gt; 'value'}. x-vcloud-authorization and Accept will be added automatically&quot;</span>
+  <span class='rubyid_end end kw'>end</span>
+  <span class='rubyid_respond_to identifier id'>respond_to</span> <span class='rubyid_do do kw'>do</span> <span class='bitor op'>|</span><span class='rubyid_format identifier id'>format</span><span class='bitor op'>|</span>
+    <span class='rubyid_format identifier id'>format</span><span class='dot token'>.</span><span class='rubyid_html identifier id'>html</span> <span class='lbrace token'>{</span> <span class='rubyid_render identifier id'>render</span> <span class='string val'>&quot;shared/manual_request&quot;</span> <span class='rbrace token'>}</span>
+  <span class='rubyid_end end kw'>end</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="physical_view-instance_method">
+  
+    - (<tt>Object</tt>) <strong>physical_view</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Show the physical reporting using the Atmos REST Management API</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/platform_controller.rb', line 21</span>
+
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_physical_view identifier id'>physical_view</span>
+  <span class='rubyid_path identifier id'>path</span> <span class='assign token'>=</span> <span class='string val'>&quot;/sysmgmt/rmgs&quot;</span>
+  <span class='rubyid_response_rmgs identifier id'>response_rmgs</span><span class='comma token'>,</span> <span class='rubyid_temp identifier id'>temp</span> <span class='assign token'>=</span> <span class='rubyid_atmos_management_request identifier id'>atmos_management_request</span><span class='lparen token'>(</span><span class='string val'>&quot;Get&quot;</span><span class='comma token'>,</span> <span class='rubyid_Hash constant id'>Hash</span><span class='dot token'>.</span><span class='rubyid_new identifier id'>new</span><span class='comma token'>,</span>  <span class='rubyid_path identifier id'>path</span><span class='comma token'>,</span> <span class='rubyid_nil nil kw'>nil</span><span class='comma token'>,</span> <span class='string val'>&quot;sysadmin&quot;</span><span class='rparen token'>)</span>
+  <span class='rubyid_rmgs identifier id'>rmgs</span> <span class='assign token'>=</span> <span class='rubyid_Array constant id'>Array</span><span class='dot token'>.</span><span class='rubyid_new identifier id'>new</span>
+  <span class='rubyid_rmgs_hash identifier id'>rmgs_hash</span> <span class='assign token'>=</span> <span class='rubyid_Hash constant id'>Hash</span><span class='dot token'>.</span><span class='rubyid_from_xml identifier id'>from_xml</span><span class='lparen token'>(</span><span class='rubyid_response_rmgs identifier id'>response_rmgs</span><span class='dot token'>.</span><span class='rubyid_body identifier id'>body</span><span class='rparen token'>)</span>
+  <span class='rubyid_if if kw'>if</span> <span class='rubyid_rmgs_hash identifier id'>rmgs_hash</span><span class='lbrack token'>[</span><span class='string val'>&quot;rmgList&quot;</span><span class='rbrack token'>]</span><span class='lbrack token'>[</span><span class='string val'>&quot;rmg&quot;</span><span class='rbrack token'>]</span><span class='dot token'>.</span><span class='rubyid_instance_of? fid id'>instance_of?</span> <span class='rubyid_Array constant id'>Array</span>
+    <span class='rubyid_rmgs_hash identifier id'>rmgs_hash</span><span class='lbrack token'>[</span><span class='string val'>&quot;rmgList&quot;</span><span class='rbrack token'>]</span><span class='lbrack token'>[</span><span class='string val'>&quot;rmg&quot;</span><span class='rbrack token'>]</span><span class='dot token'>.</span><span class='rubyid_each identifier id'>each</span> <span class='rubyid_do do kw'>do</span> <span class='bitor op'>|</span><span class='rubyid_elem identifier id'>elem</span><span class='bitor op'>|</span>
+      <span class='rubyid_rmgs identifier id'>rmgs</span> <span class='lshft op'>&lt;&lt;</span> <span class='rubyid_elem identifier id'>elem</span><span class='lbrack token'>[</span><span class='string val'>&quot;name&quot;</span><span class='rbrack token'>]</span><span class='lbrack token'>[</span><span class='integer val'>0</span><span class='rbrack token'>]</span>
+    <span class='rubyid_end end kw'>end</span>
+  <span class='rubyid_elsif elsif kw'>elsif</span> <span class='rubyid_rmgs_hash identifier id'>rmgs_hash</span><span class='lbrack token'>[</span><span class='string val'>&quot;rmgList&quot;</span><span class='rbrack token'>]</span><span class='lbrack token'>[</span><span class='string val'>&quot;rmg&quot;</span><span class='rbrack token'>]</span><span class='dot token'>.</span><span class='rubyid_instance_of? fid id'>instance_of?</span> <span class='rubyid_Hash constant id'>Hash</span>
+    <span class='rubyid_rmgs identifier id'>rmgs</span> <span class='lshft op'>&lt;&lt;</span> <span class='rubyid_rmgs_hash identifier id'>rmgs_hash</span><span class='lbrack token'>[</span><span class='string val'>&quot;rmgList&quot;</span><span class='rbrack token'>]</span><span class='lbrack token'>[</span><span class='string val'>&quot;rmg&quot;</span><span class='rbrack token'>]</span><span class='lbrack token'>[</span><span class='string val'>&quot;name&quot;</span><span class='rbrack token'>]</span><span class='lbrack token'>[</span><span class='integer val'>0</span><span class='rbrack token'>]</span>
+  <span class='rubyid_end end kw'>end</span>
+  <span class='rubyid_nodes identifier id'>nodes</span> <span class='assign token'>=</span> <span class='rubyid_Hash constant id'>Hash</span><span class='dot token'>.</span><span class='rubyid_new identifier id'>new</span>
+  <span class='rubyid_rmgs identifier id'>rmgs</span><span class='dot token'>.</span><span class='rubyid_each identifier id'>each</span> <span class='rubyid_do do kw'>do</span> <span class='bitor op'>|</span><span class='rubyid_rmg identifier id'>rmg</span><span class='bitor op'>|</span>
+    <span class='rubyid_path identifier id'>path</span> <span class='assign token'>=</span> <span class='dstring node'>&quot;/sysmgmt/rmgs/#{rmg}/nodes&quot;</span>
+    <span class='rubyid_response_nodes identifier id'>response_nodes</span><span class='comma token'>,</span> <span class='rubyid_temp identifier id'>temp</span> <span class='assign token'>=</span> <span class='rubyid_atmos_management_request identifier id'>atmos_management_request</span><span class='lparen token'>(</span><span class='string val'>&quot;Get&quot;</span><span class='comma token'>,</span> <span class='rubyid_Hash constant id'>Hash</span><span class='dot token'>.</span><span class='rubyid_new identifier id'>new</span><span class='comma token'>,</span>  <span class='rubyid_path identifier id'>path</span><span class='comma token'>,</span> <span class='rubyid_nil nil kw'>nil</span><span class='comma token'>,</span> <span class='string val'>&quot;sysadmin&quot;</span><span class='rparen token'>)</span>
+    <span class='rubyid_nodes identifier id'>nodes</span><span class='lbrack token'>[</span><span class='rubyid_rmg identifier id'>rmg</span><span class='rbrack token'>]</span> <span class='assign token'>=</span> <span class='rubyid_Array constant id'>Array</span><span class='dot token'>.</span><span class='rubyid_new identifier id'>new</span>
+    <span class='rubyid_nodes_hash identifier id'>nodes_hash</span> <span class='assign token'>=</span> <span class='rubyid_Hash constant id'>Hash</span><span class='dot token'>.</span><span class='rubyid_from_xml identifier id'>from_xml</span><span class='lparen token'>(</span><span class='rubyid_response_nodes identifier id'>response_nodes</span><span class='dot token'>.</span><span class='rubyid_body identifier id'>body</span><span class='rparen token'>)</span>
+    <span class='rubyid_nodes_hash identifier id'>nodes_hash</span><span class='lbrack token'>[</span><span class='string val'>&quot;nodeList&quot;</span><span class='rbrack token'>]</span><span class='lbrack token'>[</span><span class='string val'>&quot;node&quot;</span><span class='rbrack token'>]</span><span class='dot token'>.</span><span class='rubyid_each identifier id'>each</span> <span class='rubyid_do do kw'>do</span> <span class='bitor op'>|</span><span class='rubyid_elem identifier id'>elem</span><span class='bitor op'>|</span>
+     <span class='rubyid_nodes identifier id'>nodes</span><span class='lbrack token'>[</span><span class='rubyid_rmg identifier id'>rmg</span><span class='rbrack token'>]</span> <span class='lshft op'>&lt;&lt;</span> <span class='rubyid_elem identifier id'>elem</span><span class='lbrack token'>[</span><span class='string val'>&quot;name&quot;</span><span class='rbrack token'>]</span>
+    <span class='rubyid_end end kw'>end</span>
+  <span class='rubyid_end end kw'>end</span>
+  <span class='rubyid_uuids identifier id'>uuids</span> <span class='assign token'>=</span> <span class='rubyid_Hash constant id'>Hash</span><span class='dot token'>.</span><span class='rubyid_new identifier id'>new</span>
+  <span class='rubyid_nodes identifier id'>nodes</span><span class='dot token'>.</span><span class='rubyid_each identifier id'>each</span> <span class='rubyid_do do kw'>do</span> <span class='bitor op'>|</span><span class='rubyid_rmg identifier id'>rmg</span><span class='comma token'>,</span> <span class='rubyid_values identifier id'>values</span><span class='bitor op'>|</span>
+    <span class='rubyid_uuids identifier id'>uuids</span><span class='lbrack token'>[</span><span class='rubyid_rmg identifier id'>rmg</span><span class='rbrack token'>]</span> <span class='assign token'>=</span> <span class='rubyid_Hash constant id'>Hash</span><span class='dot token'>.</span><span class='rubyid_new identifier id'>new</span>
+    <span class='rubyid_values identifier id'>values</span><span class='dot token'>.</span><span class='rubyid_each identifier id'>each</span> <span class='rubyid_do do kw'>do</span> <span class='bitor op'>|</span><span class='rubyid_node identifier id'>node</span><span class='bitor op'>|</span>
+      <span class='rubyid_path identifier id'>path</span> <span class='assign token'>=</span> <span class='dstring node'>&quot;/util/translate?scope=Node&amp;input=name&amp;value=#{node}&amp;output=uuid&quot;</span>
+      <span class='rubyid_response_translate identifier id'>response_translate</span><span class='comma token'>,</span> <span class='rubyid_temp identifier id'>temp</span> <span class='assign token'>=</span> <span class='rubyid_atmos_management_request identifier id'>atmos_management_request</span><span class='lparen token'>(</span><span class='string val'>&quot;Get&quot;</span><span class='comma token'>,</span> <span class='rubyid_Hash constant id'>Hash</span><span class='dot token'>.</span><span class='rubyid_new identifier id'>new</span><span class='comma token'>,</span>  <span class='rubyid_path identifier id'>path</span><span class='comma token'>,</span> <span class='rubyid_nil nil kw'>nil</span><span class='comma token'>,</span> <span class='string val'>&quot;tenantadmin&quot;</span><span class='rparen token'>)</span>
+      <span class='rubyid_uuids identifier id'>uuids</span><span class='lbrack token'>[</span><span class='rubyid_rmg identifier id'>rmg</span><span class='rbrack token'>]</span><span class='lbrack token'>[</span><span class='rubyid_node identifier id'>node</span><span class='rbrack token'>]</span> <span class='assign token'>=</span> <span class='rubyid_Hash constant id'>Hash</span><span class='dot token'>.</span><span class='rubyid_from_xml identifier id'>from_xml</span><span class='lparen token'>(</span><span class='rubyid_response_translate identifier id'>response_translate</span><span class='dot token'>.</span><span class='rubyid_body identifier id'>body</span><span class='rparen token'>)</span><span class='lbrack token'>[</span><span class='string val'>&quot;translated_id&quot;</span><span class='rbrack token'>]</span>
+    <span class='rubyid_end end kw'>end</span>
+  <span class='rubyid_end end kw'>end</span>
+  <span class='rubyid_@fs ivar id'>@fs</span> <span class='assign token'>=</span> <span class='rubyid_Hash constant id'>Hash</span><span class='dot token'>.</span><span class='rubyid_new identifier id'>new</span>
+  <span class='rubyid_nodes identifier id'>nodes</span><span class='dot token'>.</span><span class='rubyid_each identifier id'>each</span> <span class='rubyid_do do kw'>do</span> <span class='bitor op'>|</span><span class='rubyid_rmg identifier id'>rmg</span><span class='comma token'>,</span> <span class='rubyid_values identifier id'>values</span><span class='bitor op'>|</span>
+    <span class='rubyid_@fs ivar id'>@fs</span><span class='lbrack token'>[</span><span class='rubyid_rmg identifier id'>rmg</span><span class='rbrack token'>]</span> <span class='assign token'>=</span> <span class='rubyid_Hash constant id'>Hash</span><span class='dot token'>.</span><span class='rubyid_new identifier id'>new</span>
+    <span class='rubyid_values identifier id'>values</span><span class='dot token'>.</span><span class='rubyid_each identifier id'>each</span> <span class='rubyid_do do kw'>do</span> <span class='bitor op'>|</span><span class='rubyid_node identifier id'>node</span><span class='bitor op'>|</span>
+      <span class='rubyid_path identifier id'>path</span> <span class='assign token'>=</span> <span class='dstring node'>&quot;/mgmt/disk_information_for_grid?node_uuid=#{uuids[rmg][node]}&quot;</span>
+      <span class='rubyid_response_fs identifier id'>response_fs</span><span class='comma token'>,</span> <span class='rubyid_temp identifier id'>temp</span> <span class='assign token'>=</span> <span class='rubyid_atmos_management_request identifier id'>atmos_management_request</span><span class='lparen token'>(</span><span class='string val'>&quot;Get&quot;</span><span class='comma token'>,</span> <span class='rubyid_Hash constant id'>Hash</span><span class='dot token'>.</span><span class='rubyid_new identifier id'>new</span><span class='comma token'>,</span>  <span class='rubyid_path identifier id'>path</span><span class='comma token'>,</span> <span class='rubyid_nil nil kw'>nil</span><span class='comma token'>,</span> <span class='string val'>&quot;tenantadmin&quot;</span><span class='rparen token'>)</span>
+      <span class='rubyid_@fs ivar id'>@fs</span><span class='lbrack token'>[</span><span class='rubyid_rmg identifier id'>rmg</span><span class='rbrack token'>]</span><span class='lbrack token'>[</span><span class='rubyid_node identifier id'>node</span><span class='rbrack token'>]</span> <span class='assign token'>=</span> <span class='rubyid_Hash constant id'>Hash</span><span class='dot token'>.</span><span class='rubyid_new identifier id'>new</span>
+      <span class='rubyid_@temp ivar id'>@temp</span> <span class='assign token'>=</span> <span class='rubyid_ActiveSupport constant id'>ActiveSupport</span><span class='colon2 op'>::</span><span class='rubyid_JSON constant id'>JSON</span><span class='dot token'>.</span><span class='rubyid_decode identifier id'>decode</span><span class='lparen token'>(</span><span class='rubyid_response_fs identifier id'>response_fs</span><span class='dot token'>.</span><span class='rubyid_body identifier id'>body</span><span class='rparen token'>)</span>
+      <span class='rubyid_ActiveSupport constant id'>ActiveSupport</span><span class='colon2 op'>::</span><span class='rubyid_JSON constant id'>JSON</span><span class='dot token'>.</span><span class='rubyid_decode identifier id'>decode</span><span class='lparen token'>(</span><span class='rubyid_response_fs identifier id'>response_fs</span><span class='dot token'>.</span><span class='rubyid_body identifier id'>body</span><span class='rparen token'>)</span><span class='lbrack token'>[</span><span class='string val'>&quot;aaData&quot;</span><span class='rbrack token'>]</span><span class='dot token'>.</span><span class='rubyid_each identifier id'>each</span> <span class='rubyid_do do kw'>do</span> <span class='bitor op'>|</span><span class='rubyid_disk identifier id'>disk</span><span class='bitor op'>|</span>
+        <span class='rubyid_@fs ivar id'>@fs</span><span class='lbrack token'>[</span><span class='rubyid_rmg identifier id'>rmg</span><span class='rbrack token'>]</span><span class='lbrack token'>[</span><span class='rubyid_node identifier id'>node</span><span class='rbrack token'>]</span><span class='lbrack token'>[</span><span class='rubyid_disk identifier id'>disk</span><span class='lbrack token'>[</span><span class='integer val'>0</span><span class='rbrack token'>]</span><span class='rbrack token'>]</span> <span class='assign token'>=</span> <span class='rubyid_Hash constant id'>Hash</span><span class='dot token'>.</span><span class='rubyid_new identifier id'>new</span>
+        <span class='rubyid_@fs ivar id'>@fs</span><span class='lbrack token'>[</span><span class='rubyid_rmg identifier id'>rmg</span><span class='rbrack token'>]</span><span class='lbrack token'>[</span><span class='rubyid_node identifier id'>node</span><span class='rbrack token'>]</span><span class='lbrack token'>[</span><span class='rubyid_disk identifier id'>disk</span><span class='lbrack token'>[</span><span class='integer val'>0</span><span class='rbrack token'>]</span><span class='rbrack token'>]</span><span class='lbrack token'>[</span><span class='string val'>&quot;device_path&quot;</span><span class='rbrack token'>]</span> <span class='assign token'>=</span> <span class='rubyid_disk identifier id'>disk</span><span class='lbrack token'>[</span><span class='integer val'>11</span><span class='rbrack token'>]</span>
+        <span class='rubyid_@fs ivar id'>@fs</span><span class='lbrack token'>[</span><span class='rubyid_rmg identifier id'>rmg</span><span class='rbrack token'>]</span><span class='lbrack token'>[</span><span class='rubyid_node identifier id'>node</span><span class='rbrack token'>]</span><span class='lbrack token'>[</span><span class='rubyid_disk identifier id'>disk</span><span class='lbrack token'>[</span><span class='integer val'>0</span><span class='rbrack token'>]</span><span class='rbrack token'>]</span><span class='lbrack token'>[</span><span class='string val'>&quot;dae&quot;</span><span class='rbrack token'>]</span> <span class='assign token'>=</span> <span class='rubyid_disk identifier id'>disk</span><span class='lbrack token'>[</span><span class='integer val'>1</span><span class='rbrack token'>]</span>
+        <span class='rubyid_@fs ivar id'>@fs</span><span class='lbrack token'>[</span><span class='rubyid_rmg identifier id'>rmg</span><span class='rbrack token'>]</span><span class='lbrack token'>[</span><span class='rubyid_node identifier id'>node</span><span class='rbrack token'>]</span><span class='lbrack token'>[</span><span class='rubyid_disk identifier id'>disk</span><span class='lbrack token'>[</span><span class='integer val'>0</span><span class='rbrack token'>]</span><span class='rbrack token'>]</span><span class='lbrack token'>[</span><span class='string val'>&quot;slot_id&quot;</span><span class='rbrack token'>]</span> <span class='assign token'>=</span> <span class='rubyid_disk identifier id'>disk</span><span class='lbrack token'>[</span><span class='integer val'>2</span><span class='rbrack token'>]</span>
+        <span class='rubyid_@fs ivar id'>@fs</span><span class='lbrack token'>[</span><span class='rubyid_rmg identifier id'>rmg</span><span class='rbrack token'>]</span><span class='lbrack token'>[</span><span class='rubyid_node identifier id'>node</span><span class='rbrack token'>]</span><span class='lbrack token'>[</span><span class='rubyid_disk identifier id'>disk</span><span class='lbrack token'>[</span><span class='integer val'>0</span><span class='rbrack token'>]</span><span class='rbrack token'>]</span><span class='lbrack token'>[</span><span class='string val'>&quot;free_capacity&quot;</span><span class='rbrack token'>]</span> <span class='assign token'>=</span> <span class='rubyid_disk identifier id'>disk</span><span class='lbrack token'>[</span><span class='integer val'>3</span><span class='rbrack token'>]</span>
+        <span class='rubyid_@fs ivar id'>@fs</span><span class='lbrack token'>[</span><span class='rubyid_rmg identifier id'>rmg</span><span class='rbrack token'>]</span><span class='lbrack token'>[</span><span class='rubyid_node identifier id'>node</span><span class='rbrack token'>]</span><span class='lbrack token'>[</span><span class='rubyid_disk identifier id'>disk</span><span class='lbrack token'>[</span><span class='integer val'>0</span><span class='rbrack token'>]</span><span class='rbrack token'>]</span><span class='lbrack token'>[</span><span class='string val'>&quot;percent_used&quot;</span><span class='rbrack token'>]</span> <span class='assign token'>=</span> <span class='rubyid_disk identifier id'>disk</span><span class='lbrack token'>[</span><span class='integer val'>5</span><span class='rbrack token'>]</span>
+        <span class='rubyid_@fs ivar id'>@fs</span><span class='lbrack token'>[</span><span class='rubyid_rmg identifier id'>rmg</span><span class='rbrack token'>]</span><span class='lbrack token'>[</span><span class='rubyid_node identifier id'>node</span><span class='rbrack token'>]</span><span class='lbrack token'>[</span><span class='rubyid_disk identifier id'>disk</span><span class='lbrack token'>[</span><span class='integer val'>0</span><span class='rbrack token'>]</span><span class='rbrack token'>]</span><span class='lbrack token'>[</span><span class='string val'>&quot;used_capacity&quot;</span><span class='rbrack token'>]</span> <span class='assign token'>=</span> <span class='rubyid_human_size_to_number identifier id'>human_size_to_number</span><span class='lparen token'>(</span><span class='rubyid_disk identifier id'>disk</span><span class='lbrack token'>[</span><span class='integer val'>6</span><span class='rbrack token'>]</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='rubyid_to_s identifier id'>to_s</span>
+        <span class='rubyid_@fs ivar id'>@fs</span><span class='lbrack token'>[</span><span class='rubyid_rmg identifier id'>rmg</span><span class='rbrack token'>]</span><span class='lbrack token'>[</span><span class='rubyid_node identifier id'>node</span><span class='rbrack token'>]</span><span class='lbrack token'>[</span><span class='rubyid_disk identifier id'>disk</span><span class='lbrack token'>[</span><span class='integer val'>0</span><span class='rbrack token'>]</span><span class='rbrack token'>]</span><span class='lbrack token'>[</span><span class='string val'>&quot;total_capacity&quot;</span><span class='rbrack token'>]</span> <span class='assign token'>=</span> <span class='rubyid_human_size_to_number identifier id'>human_size_to_number</span><span class='lparen token'>(</span><span class='rubyid_disk identifier id'>disk</span><span class='lbrack token'>[</span><span class='integer val'>7</span><span class='rbrack token'>]</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='rubyid_to_s identifier id'>to_s</span>
+        <span class='rubyid_@fs ivar id'>@fs</span><span class='lbrack token'>[</span><span class='rubyid_rmg identifier id'>rmg</span><span class='rbrack token'>]</span><span class='lbrack token'>[</span><span class='rubyid_node identifier id'>node</span><span class='rbrack token'>]</span><span class='lbrack token'>[</span><span class='rubyid_disk identifier id'>disk</span><span class='lbrack token'>[</span><span class='integer val'>0</span><span class='rbrack token'>]</span><span class='rbrack token'>]</span><span class='lbrack token'>[</span><span class='string val'>&quot;make&quot;</span><span class='rbrack token'>]</span> <span class='assign token'>=</span> <span class='rubyid_disk identifier id'>disk</span><span class='lbrack token'>[</span><span class='integer val'>8</span><span class='rbrack token'>]</span>
+        <span class='rubyid_@fs ivar id'>@fs</span><span class='lbrack token'>[</span><span class='rubyid_rmg identifier id'>rmg</span><span class='rbrack token'>]</span><span class='lbrack token'>[</span><span class='rubyid_node identifier id'>node</span><span class='rbrack token'>]</span><span class='lbrack token'>[</span><span class='rubyid_disk identifier id'>disk</span><span class='lbrack token'>[</span><span class='integer val'>0</span><span class='rbrack token'>]</span><span class='rbrack token'>]</span><span class='lbrack token'>[</span><span class='string val'>&quot;model&quot;</span><span class='rbrack token'>]</span> <span class='assign token'>=</span> <span class='rubyid_disk identifier id'>disk</span><span class='lbrack token'>[</span><span class='integer val'>9</span><span class='rbrack token'>]</span>
+        <span class='rubyid_@fs ivar id'>@fs</span><span class='lbrack token'>[</span><span class='rubyid_rmg identifier id'>rmg</span><span class='rbrack token'>]</span><span class='lbrack token'>[</span><span class='rubyid_node identifier id'>node</span><span class='rbrack token'>]</span><span class='lbrack token'>[</span><span class='rubyid_disk identifier id'>disk</span><span class='lbrack token'>[</span><span class='integer val'>0</span><span class='rbrack token'>]</span><span class='rbrack token'>]</span><span class='lbrack token'>[</span><span class='string val'>&quot;serial_number&quot;</span><span class='rbrack token'>]</span> <span class='assign token'>=</span> <span class='rubyid_disk identifier id'>disk</span><span class='lbrack token'>[</span><span class='integer val'>10</span><span class='rbrack token'>]</span>
+        <span class='rubyid_@fs ivar id'>@fs</span><span class='lbrack token'>[</span><span class='rubyid_rmg identifier id'>rmg</span><span class='rbrack token'>]</span><span class='lbrack token'>[</span><span class='rubyid_node identifier id'>node</span><span class='rbrack token'>]</span><span class='lbrack token'>[</span><span class='rubyid_disk identifier id'>disk</span><span class='lbrack token'>[</span><span class='integer val'>0</span><span class='rbrack token'>]</span><span class='rbrack token'>]</span><span class='lbrack token'>[</span><span class='string val'>&quot;atmos_services&quot;</span><span class='rbrack token'>]</span> <span class='assign token'>=</span> <span class='rubyid_disk identifier id'>disk</span><span class='lbrack token'>[</span><span class='integer val'>18</span><span class='rbrack token'>]</span>
+        <span class='rubyid_@fs ivar id'>@fs</span><span class='lbrack token'>[</span><span class='rubyid_rmg identifier id'>rmg</span><span class='rbrack token'>]</span><span class='lbrack token'>[</span><span class='rubyid_node identifier id'>node</span><span class='rbrack token'>]</span><span class='lbrack token'>[</span><span class='rubyid_disk identifier id'>disk</span><span class='lbrack token'>[</span><span class='integer val'>0</span><span class='rbrack token'>]</span><span class='rbrack token'>]</span><span class='lbrack token'>[</span><span class='string val'>&quot;current_status&quot;</span><span class='rbrack token'>]</span> <span class='assign token'>=</span> <span class='rubyid_disk identifier id'>disk</span><span class='lbrack token'>[</span><span class='integer val'>19</span><span class='rbrack token'>]</span>
+      <span class='rubyid_end end kw'>end</span>
+    <span class='rubyid_end end kw'>end</span>
+  <span class='rubyid_end end kw'>end</span>
+
+  <span class='rubyid_respond_to identifier id'>respond_to</span> <span class='rubyid_do do kw'>do</span> <span class='bitor op'>|</span><span class='rubyid_format identifier id'>format</span><span class='bitor op'>|</span>
+    <span class='rubyid_format identifier id'>format</span><span class='dot token'>.</span><span class='rubyid_html identifier id'>html</span> <span class='lbrace token'>{</span> <span class='rubyid_render identifier id'>render</span> <span class='symbol val'>:physical_view</span> <span class='rbrace token'>}</span>
+  <span class='rubyid_end end kw'>end</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="set_platform-instance_method">
+  
+    - (<tt>Object</tt>) <strong>set_platform</strong>  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Set the current platform API</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+246
+247
+248</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/platform_controller.rb', line 246</span>
+
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_set_platform identifier id'>set_platform</span>
+  <span class='rubyid_@platform ivar id'>@platform</span> <span class='assign token'>=</span> <span class='rubyid_Platform constant id'>Platform</span><span class='dot token'>.</span><span class='rubyid_find identifier id'>find</span><span class='lparen token'>(</span><span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:platform_id</span><span class='rbrack token'>]</span><span class='rparen token'>)</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="show_subtenant_details-instance_method">
+  
+    - (<tt>Object</tt>) <strong>show_subtenant_details</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Show the subtenant reporting using the Atmos REST Management API</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+84
+85
+86
+87
+88
+89
+90
+91
+92</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/platform_controller.rb', line 84</span>
+
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_show_subtenant_details identifier id'>show_subtenant_details</span>
+  <span class='rubyid_path identifier id'>path</span> <span class='assign token'>=</span> <span class='dstring node'>&quot;/sysmgmt/tenants/#{@platform.tenant_name}/subtenants/#{params[:subtenant_name]}&quot;</span>
+  <span class='rubyid_@response ivar id'>@response</span><span class='comma token'>,</span> <span class='rubyid_temp identifier id'>temp</span> <span class='assign token'>=</span> <span class='rubyid_atmos_management_request identifier id'>atmos_management_request</span><span class='lparen token'>(</span><span class='string val'>&quot;Get&quot;</span><span class='comma token'>,</span> <span class='rubyid_Hash constant id'>Hash</span><span class='dot token'>.</span><span class='rubyid_new identifier id'>new</span><span class='comma token'>,</span>  <span class='rubyid_path identifier id'>path</span><span class='comma token'>,</span> <span class='rubyid_nil nil kw'>nil</span><span class='comma token'>,</span> <span class='string val'>&quot;tenantadmin&quot;</span><span class='rparen token'>)</span>
+  <span class='rubyid_path identifier id'>path</span> <span class='assign token'>=</span> <span class='dstring node'>&quot;/sysmgmt/tenants/#{@platform.tenant_name}/#{params[:subtenant_name]}/scMetrics&quot;</span>
+  <span class='rubyid_@response_metrics ivar id'>@response_metrics</span><span class='comma token'>,</span> <span class='rubyid_temp identifier id'>temp</span> <span class='assign token'>=</span> <span class='rubyid_atmos_management_request identifier id'>atmos_management_request</span><span class='lparen token'>(</span><span class='string val'>&quot;Get&quot;</span><span class='comma token'>,</span> <span class='rubyid_Hash constant id'>Hash</span><span class='dot token'>.</span><span class='rubyid_new identifier id'>new</span><span class='comma token'>,</span>  <span class='rubyid_path identifier id'>path</span><span class='comma token'>,</span> <span class='rubyid_nil nil kw'>nil</span><span class='comma token'>,</span> <span class='string val'>&quot;tenantadmin&quot;</span><span class='rparen token'>)</span>
+  <span class='rubyid_respond_to identifier id'>respond_to</span> <span class='rubyid_do do kw'>do</span> <span class='bitor op'>|</span><span class='rubyid_format identifier id'>format</span><span class='bitor op'>|</span>
+    <span class='rubyid_format identifier id'>format</span><span class='dot token'>.</span><span class='rubyid_html identifier id'>html</span> <span class='lbrace token'>{</span> <span class='rubyid_render identifier id'>render</span> <span class='symbol val'>:show_subtenant_details</span> <span class='rbrace token'>}</span>
+  <span class='rubyid_end end kw'>end</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="show_uid_metrics-instance_method">
+  
+    - (<tt>Object</tt>) <strong>show_uid_metrics</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Show the uid reporting using the Atmos REST Management API</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+95
+96
+97
+98
+99
+100
+101</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/platform_controller.rb', line 95</span>
+
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_show_uid_metrics identifier id'>show_uid_metrics</span>
+  <span class='rubyid_path identifier id'>path</span> <span class='assign token'>=</span> <span class='dstring node'>&quot;/sysmgmt/tenants/#{@platform.tenant_name}/#{params[:subtenant_name]}/#{params[:uid]}/scMetrics&quot;</span>
+  <span class='rubyid_@response ivar id'>@response</span><span class='comma token'>,</span> <span class='rubyid_temp identifier id'>temp</span> <span class='assign token'>=</span> <span class='rubyid_atmos_management_request identifier id'>atmos_management_request</span><span class='lparen token'>(</span><span class='string val'>&quot;Get&quot;</span><span class='comma token'>,</span> <span class='rubyid_Hash constant id'>Hash</span><span class='dot token'>.</span><span class='rubyid_new identifier id'>new</span><span class='comma token'>,</span>  <span class='rubyid_path identifier id'>path</span><span class='comma token'>,</span> <span class='rubyid_nil nil kw'>nil</span><span class='comma token'>,</span> <span class='string val'>&quot;tenantadmin&quot;</span><span class='rparen token'>)</span>
+  <span class='rubyid_respond_to identifier id'>respond_to</span> <span class='rubyid_do do kw'>do</span> <span class='bitor op'>|</span><span class='rubyid_format identifier id'>format</span><span class='bitor op'>|</span>
+    <span class='rubyid_format identifier id'>format</span><span class='dot token'>.</span><span class='rubyid_html identifier id'>html</span> <span class='lbrace token'>{</span> <span class='rubyid_render identifier id'>render</span> <span class='symbol val'>:show_uid_metrics</span> <span class='rbrace token'>}</span>
+  <span class='rubyid_end end kw'>end</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Sat Nov 22 22:39:25 2014 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.6 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

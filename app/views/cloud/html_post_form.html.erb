@@ -1,0 +1,49 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">Uploading from client</div>
+  <div class="panel-body">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Api</th>
+          <th>Url</th>
+          <th>Port</th>
+          <th>Token</th>
+          <th>Bucket</th>
+        </tr>
+      </thead>
+
+      <tbody>
+         <tr>
+          <td><%= @cloud.api %></td>
+          <td><%= @cloud.url %></td>
+          <td><%= @cloud.port %></td>
+          <td><%= @cloud.token %></td>
+          <td><%= @cloud.bucket %></td>
+        </tr>
+      </tbody>
+    </table>
+    <div>
+      <%
+        uri = URI.parse(@cloud.url)
+        begin
+          Resolv.getaddress @cloud.bucket + '.' + uri.host
+          url = uri.scheme + '://' + @cloud.bucket + '.' + uri.host + ":" + @cloud.port.to_s
+        rescue
+          url = uri.scheme + '://' + uri.host + ":" + @cloud.port.to_s + '/' + @cloud.bucket
+        end
+      %>
+      <form action="<%= url %>" method="post" enctype="multipart/form-data">
+      <input type="hidden" name="key" value="TEST">
+      <input type="hidden" name="AWSAccessKeyId" value="<%= @cloud.token %>">
+      <input type="hidden" name="success_action_redirect" value="http://www.google.fr/">
+      <input type="hidden" name="policy" value="<%= @policy %>">
+      <input type="hidden" name="Signature" value="<%= @signature %>">
+
+      File to upload to S3:
+      <input name="file" type="file">
+      <br>
+      <input type="submit" value="Upload File to S3">
+    </form>
+    </div>
+  </div>
+</div>

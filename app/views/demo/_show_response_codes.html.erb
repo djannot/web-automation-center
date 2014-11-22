@@ -1,0 +1,19 @@
+<td colspan="11">
+  <div class="panel panel-default">
+    <div class="panel-heading">Response codes</div>
+    <div class="panel-body">
+      <%= form_tag url_for(:controller => "demo", :action => 'execute_set_response_codes', :id => @task.id), :remote => true do %>
+        <div class="field">
+          <div class="input-group">
+            <span class="input-group-addon">Expected response codes</span>
+            <%= text_field_tag :response_codes, @task.response_codes, :placeholder => "CSV separated", :class => "form-control" %>
+          </div>
+        </div>
+        <br />
+        <div class="actions">
+          <%= submit_tag "Submit", :id => "submit_request", :class => "btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</td>

@@ -1,0 +1,404 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>
+  File: README
+  
+    &mdash; Documentation by YARD 0.8.7.6
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!file.README.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index</a> &raquo; 
+    <span class="title">File: README</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><div id='filecontents'>
+<h1 id="label-Web+Automation+Center">Web Automation Center</h1>
+
+<h2 id="label-OVERVIEW">OVERVIEW</h2>
+
+<p>Web Automation Center is a web application written using the ruby on rails
+framework and running in jruby.</p>
+
+<p>You just need to run the following commands to start the application:</p>
+<ul><li>
+<p>export RAILS_ENV=production</p>
+</li><li>
+<p>jruby -S bundle install</p>
+</li><li>
+<p>jruby -S rails s trinidad</p>
+</li></ul>
+
+<p>The following environment variables must be set to use Amazon S3 (or
+another Amazon S3 compliant storage platform) to backup/restore data and
+share data among users:</p>
+<ul><li>
+<p>S3_URL (ex: <a
+href="http://s3.amazonaws.com">ht<span>tp://</span>s3.amazonaws.com</a>)</p>
+</li><li>
+<p>S3_PORT (ex: 80)</p>
+</li><li>
+<p>S3_BUCKET</p>
+</li><li>
+<p>S3_ACCESS_KEY_ID</p>
+</li><li>
+<p>S3_SECRET_ACCESS_KEY</p>
+</li></ul>
+
+<p>The goal of this application is to allow people to:</p>
+<ul><li>
+<p>Learn how to use different REST APIs (Amazon S3, Atmos REST, ViPR
+Management API, …)</p>
+</li><li>
+<p>Run some demos to demonstrate the API capabilities</p>
+</li><li>
+<p>Automate the creation of resources, for example during a POC</p>
+</li><li>
+<p>Show how object storage can solve many problems (large files upload with
+Amazon S3 multipart upload for example, …)</p>
+</li><li>
+<p>Share demos with other people</p>
+</li><li>
+<p>Troubleshoot API issues (for example, comparing the response using a true
+Amazon account and a S3 compliant platform)</p>
+</li></ul>
+
+<h2 id="label-DOCKER+CONTAINER">DOCKER CONTAINER</h2>
+
+<p>The Dockerfile can be used to create a Docker container for this web
+application.</p>
+
+<p>A Docker container is also available in the Docker Hub
+(djannot/web-automation-center)</p>
+
+<p>To run the container, you need to execute the following command:</p>
+<ul><li>
+<p>docker run -d -p 3000:3000 djannot/web-automation-center</p>
+</li></ul>
+
+<p>You can also use -e S3_URL=xxx -e S3_PORT=80 … to specify the environment
+variables to use Amazon S3 (or another Amazon S3 compliant storage
+platform) to backup/restore data and share data among users.</p>
+
+<h2 id="label-GETTING+STARTED">GETTING STARTED</h2>
+
+<p><strong>Login</strong></p>
+
+<p>The first time you connect to the URL of the web application, you need to
+sign up:</p>
+
+<p><img
+src="https://github.com/djannot/web-automation-center/images/signup.png"></p>
+
+<p>Then, you can directly login using the same email address:</p>
+
+<p><img
+src="https://github.com/djannot/web-automation-center/images/login.png"></p>
+
+<p><strong>Adding a Cloud API</strong></p>
+
+<p>Web Automation Center currently supports the following Cloud APIs:</p>
+<ul><li>
+<p>Amazon S3 API</p>
+</li><li>
+<p>Atmos REST API</p>
+</li><li>
+<p>Openstack Swift API</p>
+</li></ul>
+
+<p>Click on <em>Cloud APIs – Add</em></p>
+
+<p><img
+src="https://github.com/djannot/web-automation-center/images/cloudapisadd.png"></p>
+
+<p>If the <em>Url</em> contains a FQDN, you must ensure that this FQDN can be
+resolved, which is generally a challenge (especially when using the online
+version of the web application), so I encourage you to specify an IP
+address instead.</p>
+
+<p>The <em>IP addresses</em> field can be used to balance the load across
+different IP addresses (it’s useful for the benchmark feature, not really
+for the other ones).</p>
+
+<p><em>Bucket</em> can be used if you want each request to be sent to this
+bucket.</p>
+
+<p><strong>Adding a Management API</strong></p>
+
+<p>Web Automation Center currently supports the following Management APIs:</p>
+<ul><li>
+<p>Atmos REST Management API</p>
+</li><li>
+<p>Avamar REST API</p>
+</li><li>
+<p>ViPR Management API</p>
+</li><li>
+<p>vCloud Director API</p>
+</li></ul>
+
+<p>Click on <em>Platform Management – Add</em></p>
+
+<p><img
+src="https://github.com/djannot/web-automation-center/images/managementapisadd.png"></p>
+
+<h2 id="label-FEATURES">FEATURES</h2>
+
+<p><strong>Requests</strong></p>
+
+<p>This is the main feature of the web application. It allows you to run REST
+requests without having to struggle with the authentication complexity.</p>
+
+<p>When using the ViPR Management API, the authentication is pretty simple.
+You send a request to a special URL which returns a token that you can then
+use to send any other request.</p>
+
+<p>But, when using the Amazon S3 API or the Atmos REST API, each request must
+be signed using a complex mechanism.</p>
+
+<p>So, the goal of this web application is to do the authentication behind the
+scene.</p>
+<ul><li>
+<p>Manual Requests</p>
+</li></ul>
+
+<p>Click on <em>Requests – Manual request</em></p>
+
+<p><img
+src="https://github.com/djannot/web-automation-center/images/manualrequest.png"></p>
+
+<p>Headers can be added in a ruby hash format <em>=&gt; ‘value’</em>
+(one per line)</p>
+
+<p>If you specify a keyword between two <em>XXX</em>, a new field will be
+automatically created at the top of the page:</p>
+
+<p><img
+src="https://github.com/djannot/web-automation-center/images/texttoreplace.png"></p>
+
+<p>When you click on <em>Execute Request</em>, then the REST call is executed
+and a detailed response is displayed</p>
+
+<p><img
+src="https://github.com/djannot/web-automation-center/images/response.png"></p>
+
+<p>To be able to run this request again later, click on <em>Add to
+favorites</em></p>
+
+<p>You can now click on <em>Manage favorites</em> to see all your favorites
+classified by APIs:</p>
+
+<p><img
+src="https://github.com/djannot/web-automation-center/images/favorite.png"></p>
+
+<p>You can click modify, select, execute or delete a favorite.</p>
+
+<p>I’ll cover the other features later.</p>
+<ul><li>
+<p>Bulk Requests</p>
+</li></ul>
+
+<p>Click on <em>Requests – Bulk requests</em></p>
+
+<p><img
+src="https://github.com/djannot/web-automation-center/images/bulkrequests.png"></p>
+
+<p>In this example, I’ve selected a file containing the following text and
+I’ve used the <em>XXXCHANGEMEXXX</em> to tell the web application to
+execute the request for each line replacing <em>XXXCHANGEMEXXX</em> by the
+value of each line and I’ve indicated the number of threads to execute in
+parallel.</p>
+
+<p>You can also select the <em>Detailed results</em> checkbox to see the
+complete response of each request.</p>
+
+<p><strong>Demo</strong></p>
+
+<p>Web Automation Center allows you to create demos using your different
+favorites.</p>
+
+<p>Click on <em>Demos – Add</em></p>
+
+<p><img
+src="https://github.com/djannot/web-automation-center/images/demo.png"></p>
+
+<p>You can then click on Manage favorites to add tasks to this demo.</p>
+
+<p>When you found the favorite you want to use, click on <em>Add to a
+demo</em> and select the demo you want to use.</p>
+
+<p><img
+src="https://github.com/djannot/web-automation-center/images/tasks.png"></p>
+
+<p>As you can see above, the <em>Type</em> and <em>API</em> field are not set
+correctly, so you need to click on <em>Actions – Update API</em></p>
+
+<p><img
+src="https://github.com/djannot/web-automation-center/images/updateapi.png"></p>
+
+<p>Select the API you want to use and select the <em>Apply the modification to
+all the tasks ?</em> checkbox if you want to update all the tasks of this
+demo.</p>
+
+<p>Click on the <em>Run</em> button.</p>
+
+<p>You can click on <em>Actions – Add response codes</em> to set what response
+code you expect</p>
+
+<p><img
+src="https://github.com/djannot/web-automation-center/images/responsecode.png"></p>
+
+<p>Now the response code will become green if the expected response code is
+returned.</p>
+
+<p>Click on <em>Actions – Show request</em> to see the full response</p>
+
+<p>Let’s add a second task to add a metadata to the existing object:</p>
+
+<p><img src="Image"> of Second task(<a
+href="https://github.com/djannot/web-automation-center/images/second">github.com/djannot/web-automation-center/images/second</a>
+task.png)</p>
+
+<p><img
+src="https://github.com/djannot/web-automation-center/images/secondtaskresult.png"></p>
+
+<p>This works well, but what if you want to retrieve a value from the first
+task. You can simply click on <em>Actions – Add a regular expression</em></p>
+
+<p><img
+src="https://github.com/djannot/web-automation-center/images/regexp.png"></p>
+
+<p>As you can see below, the <em>Metadata Value</em> field is no more
+required:</p>
+
+<p><img
+src="https://github.com/djannot/web-automation-center/images/taskswithregexp.png"></p>
+
+<p>And when you execute all the tasks, the value returned by the first task is
+used by the second task.</p>
+
+<p><strong>Backup &amp; Sharing</strong></p>
+<ul><li>
+<p>Backup &amp; Restore</p>
+</li></ul>
+
+<p>Click on <em>Backup &amp; Restore</em></p>
+
+<p><img
+src="https://github.com/djannot/web-automation-center/images/backup.png"></p>
+
+<p>You can backup the data you want either in a local file or in the cloud (in
+my Amazon account, in fact). This will be encrypted with the encryption
+password you choose (this is not the password you use to log into the web
+application) to ensure the password you indicate in the Cloud or Management
+APIs won’t be compromised.</p>
+
+<p><img
+src="https://github.com/djannot/web-automation-center/images/restore.png"></p>
+
+<p>You can later upload the file containing your backups to restore it and
+again you need to enter the decryption password. If the backup you want to
+use contains all your data, you should probably click on the <em>Delete all
+my data</em> button first to avoid any duplicate entry.</p>
+
+<p>The decryption password is not necessary if you recover a single favorite
+or demo.</p>
+
+<p>You can also Click on the <em>Backup</em> button at the favorite or demo
+level to backup them to a file.</p>
+
+<p>Finally, if you backed up your data to the cloud, you can click on <em>List
+cloud data</em>:</p>
+
+<p><img
+src="https://github.com/djannot/web-automation-center/images/clouddata.png"></p>
+<ul><li>
+<p>Sharing</p>
+</li></ul>
+
+<p>This feature allows you to share your favorites and/or demo with other
+users.</p>
+
+<p>Anyone will be able to access them, but nobody else will be able to delete
+them.</p>
+
+<p>You can click on <em>List cloud data</em> to browse the shared data and
+manage the data you shared:</p>
+
+<p><img
+src="https://github.com/djannot/web-automation-center/images/sharing.png"></p>
+
+<p>Simply click on <em>Import</em> to import one of them and don’t forget to
+update the API after importing a demo.</p>
+
+<p>The shared favorites and demo aren’t encrypted in Amazon, so they shouldn’t
+contain any critical information.</p>
+
+<h2 id="label-ADVANCED+FEATURES">ADVANCED FEATURES</h2>
+
+<p>Web Automation Center also provides other features like:</p>
+<ul><li>
+<p>Amazon S3 Multipart upload demo</p>
+</li><li>
+<p>Client-side upload using multipart upload (Amazon S3 API)</p>
+</li><li>
+<p>Atmos logical and physical reporting</p>
+</li></ul>
+</div></div>
+
+    <div id="footer">
+  Generated on Sat Nov 22 22:39:14 2014 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.6 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">Create you own request</div>
+  <div class="panel-body">
+    <% if @platform %>
+      <%= render :partial => "/platform/show_platform" %>
+      <% @object = @platform %>
+    <% elsif @cloud %>
+      <%= render :partial => "/cloud/show_cloud" %>
+      <% @object = @cloud %>
+    <% end %>
+    <% @object_id = @object ? @object.id : "0" %>
+    <%= form_tag url_for(:action => 'execute_manual_request', :id => @object_id), :remote => true do %>
+      <div id="to_replace" style="display:none">
+        <h2>Text to replace</h2>
+      </div>
+      <h2>Request</h2>
+      <%= render :partial => "shared/form_request" %>
+      <div class="actions">
+        <%= submit_tag "Execute request", :id => "submit_request", :class => "btn btn-primary", :onclick => "$('#changediv').html('');" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+<div id="changediv"></div>
+<% if @platform %>
+  <%= link_to "Back", @platform, :class => "btn btn-default" %>
+<% elsif @cloud %>
+  <%= link_to "Back", @cloud, :class => "btn btn-default" %>
+<% else %>
+  <%= link_to "Back", "/", :class => "btn btn-default" %>
+<% end %>
+<%= render :partial => "shared/favorites" %>
+<%= render :partial => "shared/to_replace" %>
+<script type="text/javascript">
+  $('#alert-info').html("Keywords can be specified with the format XXXKeywordXXX");
+  $('#alert-info').show();
+</script>

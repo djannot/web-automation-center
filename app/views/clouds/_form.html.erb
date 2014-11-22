@@ -1,0 +1,58 @@
+<%= form_for(@cloud) do |f| %>
+  <% if @cloud.errors.any? %>
+    <div id="error_explanation" class="alert alert-danger">
+      <h2><%= pluralize(@cloud.errors.count, "error") %> prohibited this cloud from being saved:</h2>
+      <ul>
+      <% @cloud.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="input-group">
+    <span class="input-group-addon">Api</span>
+    <%= f.select :api, ["Atmos","Amazon","Swift"], {}, {:class => "form-control"} %>
+  </div>
+  <br />
+  <div class="input-group">
+    <span class="input-group-addon">Url</span>
+    <%= f.text_field :url, :class => "form-control" %>
+  </div>
+  <br />
+  <div class="input-group">
+    <span class="input-group-addon">IP addresses</span>
+    <%= f.text_field :ip_addresses, :placeholder => "Optionnal, to perform load balancing (format: ['192.168.0.1', '192.168.0.2'])", :class => "form-control" %>
+  </div>
+  <br />
+  <div class="input-group">
+    <span class="input-group-addon">Port</span>
+    <%= f.text_field :port, :class => "form-control" %>
+  </div>
+  <br />
+  <div class="input-group">
+    <span class="input-group-addon">Token</span>
+    <%= f.text_field :token, :class => "form-control" %>
+  </div>
+  <br />
+  <div class="input-group">
+    <span class="input-group-addon">Shared secret</span>
+    <%= f.text_field :shared_secret, :class => "form-control" %>
+  </div>
+  <br />
+  <div class="input-group">
+    <span class="input-group-addon">Bucket</span>
+    <%= f.text_field :bucket, :placeholder => "For Amazon and Swift", :class => "form-control" %>
+  </div>
+  <br />
+  <div class="input-group">
+    <span class="input-group-addon">Platform (optional)</span>
+    <%= f.select :platform_id, Platform.where("platform_type like 'ViPR' or platform_type like 'Atmos'").to_a.collect {|p| [ p.ip, p.id ] }, { include_blank: true }, {:class => "form-control"} %>
+  </div>
+  <br />
+  <div class="actions">
+    <%= f.submit nil, :class => "btn btn-primary" %>
+  </div>
+<% end %>
+<br />
+<%= link_to "Cancel", "/clouds", :class => "btn btn-default" %>

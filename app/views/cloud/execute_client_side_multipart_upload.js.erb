@@ -1,0 +1,20 @@
+<% if @exception %>
+	$('#alert-danger').html("<%= @exception %>");
+	$('#alert-danger').show();
+<% else %>
+	$("#upload_frame").attr('src',"<%= raw @shareable_url %>");
+	$("#upload_frame").load(function() {
+		var files = $("#file")[0].files;
+		var reader = new FileReader();
+		reader.onload = function(event){
+		  var content = event.target.result;
+		  try {
+		  	$("#upload_frame")[0].contentWindow.postMessage(content, "<%= raw @shareable_url %>");
+		  }
+		  catch (e) {
+	      alert(e);
+	    }
+		}
+		reader.readAsArrayBuffer(files[0]);
+	});
+<% end %>

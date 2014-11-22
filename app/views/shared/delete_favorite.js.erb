@@ -1,0 +1,5 @@
+<% if @deleted %>
+	$("#favorite_<%= @favorite.id %>").fadeOut();
+<% else %>
+	$("#delete_<%= @favorite.id %>_danger").html("This favorite can't be deleted because it's still used by a demo").show().delay(10000).fadeOut();
+<% end %>

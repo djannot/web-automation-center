@@ -1,0 +1,689 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: DemosController
+  
+    &mdash; Documentation by YARD 0.8.7.6
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!DemosController.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (D)</a> &raquo;
+    
+    
+    <span class="title">DemosController</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: DemosController
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName"><span class='object_link'><a href="ApplicationController.html" title="ApplicationController (class)">ApplicationController</a></span></span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">ActionController::Base</li>
+          
+            <li class="next"><span class='object_link'><a href="ApplicationController.html" title="ApplicationController (class)">ApplicationController</a></span></li>
+          
+            <li class="next">DemosController</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+      <dt class="r2">Includes:</dt>
+      <dd class="r2"><span class='object_link'><a href="Favorites.html" title="Favorites (module)">Favorites</a></span></dd>
+      
+    
+  
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">app/controllers/demos_controller.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#create-instance_method" title="#create (instance method)">- (Object) <strong>create</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Create a new demo.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#demo_params-instance_method" title="#demo_params (instance method)">- (Object) <strong>demo_params</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Never trust parameters from the scary internet, only allow the white list
+through.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#destroy-instance_method" title="#destroy (instance method)">- (Object) <strong>destroy</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Delete a demo.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#index-instance_method" title="#index (instance method)">- (Object) <strong>index</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Show the demos.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#new-instance_method" title="#new (instance method)">- (Object) <strong>new</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Show the form to create a new demo.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#set_demo-instance_method" title="#set_demo (instance method)">- (Object) <strong>set_demo</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Set the current demo.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#update-instance_method" title="#update (instance method)">- (Object) <strong>update</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Update a demo.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="Favorites.html" title="Favorites (module)">Favorites</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Favorites.html#add_favorite-instance_method" title="Favorites#add_favorite (method)">#add_favorite</a></span>, <span class='object_link'><a href="Favorites.html#delete_favorite-instance_method" title="Favorites#delete_favorite (method)">#delete_favorite</a></span>, <span class='object_link'><a href="Favorites.html#execute_favorite-instance_method" title="Favorites#execute_favorite (method)">#execute_favorite</a></span>, <span class='object_link'><a href="Favorites.html#retrieve_favorites-instance_method" title="Favorites#retrieve_favorites (method)">#retrieve_favorites</a></span>, <span class='object_link'><a href="Favorites.html#select_favorite-instance_method" title="Favorites#select_favorite (method)">#select_favorite</a></span>, <span class='object_link'><a href="Favorites.html#update_favorite-instance_method" title="Favorites#update_favorite (method)">#update_favorite</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods inherited from <span class='object_link'><a href="ApplicationController.html" title="ApplicationController (class)">ApplicationController</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="ApplicationController.html#amazon_request-instance_method" title="ApplicationController#amazon_request (method)">#amazon_request</a></span>, <span class='object_link'><a href="ApplicationController.html#atmos_management_request-instance_method" title="ApplicationController#atmos_management_request (method)">#atmos_management_request</a></span>, <span class='object_link'><a href="ApplicationController.html#atmos_request-instance_method" title="ApplicationController#atmos_request (method)">#atmos_request</a></span>, <span class='object_link'><a href="ApplicationController.html#avamar_request-instance_method" title="ApplicationController#avamar_request (method)">#avamar_request</a></span>, <span class='object_link'><a href="ApplicationController.html#current_user-instance_method" title="ApplicationController#current_user (method)">#current_user</a></span>, <span class='object_link'><a href="ApplicationController.html#get_ip_addresses-instance_method" title="ApplicationController#get_ip_addresses (method)">#get_ip_addresses</a></span>, <span class='object_link'><a href="ApplicationController.html#http_request-instance_method" title="ApplicationController#http_request (method)">#http_request</a></span>, <span class='object_link'><a href="ApplicationController.html#human_size_to_number-instance_method" title="ApplicationController#human_size_to_number (method)">#human_size_to_number</a></span>, <span class='object_link'><a href="ApplicationController.html#require_login-instance_method" title="ApplicationController#require_login (method)">#require_login</a></span>, <span class='object_link'><a href="ApplicationController.html#set_cloud-instance_method" title="ApplicationController#set_cloud (method)">#set_cloud</a></span>, <span class='object_link'><a href="ApplicationController.html#set_variables-instance_method" title="ApplicationController#set_variables (method)">#set_variables</a></span>, <span class='object_link'><a href="ApplicationController.html#sign_amazon_request-instance_method" title="ApplicationController#sign_amazon_request (method)">#sign_amazon_request</a></span>, <span class='object_link'><a href="ApplicationController.html#sign_atmos_request-instance_method" title="ApplicationController#sign_atmos_request (method)">#sign_atmos_request</a></span>, <span class='object_link'><a href="ApplicationController.html#swift_request-instance_method" title="ApplicationController#swift_request (method)">#swift_request</a></span>, <span class='object_link'><a href="ApplicationController.html#vcloud_request-instance_method" title="ApplicationController#vcloud_request (method)">#vcloud_request</a></span>, <span class='object_link'><a href="ApplicationController.html#vipr_request-instance_method" title="ApplicationController#vipr_request (method)">#vipr_request</a></span></p>
+
+  
+  
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="create-instance_method">
+  
+    - (<tt>Object</tt>) <strong>create</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Create a new demo</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/demos_controller.rb', line 21</span>
+
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_create identifier id'>create</span>
+  <span class='rubyid_@demo ivar id'>@demo</span> <span class='assign token'>=</span> <span class='rubyid_Demo constant id'>Demo</span><span class='dot token'>.</span><span class='rubyid_new identifier id'>new</span><span class='lparen token'>(</span><span class='rubyid_demo_params identifier id'>demo_params</span><span class='rparen token'>)</span>
+  <span class='rubyid_current_user identifier id'>current_user</span>
+  <span class='rubyid_@demo ivar id'>@demo</span><span class='dot token'>.</span><span class='rubyid_user_id identifier id'>user_id</span> <span class='assign token'>=</span> <span class='rubyid_@current_user ivar id'>@current_user</span><span class='dot token'>.</span><span class='rubyid_id identifier id'>id</span>
+
+  <span class='rubyid_respond_to identifier id'>respond_to</span> <span class='rubyid_do do kw'>do</span> <span class='bitor op'>|</span><span class='rubyid_format identifier id'>format</span><span class='bitor op'>|</span>
+    <span class='rubyid_if if kw'>if</span> <span class='rubyid_@demo ivar id'>@demo</span><span class='dot token'>.</span><span class='rubyid_save identifier id'>save</span>
+      <span class='rubyid_format identifier id'>format</span><span class='dot token'>.</span><span class='rubyid_html identifier id'>html</span> <span class='lbrace token'>{</span> <span class='rubyid_redirect_to identifier id'>redirect_to</span> <span class='rubyid_@demo ivar id'>@demo</span><span class='comma token'>,</span> <span class='label val'>notice:</span> <span class='string val'>'Demo was successfully created.'</span> <span class='rbrace token'>}</span>
+      <span class='rubyid_format identifier id'>format</span><span class='dot token'>.</span><span class='rubyid_json identifier id'>json</span> <span class='lbrace token'>{</span> <span class='rubyid_render identifier id'>render</span> <span class='label val'>action:</span> <span class='string val'>'show'</span><span class='comma token'>,</span> <span class='label val'>status:</span> <span class='symbol val'>:created</span><span class='comma token'>,</span> <span class='label val'>location:</span> <span class='rubyid_@demo ivar id'>@demo</span> <span class='rbrace token'>}</span>
+    <span class='rubyid_else else kw'>else</span>
+      <span class='rubyid_format identifier id'>format</span><span class='dot token'>.</span><span class='rubyid_html identifier id'>html</span> <span class='lbrace token'>{</span> <span class='rubyid_render identifier id'>render</span> <span class='label val'>action:</span> <span class='string val'>'new'</span> <span class='rbrace token'>}</span>
+      <span class='rubyid_format identifier id'>format</span><span class='dot token'>.</span><span class='rubyid_json identifier id'>json</span> <span class='lbrace token'>{</span> <span class='rubyid_render identifier id'>render</span> <span class='label val'>json:</span> <span class='rubyid_@demo ivar id'>@demo</span><span class='dot token'>.</span><span class='rubyid_errors identifier id'>errors</span><span class='comma token'>,</span> <span class='label val'>status:</span> <span class='symbol val'>:unprocessable_entity</span> <span class='rbrace token'>}</span>
+    <span class='rubyid_end end kw'>end</span>
+  <span class='rubyid_end end kw'>end</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="demo_params-instance_method">
+  
+    - (<tt>Object</tt>) <strong>demo_params</strong>  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Never trust parameters from the scary internet, only allow the white list
+through.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+66
+67
+68</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/demos_controller.rb', line 66</span>
+
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_demo_params identifier id'>demo_params</span>
+  <span class='rubyid_params identifier id'>params</span><span class='dot token'>.</span><span class='rubyid_require identifier id'>require</span><span class='lparen token'>(</span><span class='symbol val'>:demo</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='rubyid_permit identifier id'>permit</span><span class='lparen token'>(</span><span class='symbol val'>:name</span><span class='comma token'>,</span> <span class='symbol val'>:description</span><span class='rparen token'>)</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="destroy-instance_method">
+  
+    - (<tt>Object</tt>) <strong>destroy</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Delete a demo</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+51
+52
+53
+54
+55
+56
+57</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/demos_controller.rb', line 51</span>
+
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_destroy identifier id'>destroy</span>
+  <span class='rubyid_@demo ivar id'>@demo</span><span class='dot token'>.</span><span class='rubyid_destroy identifier id'>destroy</span>
+  <span class='rubyid_respond_to identifier id'>respond_to</span> <span class='rubyid_do do kw'>do</span> <span class='bitor op'>|</span><span class='rubyid_format identifier id'>format</span><span class='bitor op'>|</span>
+    <span class='rubyid_format identifier id'>format</span><span class='dot token'>.</span><span class='rubyid_html identifier id'>html</span> <span class='lbrace token'>{</span> <span class='rubyid_redirect_to identifier id'>redirect_to</span> <span class='rubyid_demos_url identifier id'>demos_url</span> <span class='rbrace token'>}</span>
+    <span class='rubyid_format identifier id'>format</span><span class='dot token'>.</span><span class='rubyid_json identifier id'>json</span> <span class='lbrace token'>{</span> <span class='rubyid_head identifier id'>head</span> <span class='symbol val'>:no_content</span> <span class='rbrace token'>}</span>
+  <span class='rubyid_end end kw'>end</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="index-instance_method">
+  
+    - (<tt>Object</tt>) <strong>index</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Show the demos</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+7
+8
+9
+10
+11
+12
+13</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/demos_controller.rb', line 7</span>
+
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_index identifier id'>index</span>
+  <span class='rubyid_if if kw'>if</span> <span class='rubyid_current_user identifier id'>current_user</span>
+    <span class='rubyid_if if kw'>if</span> <span class='rubyid_Demo constant id'>Demo</span><span class='dot token'>.</span><span class='rubyid_exists? fid id'>exists?</span><span class='lparen token'>(</span><span class='label val'>user_id:</span> <span class='rubyid_@current_user ivar id'>@current_user</span><span class='dot token'>.</span><span class='rubyid_id identifier id'>id</span><span class='rparen token'>)</span>
+      <span class='rubyid_@demos ivar id'>@demos</span> <span class='assign token'>=</span> <span class='rubyid_@current_user ivar id'>@current_user</span><span class='dot token'>.</span><span class='rubyid_demos identifier id'>demos</span><span class='dot token'>.</span><span class='rubyid_all identifier id'>all</span>
+    <span class='rubyid_end end kw'>end</span>
+  <span class='rubyid_end end kw'>end</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="new-instance_method">
+  
+    - (<tt>Object</tt>) <strong>new</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Show the form to create a new demo</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+16
+17
+18</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/demos_controller.rb', line 16</span>
+
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_new identifier id'>new</span>
+  <span class='rubyid_@demo ivar id'>@demo</span> <span class='assign token'>=</span> <span class='rubyid_Demo constant id'>Demo</span><span class='dot token'>.</span><span class='rubyid_new identifier id'>new</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="set_demo-instance_method">
+  
+    - (<tt>Object</tt>) <strong>set_demo</strong>  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Set the current demo</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+61
+62
+63</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/demos_controller.rb', line 61</span>
+
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_set_demo identifier id'>set_demo</span>
+  <span class='rubyid_@demo ivar id'>@demo</span> <span class='assign token'>=</span> <span class='rubyid_Demo constant id'>Demo</span><span class='dot token'>.</span><span class='rubyid_find identifier id'>find</span><span class='lparen token'>(</span><span class='rubyid_params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:id</span><span class='rbrack token'>]</span><span class='rparen token'>)</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="update-instance_method">
+  
+    - (<tt>Object</tt>) <strong>update</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Update a demo</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/demos_controller.rb', line 38</span>
+
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_update identifier id'>update</span>
+  <span class='rubyid_respond_to identifier id'>respond_to</span> <span class='rubyid_do do kw'>do</span> <span class='bitor op'>|</span><span class='rubyid_format identifier id'>format</span><span class='bitor op'>|</span>
+    <span class='rubyid_if if kw'>if</span> <span class='rubyid_@demo ivar id'>@demo</span><span class='dot token'>.</span><span class='rubyid_update identifier id'>update</span><span class='lparen token'>(</span><span class='rubyid_demo_params identifier id'>demo_params</span><span class='rparen token'>)</span>
+      <span class='rubyid_format identifier id'>format</span><span class='dot token'>.</span><span class='rubyid_html identifier id'>html</span> <span class='lbrace token'>{</span> <span class='rubyid_redirect_to identifier id'>redirect_to</span> <span class='rubyid_@demo ivar id'>@demo</span><span class='comma token'>,</span> <span class='label val'>notice:</span> <span class='string val'>'Demo was successfully updated.'</span> <span class='rbrace token'>}</span>
+      <span class='rubyid_format identifier id'>format</span><span class='dot token'>.</span><span class='rubyid_json identifier id'>json</span> <span class='lbrace token'>{</span> <span class='rubyid_head identifier id'>head</span> <span class='symbol val'>:no_content</span> <span class='rbrace token'>}</span>
+    <span class='rubyid_else else kw'>else</span>
+      <span class='rubyid_format identifier id'>format</span><span class='dot token'>.</span><span class='rubyid_html identifier id'>html</span> <span class='lbrace token'>{</span> <span class='rubyid_render identifier id'>render</span> <span class='label val'>action:</span> <span class='string val'>'edit'</span> <span class='rbrace token'>}</span>
+      <span class='rubyid_format identifier id'>format</span><span class='dot token'>.</span><span class='rubyid_json identifier id'>json</span> <span class='lbrace token'>{</span> <span class='rubyid_render identifier id'>render</span> <span class='label val'>json:</span> <span class='rubyid_@demo ivar id'>@demo</span><span class='dot token'>.</span><span class='rubyid_errors identifier id'>errors</span><span class='comma token'>,</span> <span class='label val'>status:</span> <span class='symbol val'>:unprocessable_entity</span> <span class='rbrace token'>}</span>
+    <span class='rubyid_end end kw'>end</span>
+  <span class='rubyid_end end kw'>end</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Sat Nov 22 22:39:23 2014 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.6 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

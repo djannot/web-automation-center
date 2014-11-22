@@ -1,0 +1,83 @@
+<% details = Hash.from_xml(@response.body) %>
+<div class="panel panel-primary">
+  <div class="panel-heading">Subtenant details</div>
+  <div class="panel-body">
+		<table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Id</th>
+          <th>Default policy</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td><%= details["subtenant"]["name"] %></td>
+          <td><%= details["subtenant"]["id"] %></td>
+          <td><%= details["subtenant"]["defaultPolicySpec"] %></td>
+	      </tr>
+      </tbody>
+    </table>
+	</div>
+</div>
+<% details_metrics = Hash.from_xml(@response_metrics.body) %>
+<div class="panel panel-primary">
+  <div class="panel-heading">Subtenant metrics</div>
+  <div class="panel-body">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Objects</th>
+          <th>Size</th>
+          <th>Real size</th>
+          <th>Metadata size</th>
+          <th>Total size</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td><%= details_metrics["scMetrics"]["objCount"] %></td>
+          <td><%= number_to_human_size(details_metrics["scMetrics"]["size"]) %></td>
+          <td><%= number_to_human_size(details_metrics["scMetrics"]["realsize"]) %></td>
+          <td><%= number_to_human_size(details_metrics["scMetrics"]["metadatasize"]) %></td>
+          <td><%= number_to_human_size(details_metrics["scMetrics"]["totalSize"]) %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="panel panel-primary">
+  <div class="panel-heading">Uid list</div>
+  <div class="panel-body">
+    <table class="table sortable">
+      <thead>
+        <tr>
+          <th data-defaultsort="asc">Uid</th>
+          <th>Shared secret</th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% if details["subtenant"]["uidSecretList"]["uidSecret"].instance_of? Array %>
+          <% details["subtenant"]["uidSecretList"]["uidSecret"].each do |elem| %>
+             <tr>
+              <td><%= elem["uid"] %></td>
+              <td><%= elem["sharedSecret"] %></td>
+              <td><%= link_to "Show uid metrics", "/platform/show_uid_metrics/#{@platform.id.to_s}/#{details["subtenant"]["name"]}/#{elem["uid"]}", :class => "btn btn-primary" %></td>
+            </tr>
+          <% end %>
+        <% elsif details["subtenant"]["uidSecretList"]["uidSecret"].instance_of? Hash %>
+          <tr>
+            <td><%= details["subtenant"]["uidSecretList"]["uidSecret"]["uid"] %></td>
+            <td><%= details["subtenant"]["uidSecretList"]["uidSecret"]["sharedSecret"] %></td>
+            <td><%= link_to "Show uid metrics", "/platform/show_uid_metrics/#{@platform.id.to_s}/#{details["subtenant"]["name"]}/#{details["subtenant"]["uidSecretList"]["uidSecret"]["uid"]}", :class => "btn btn-primary" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+<%= link_to "Back", "/platform/logical_view/#{@platform.id.to_s}", :class => "btn btn-default" %>

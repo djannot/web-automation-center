@@ -1,0 +1,54 @@
+<%= form_for(@platform) do |f| %>
+  <% if @platform.errors.any? %>
+    <div id="error_explanation" class="alert alert-danger">
+      <h2><%= pluralize(@platform.errors.count, "error") %> prohibited this platform from being saved:</h2>
+
+      <ul>
+      <% @platform.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="input-group">
+    <span class="input-group-addon">Platform type</span>
+    <%= f.select :platform_type, ["Atmos", "Avamar", "ViPR", "vCloud Director"], {}, {:class => "form-control"} %>
+  </div>
+  <br />
+  <div class="input-group">
+    <span class="input-group-addon">Ip</span>
+    <%= f.text_field :ip, :class => "form-control" %>
+  </div>
+  <br />
+  <div class="input-group">
+    <span class="input-group-addon">SysAdmin</span>
+    <%= f.text_field :sys_admin, :class => "form-control" %>
+  </div>
+  <br />
+  <div class="input-group">
+    <span class="input-group-addon">SysAdmin password</span>
+    <%= f.password_field :sys_admin_password, :class => "form-control" %>
+  </div>
+  <br />
+  <div class="input-group">
+    <span class="input-group-addon">Tenant name</span>
+    <%= f.text_field :tenant_name, :placeholder => "For Atmos, ViPR or vCloud Director (organization for vCloud Director if the user isn't a system administrator) ", :class => "form-control" %>
+  </div>
+  <br />
+  <div class="input-group">
+    <span class="input-group-addon">TenantAdmin</span>
+    <%= f.text_field :tenant_admin, :placeholder => "Only for Atmos", :class => "form-control" %>
+  </div>
+  <br />
+  <div class="input-group">
+    <span class="input-group-addon">TenantAdmin password</span>
+    <%= f.password_field :tenant_admin_password, :placeholder => "Only for Atmos", :class => "form-control" %>
+  </div>
+  <br />
+  <div class="actions">
+    <%= f.submit nil, :class => "btn btn-primary" %>
+  </div>
+<% end %>
+<br />
+<%= link_to "Cancel", "/platforms", :class => "btn btn-default" %>

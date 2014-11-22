@@ -1,0 +1,38 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">Listing demos</div>
+  <div class="panel-body">
+    <table class="table sortable">
+      <thead>
+        <tr>
+          <th data-defaultsort="asc">Name</th>
+          <th>Description</th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <% if @s3 %>
+            <th></th>
+          <% end %>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% if @demos %>
+          <% @demos.each do |demo| %>
+            <tr>
+              <td><%= demo.name %></td>
+              <td><%= demo.description %></td>
+              <td><%= link_to 'Edit', edit_demo_path(demo), :class => "btn btn-primary" %></td>
+              <td><%= link_to 'Tasks', demo, :class => "btn btn-primary" %></td>
+              <td><%= link_to 'Backup', "/backup/backup/demo/1/1/#{demo.id}", :class => "btn btn-primary" %></td>
+              <% if @s3 %>
+                <td><%= link_to 'Share', "/backup/backup/demo/1/1/#{demo.id}/share_demo", :remote => true, :class => "btn btn-primary" %></td>
+              <% end %>
+              <td><%= link_to 'Delete', demo, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %></td>
+            </tr>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

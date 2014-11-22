@@ -1,0 +1,33 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">Sign up</div>
+  <div class="panel-body">
+		<%= form_for @user do |f| %>
+		  <% if @user.errors.any? %>
+		    <div class="error_messages">
+		      <h2>Form is invalid</h2>
+		      <ul>
+		        <% for message in @user.errors.full_messages %>
+		          <li><%= message %></li>
+		        <% end %>
+		      </ul>
+		    </div>
+		  <% end %>
+		  <div class="input-group">
+		    <span class="input-group-addon">Email</span>
+		    <%= f.text_field :email, :class => "form-control" %>
+		  </div>
+		  <br />
+		  <div class="input-group">
+		    <span class="input-group-addon">Password</span>
+		    <%= f.password_field :password, :class => "form-control" %>
+		  </div>
+		  <br />
+		  <div class="input-group">
+		    <span class="input-group-addon">Password confirmation</span>
+		    <%= f.password_field :password_confirmation, :class => "form-control" %>
+		  </div>
+		  <br />
+		  <%= f.submit "Submit", :class => "btn btn-primary" %>
+		<% end %>
+	</div>
+</div>

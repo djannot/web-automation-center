@@ -1,0 +1,88 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">Restore/Import data</div>
+  <div class="panel-body">
+    <%= form_tag url_for(:action => 'restore'), :multipart => true, :id => "restore_form" do %>
+      <div class="field">
+        <div class="input-group">
+          <span class="input-group-addon">Decryption password</span>
+          <%= password_field_tag :password, nil, :class => "form-control" %>
+        </div>
+      </div>
+      <br />
+      <div class="field">
+        <div class="input-group">
+          <span class="input-group-addon">File</span>
+          <%= file_field_tag :file, :class => "form-control" %>
+        </div>
+      </div>
+      <br />
+      <div class="actions">
+        <%= submit_tag "Upload File & Restore", :id => "submit_request", :class => "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+<div class="panel panel-primary">
+  <div class="panel-heading">Backup/Export data</div>
+  <div class="panel-body">
+    <%= form_tag url_for(:action => 'backup'), :id => "backup_form" do %>
+      <h3>What do you want to backup ?</h3>
+      <% {"platforms" => "Platforms", "clouds" => "Clouds", "favorites" => "Favorites", "demos" => "Demos & Tasks & Regular expressions" }.each do |key, value| %>
+        <div class="field">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <input id="check_box_<%= key %>" type="checkbox" value="yes" name="<%= key %>" checked="checked" onclick="check_dependencies();">
+            </span>
+            <input type="text" class="form-control" value="<%= value %>" readonly="readonly">
+          </div>
+        </div>
+        <br />
+      <% end %>
+      <% if @s3 %>
+      <h3>Where do you want to backup ?</h3>
+        <div class="field">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <input id="check_box_cloud" type="checkbox" value="yes" name="cloud" checked="checked">
+            </span>
+            <input type="text" class="form-control" value="Backup to the cloud ?" readonly="readonly">
+          </div>
+        </div>
+      <% end %>
+      <h3>Security</h3>
+      <div class="field">
+        <div class="input-group">
+          <span class="input-group-addon">Encryption password</span>
+          <%= password_field_tag :encrypt_password, nil, :class => "form-control" %>
+        </div>
+      </div>
+      <br />
+      <div class="actions">
+        <%= submit_tag "Backup", :id => "submit_request", :class => "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+<% if @s3 %>
+  <%= link_to 'List cloud data', '/backup/list_cloud_data', :class => "btn btn-primary" %>
+<% end %>
+<%= link_to 'Delete all my data', '/backup/delete', data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %>
+<script type="text/javascript">
+  function check_dependencies() {
+    if($("#check_box_demos").prop("checked")) {
+      $("#check_box_favorites").prop("checked", true);
+    }
+  }
+
+  $(document).ready(function() {
+    $('#backup_form').submit(function() {
+      if(/^[A-Za-z0-9\s]+$/.test($("#encrypt_password").val())) {
+        return true;
+      }
+      else {
+        window.alert("Only letters, numbers and space characters are allowed.");
+        return false;
+      }
+    });
+  });
+</script>

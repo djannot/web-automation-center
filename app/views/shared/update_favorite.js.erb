@@ -1,0 +1,5 @@
+<% if @updated %>
+	$("#update_favorite_<%= @favorite.id %>_success").html("This favorite has been updated").show().delay(10000).fadeOut();
+<% else %>
+	$("#update_favorite_<%= @favorite.id %>_danger").html("This favorite can't be updated").show().delay(10000).fadeOut();
+<% end %>

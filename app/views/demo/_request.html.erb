@@ -1,0 +1,30 @@
+<td colspan="11">
+  <div class="panel panel-default">
+    <div class="panel-heading">Request for task <%= @task.name %></div>
+    <div class="panel-body">
+      <% if @platform %>
+        <%= render :partial => "/platform/show_platform" %>
+        <%
+          @object = @platform
+          @controller = "platform"
+        %>
+      <% elsif @cloud %>
+        <%= render :partial => "/cloud/show_cloud" %>
+        <%
+          @object = @cloud
+          @controller = "cloud"
+        %>
+      <% else %>
+        <% @controller = "cloud" %>
+      <% end %>
+      <% @object_id = @object ? @object.id : "0" %>
+      <%= form_tag "/#{@controller}/execute_manual_request/#{@object_id}/#{@task.id}", :remote => true do %>
+        <%= render :partial => "shared/form_request" %>
+        <div class="actions">
+          <%= submit_tag "Execute request", :id => "submit_request", :class => "btn btn-primary", :onclick => "$('#changediv').html('');" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div id="changediv_<%= @task.id %>"></div>
+</td>

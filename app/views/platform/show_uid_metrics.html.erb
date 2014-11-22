@@ -1,0 +1,28 @@
+<% details = Hash.from_xml(@response.body) %>
+<div class="panel panel-primary">
+  <div class="panel-heading">Uid metrics</div>
+  <div class="panel-body">
+		<table class="table">
+      <thead>
+        <tr>
+          <th>Objects</th>
+          <th>Size</th>
+          <th>Real size</th>
+          <th>Metadata size</th>
+          <th>Total size</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td><%= details["scMetrics"]["objCount"] %></td>
+          <td><%= number_to_human_size(details["scMetrics"]["size"]) %></td>
+          <td><%= number_to_human_size(details["scMetrics"]["realsize"]) %></td>
+          <td><%= number_to_human_size(details["scMetrics"]["metadatasize"]) %></td>
+          <td><%= number_to_human_size(details["scMetrics"]["totalSize"]) %></td>
+	      </tr>
+      </tbody>
+    </table>
+	</div>
+</div>
+<%= link_to "Back", "/platform/show_subtenant_details/#{@platform.id.to_s}/#{params[:subtenant_name]}", :class => "btn btn-default" %>

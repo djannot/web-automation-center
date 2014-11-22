@@ -1,0 +1,8 @@
+$('#manage_favorites_modal').modal('hide');
+<% if @favorite.privilege %>
+	$("#privilege").val("<%= @favorite.privilege %>");
+<% end %>
+$("#http_method").val("<%= @favorite.http_method %>");
+$("#path").val("<%= raw @favorite.path_or_url %>");
+$("textarea#headers").val("<%= raw(@favorite.headers.gsub(/"/,"\\\"").gsub(/\r\n|\n\r|\n|\r/,"\\n")) %>");
+$("textarea#body").val("<%= raw(@favorite.body.gsub(/"/,"\\\"").gsub(/\r\n|\n\r|\n|\r/,"\\n")) %>");

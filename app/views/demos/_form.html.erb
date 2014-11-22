@@ -1,0 +1,45 @@
+<%= form_for(@demo) do |f| %>
+  <% if @demo.errors.any? %>
+    <div id="error_explanation" class="alert alert-danger">
+      <h2><%= pluralize(@demo.errors.count, "error") %> prohibited this demo from being saved:</h2>
+
+      <ul>
+      <% @demo.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="input-group">
+    <span class="input-group-addon">Name</span>
+    <%= f.text_field :name, :id => "name", :class => "form-control" %>
+  </div>
+  <br />
+  <div class="field">
+    <div class="input-group">
+      <span class="input-group-addon">Description</span>
+      <%= f.text_area :description, :rows => 10, :class => "form-control" %>
+    </div>
+  </div>
+  <br />
+  <br />
+  <div class="actions">
+    <%= f.submit nil, :class => "btn btn-primary", :onsubmit => "formvalidation();" %>
+  </div>
+<% end %>
+<br />
+<%= link_to "Cancel", "/demos", :class => "btn btn-default" %>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('form').submit(function() {
+      if(/^[A-Za-z0-9\s]+$/.test($("#name").val())) {
+        return true;
+      }
+      else {
+        window.alert("Only letters, numbers and space characters are allowed");
+        return false;
+      }
+    });
+  });
+</script>

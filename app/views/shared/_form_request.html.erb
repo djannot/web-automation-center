@@ -1,0 +1,55 @@
+<% if @other %>
+  <div class="field">
+    <div class="input-group">
+      <span class="input-group-addon">User Name</span>
+      <%= text_field_tag :user, nil, :placeholder => "To use basic authentication (optional)", :class => "form-control" %>
+    </div>
+  </div>
+  <br />
+  <div class="field">
+    <div class="input-group">
+      <span class="input-group-addon">Password</span>
+      <%= password_field_tag :password, nil, :placeholder => "To use basic authentication (optional)", :class => "form-control" %>
+    </div>
+  </div>
+  <br />
+<% end %>
+<div class="field">
+  <div class="input-group">
+    <span class="input-group-addon">HTTP method</span>
+    <%= select_tag :http_method, options_for_select(["Get", "Post", "Put", "Delete", "Head", "Option"]), :class => "form-control" %>
+  </div>
+</div>
+<br />
+<% if @platform %>
+  <% if @platform.platform_type == "Atmos" %>
+    <div class="field">
+      <div class="input-group">
+        <span class="input-group-addon">Privilege</span>
+        <%= select_tag :privilege, options_for_select(["SysAdmin", "TenantAdmin"]), :class => "form-control" %>
+      </div>
+    </div>
+    <br />
+  <% end %>
+<% end %>
+<div class="field">
+  <div class="input-group">
+    <span class="input-group-addon"><% if @cloud || @platform %>Path<% else %>Url<% end %></span>
+    <%= text_field_tag :path, nil, :placeholder => @path, :class => "form-control" %>
+  </div>
+</div>
+<br />
+<div class="field">
+  <div class="input-group">
+    <span class="input-group-addon">Headers</span>
+    <%= text_area_tag :headers, nil, :rows => 10, :placeholder => @headers, :class => "form-control" %>
+  </div>
+</div>
+<br />
+<div class="field">
+  <div class="input-group">
+    <span class="input-group-addon">Body</span>
+    <%= text_area_tag :body, nil, :rows => 10, :placeholder => "optionnal", :class => "form-control" %>
+  </div>
+</div>
+<br />

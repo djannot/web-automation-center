@@ -1,0 +1,8 @@
+<% if @exception %>
+	$('#alert-danger').html("<%= @exception %>");
+	$('#alert-danger').show();
+<% else %>
+	<% @headers_sent = @headers %>
+	$('#changediv').append("<%= escape_javascript(render :partial => 'shared/execute_request')%>").hide().fadeIn(2000);
+	$('html, body').animate({scrollTop: $('.top:last').offset().top}, 100);
+<% end %>

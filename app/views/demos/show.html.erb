@@ -1,0 +1,49 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">Tasks</div>
+  <div class="panel-body">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+         <tr>
+          <td><%= @demo.name %></td>
+          <td><%= @demo.description %></td>
+          <td><a href="javascript:void(0);" class="btn btn-primary" onclick="execute_all();"><i class="glyphicon glyphicon-play"></i></a></td>
+        </tr>
+      </tbody>
+    </table>
+    <div id="tasks">
+      <%= render :partial => 'tasks' %>
+    </div>
+	</div>
+</div>
+<%= link_to "Back", "/demos", :class => "btn btn-default" %>
+<script type="text/javascript">
+  var buttons;
+
+  function start_task(button) {
+    if(button) {
+      button.click();
+      var intervalID = setInterval(function() {
+        if($('#' + button.attr('id') + '_done').length > 0) {
+          clearInterval(intervalID);
+          start_task(buttons.shift());
+        }
+      }, 3000);
+    }
+  }
+  function execute_all() {
+    $(".status").hide();
+    buttons = new Array();
+    $(".execute").each(function(index) {
+      buttons.push($(this));
+    });
+    start_task(buttons.shift());
+  }
+</script>

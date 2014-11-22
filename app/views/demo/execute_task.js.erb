@@ -1,0 +1,20 @@
+function replace_keywords(text) {
+	jQuery.fn.reverse = Array.prototype.reverse;
+	$(".replace").reverse().each(function( index ) {
+		if($("#" + this.id + "_by").val().length > 0) {
+			text = text.replace(new RegExp("XXX" + $(this).val() + "XXX","g"), $("#" + this.id + "_by").val());
+		}
+	});
+	return text;
+}
+
+$(".requests").fadeOut();
+$("#request_<%= @task.id %>").html("<%= escape_javascript(render :partial => '/demo/request', :task => @task) %>");
+<% if @favorite.privilege %>
+	$("#privilege").val("<%= @favorite.privilege %>");
+<% end %>
+$("#request_<%= @task.id %> #http_method").val("<%= @favorite.http_method %>");
+$("#request_<%= @task.id %> #path").val(replace_keywords("<%= raw @favorite.path_or_url %>"));
+$("#request_<%= @task.id %> textarea#headers").val(replace_keywords("<%= raw(@favorite.headers.gsub(/"/,"\\\"").gsub(/\r\n|\n\r|\n|\r/,"\\n")) %>"));
+$("#request_<%= @task.id %> textarea#body").val(replace_keywords("<%= raw(@favorite.body.gsub(/"/,"\\\"").gsub(/\r\n|\n\r|\n|\r/,"\\n")) %>"));
+$("#request_<%= @task.id %> #submit_request").trigger( "click" );

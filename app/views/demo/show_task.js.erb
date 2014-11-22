@@ -1,0 +1,13 @@
+if($("#request_<%= @task.id %>").is(':empty')) {
+	$("#request_<%= @task.id %>").html("<%= escape_javascript(render :partial => '/demo/request', :task => @task) %>").fadeIn();
+	<% if @favorite.privilege %>
+		$("#request_<%= @task.id %> #privilege").val("<%= @favorite.privilege %>");
+	<% end %>
+	$("#request_<%= @task.id %> #http_method").val("<%= @favorite.http_method %>");
+	$("#request_<%= @task.id %> #path").val("<%= raw @favorite.path_or_url %>");
+	$("#request_<%= @task.id %> textarea#headers").val("<%= raw(@favorite.headers.gsub(/"/,"\\\"").gsub(/\r\n|\n\r|\n|\r/,"\\n")) %>");
+	$("#request_<%= @task.id %> textarea#body").val("<%= raw(@favorite.body.gsub(/"/,"\\\"").gsub(/\r\n|\n\r|\n|\r/,"\\n")) %>");
+}
+else {
+	$("#request_<%= @task.id %>").fadeIn();
+}

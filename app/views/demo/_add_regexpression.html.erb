@@ -1,0 +1,33 @@
+<td colspan="11">
+  <div class="panel panel-default">
+    <div class="panel-heading">Regular expressions</div>
+    <div class="panel-body">
+      <%= form_tag url_for(:controller => "demo", :action => 'execute_add_regexpression', :id => @task.id), :remote => true do %>
+        <div class="field">
+          <div class="input-group">
+            <span class="input-group-addon">Name</span>
+            <%= text_field_tag :name, nil, :placeholder => "XXX will be added automatically before and after the name to use the result in a another query", :class => "form-control" %>
+          </div>
+        </div>
+        <br />
+        <div class="field">
+          <div class="input-group">
+            <span class="input-group-addon">Regular expression</span>
+            <%= text_field_tag :expression, nil, :placeholder => "The first result which matches will be used and everything between () will be the value. HEADER:<key> for a header", :class => "form-control" %>
+          </div>
+        </div>
+        <br />
+        <div class="field">
+          <div class="input-group">
+            <span class="input-group-addon">Description</span>
+            <%= text_area_tag :description, nil, :class => "form-control" %>
+          </div>
+        </div>
+        <br />
+        <div class="actions">
+          <%= submit_tag "Submit", :id => "submit_request", :class => "btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</td>

@@ -1,0 +1,18 @@
+<tr>
+  <td>Backup</td>
+  <td><%= key["LastModified"] %></td>
+  <td><%= (key["Size"].to_i / 1024).to_s %></td>
+  <td><%= link_to 'Restore', "/backup/restore/#{key['Key']}", :class => "btn btn-primary", :id => "link_#{SecureRandom.uuid}", :onclick => "validate_restore_form(event);" %></td>
+  <td><%= link_to 'Delete', "/backup/delete_cloud_data/#{key['Key']}", data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %></td>
+</tr>
+<script type="text/javascript">
+  function validate_restore_form(event) {
+    event.preventDefault();
+    if(/^[A-Za-z0-9\s]+$/.test($("#password").val())) {
+      window.location.href = $('#'+event.target.id).attr('href') + '/' + $('#password').val();
+    }
+    else {
+      window.alert("Only letters, numbers and space characters are allowed.");
+    }
+  }
+</script>

@@ -1,0 +1,9 @@
+<% if @exception %>
+	<script type="text/javascript">
+		$('#alert-danger').html('<%= escape_javascript(@exception.to_s) %>').show().delay(10000).fadeOut();
+	</script>
+<% else %>
+	<script type="text/javascript">
+		$('#alert-success').html("Restore done").show().delay(10000).fadeOut();
+	</script>
+<% end %>

@@ -1,0 +1,65 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">Uploading from client</div>
+  <div class="panel-body">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Api</th>
+          <th>Url</th>
+          <th>Port</th>
+          <th>Token</th>
+          <th>Bucket</th>
+        </tr>
+      </thead>
+
+      <tbody>
+         <tr>
+          <td><%= @cloud.api %></td>
+          <td><%= @cloud.url %></td>
+          <td><%= @cloud.port %></td>
+          <td><%= @cloud.token %></td>
+          <td><%= @cloud.bucket %></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="field">
+      <div class="input-group">
+        <span class="input-group-addon">File</span>
+        <%= file_field_tag "file", :onchange => "$('#file_size').val(this.files[0].size);$('#file_name').val(this.files[0].name);check_file_size(this.files[0].size);$('#upload_frame').attr('src','about:blank').hide();", :class => "form-control" %>
+      </div>
+    </div>
+    <br />
+    <%= form_tag url_for(:action => 'execute_client_side_multipart_upload', :id => @cloud.id), :remote => "true" do %>
+      <%= hidden_field_tag :file_name %>
+      <div class="field">
+        <div class="input-group">
+          <span class="input-group-addon">Number of threads</span>
+          <%= text_field_tag :threads, nil, :placeholder => "Must be at least 2. Each part will be 5MB, so less threads can be used", :class => "form-control" %>
+        </div>
+      </div>
+      <br />
+      <div class="field">
+        <div class="input-group">
+          <span class="input-group-addon">File size</span>
+          <%= text_field_tag :file_size, nil, :placeholder => "will be filled when a file will be selected", :readonly => true, :class => "form-control" %>
+        </div>
+      </div>
+      <br />
+      <div class="actions">
+        <%= submit_tag "Upload file", :id => "submit_button", :style => "display:none;", :class => "btn btn-primary", :onclick => "$('#upload_frame').show();$('#submit_button').hide();" %>
+      </div>
+    <% end %>
+    <iframe id="upload_frame" name="upload_frame" src="about:blank" width="100%" height="150px" style="display: none;" frameBorder="0"></iframe>
+  </div>
+</div>
+<%= link_to "Back", @cloud, :class => "btn btn-default" %>
+<script type="text/javascript">
+  function check_file_size(size) {
+    if(size > 5 * 1024 * 1024) {
+      $("#submit_button").show();
+    }
+    else {
+      $('#alert-danger').html("Multipart upload is supported only for files bigger than 5 MB").show().delay(10000).fadeOut();
+    }
+  }
+</script>

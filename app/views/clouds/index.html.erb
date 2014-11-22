@@ -1,0 +1,36 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">Listing clouds</div>
+  <div class="panel-body">
+    <table class="table sortable">
+      <thead>
+        <tr>
+          <th data-defaultsort="asc">Api</th>
+          <th>Url</th>
+          <th>Port</th>
+          <th>Token</th>
+          <th>Bucket</th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% if @clouds %>
+          <% @clouds.each do |cloud| %>
+            <tr>
+              <td><%= cloud.api %></td>
+              <td><%= cloud.url %></td>
+              <td><%= cloud.port %></td>
+              <td><%= truncate(cloud.token, :length => 10) %></td>
+              <td><%= cloud.bucket %></td>
+              <td><%= link_to 'Actions', cloud, :class => "btn btn-primary" %></td>
+              <td><%= link_to 'Edit', edit_cloud_path(cloud), :class => "btn btn-primary" %></td>
+              <td><%= link_to 'Delete', cloud, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %></td>
+            </tr>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<td colspan="11">
+  <div class="panel panel-default">
+    <div class="panel-heading">Regular expressions</div>
+    <div class="panel-body">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Regular expression</th>
+            <th>Description</th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @regexpressions.each do |regexpression| %>
+            <tr id="regexpression_<%= regexpression.id %>">
+              <td><%= regexpression.name %></td>
+              <td><%= regexpression.expression %></td>
+              <td><%= regexpression.description %></td>
+              <td><%= link_to 'Delete', url_for(:controller => "demo", :action => 'delete_regexpression', :id => regexpression.id), :remote => true, :class => "btn btn-danger" %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+  	</div>
+  </div>
+</td>
