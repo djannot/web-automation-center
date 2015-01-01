@@ -249,7 +249,7 @@ class ApplicationController < ActionController::Base
     else
       canonicalized_resource = "/" + @cloud.bucket
     end
-    query_params_to_keep = ["acl", "lifecycle", "location", "logging", "notification", "partnumber", "policy", "requestpayment", "torrent", "uploadid", "uploads", "versionid", "versioning", "versions", "website"]
+    query_params_to_keep = ["acl", "lifecycle", "location", "logging", "notification", "partnumber", "policy", "requestpayment", "torrent", "uploadid", "uploads", "versionid", "versioning", "versions", "website", "cors"]
     query_params = Hash.new
     if path.include?("?")
       path.split("?")[1].split("&").each do |kv|
